@@ -9,6 +9,7 @@
     <iterator Binds="TblDonCrView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblDonCrView1Iterator"/>
     <searchRegion Binds="TblDonCrView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDonCrView1Query"/>
+    <iterator Binds="TblProjectView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblProjectView1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -91,5 +92,7 @@
     <action IterBinding="TblDonCrView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <list IterBinding="TblProjectView1Iterator" StaticList="false" Uses="LOV_Category" id="Category"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

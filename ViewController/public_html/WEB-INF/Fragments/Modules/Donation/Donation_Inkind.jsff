@@ -47,6 +47,14 @@
                               <f:validator binding="#{bindings.Dated.validator}"/>
                               <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>
+                            <af:spacer  id="s643"/>
+                            <af:selectOneChoice value="#{bindings.Category.inputValue}"
+                                                label="Category"
+                                                required="#{bindings.Category.hints.mandatory}"
+                                                shortDesc="#{bindings.Category.hints.tooltip}" id="soc13">
+                              <f:selectItems value="#{bindings.Category.items}" id="si13"/>
+                              <f:validator binding="#{bindings.Category.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s6"/>
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project"

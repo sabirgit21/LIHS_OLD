@@ -51,6 +51,10 @@
     Name="Bank_Cash_LOV1"
     ViewObjectName="model.LOV.Bank_Cash_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Category_LOV1"
+    ViewObjectName="model.LOV.Category_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ProjectId"
     ListVOName="Project_Name_LOV1"
@@ -121,6 +125,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Category"
+    ListVOName="Category_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Category"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -257,5 +279,13 @@
     PrecisionRule="true"
     EntityAttrName="Category"
     EntityUsage="TblDonCr"
-    AliasName="CATEGORY"/>
+    AliasName="CATEGORY"
+    LOVName="LOV_Category">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

@@ -54,6 +54,10 @@
     Name="Donation_Type_LOV1"
     ViewObjectName="model.LOV.Donation_Type_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Category_LOV1"
+    ViewObjectName="model.LOV.Category_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type1"
@@ -142,6 +146,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Narration"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Category"
+    ListVOName="Category_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Category"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -280,7 +302,15 @@
     PrecisionRule="true"
     EntityAttrName="Category"
     EntityUsage="TblDonKindM"
-    AliasName="CATEGORY"/>
+    AliasName="CATEGORY"
+    LOVName="LOV_Category">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblDonKindDView"
     ViewLink="model.ERP.VO.FkDonKindDMLink"

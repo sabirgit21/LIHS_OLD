@@ -36,6 +36,7 @@
           <Item Value="Id"/>
           <Item Value="Name"/>
           <Item Value="Ast"/>
+          <Item Value="Category"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

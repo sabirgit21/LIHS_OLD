@@ -55,7 +55,17 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblProjectView1.hints.Ast.name}" filterable="true"
+                            <af:column headerText="Category" id="c10">
+                              <af:selectOneChoice value="#{row.bindings.Category.inputValue}"
+                                                  label="#{row.bindings.Category.label}"
+                                                  required="#{bindings.TblProjectView1.hints.Category.mandatory}"
+                                                  shortDesc="#{bindings.TblProjectView1.hints.Category.tooltip}"
+                                                  id="soc5">
+                                <f:selectItems value="#{row.bindings.Category.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.Category.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblProjectView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c2">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"

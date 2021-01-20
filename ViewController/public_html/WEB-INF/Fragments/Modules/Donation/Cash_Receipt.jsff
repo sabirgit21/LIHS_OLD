@@ -74,6 +74,14 @@
                               <f:validator binding="#{bindings.ProjectId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s7"/>
+                            <af:selectOneChoice value="#{bindings.Category.inputValue}"
+                                                label="Category"
+                                                required="#{bindings.Category.hints.mandatory}"
+                                                shortDesc="#{bindings.Category.hints.tooltip}" id="soc9">
+                              <f:selectItems value="#{bindings.Category.items}" id="si9"/>
+                              <f:validator binding="#{bindings.Category.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s7342"/>
                             <af:selectOneChoice value="#{bindings.CashBankId.inputValue}"
                                                 label="Cash"
                                                 required="#{bindings.CashBankId.hints.mandatory}"
