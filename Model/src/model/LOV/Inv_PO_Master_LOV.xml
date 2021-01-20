@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Inv_PO_Master_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblPoM.ID, 
+       TblPoM.DATED, 
+       TblPoM.VNO, 
+       TblPoM.PBL_SUPP_ID, 
+       TblPblSupp.NAME, 
+       TblPblSupp.ID AS ID1, 
+       TblPoM.PROJECT_ID, 
+       TblProject.NAME AS NAME1, 
+       TblProject.ID AS ID2"
+  FromList="TBL_PO_M TblPoM, TBL_PBL_SUPP TblPblSupp, TBL_PROJECT TblProject"
+  Where="TblPoM.PBL_SUPP_ID = TblPblSupp.ID       
+and  TblPoM.PROJECT_ID = TblProject.ID">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Inv_PO_Master_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblPoM"
+    Entity="model.ERP.EO.TblPoM"/>
+  <EntityUsage
+    Name="TblPblSupp"
+    Entity="model.ERP.EO.TblPblSupp"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblProject"
+    Entity="model.ERP.EO.TblProject"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblPoM"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblPoM"
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.LOV.Inv_PO_Master_LOV.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.LOV.Inv_PO_Master_LOV.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TblPoM"
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblPoM"
+    AliasName="PBL_SUPP_ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblPblSupp"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblPblSupp"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="ProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="TblPoM"
+    AliasName="PROJECT_ID"/>
+  <ViewAttribute
+    Name="Name1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblProject"
+    AliasName="NAME1"/>
+  <ViewAttribute
+    Name="Id2"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblProject"
+    AliasName="ID2"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

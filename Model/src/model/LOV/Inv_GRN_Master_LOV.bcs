@@ -1,0 +1,12 @@
+//Groovy Scripts for model.LOV.Inv_GRN_Master_LOV
+
+package model.LOV
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getProId")
+def getProId_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessPrID')
+}
+

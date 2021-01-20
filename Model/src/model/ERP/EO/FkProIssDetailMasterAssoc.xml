@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkProIssDetailMasterAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblProIssMaster"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblProIssMaster">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblProIssMaster"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblProIssMaster.Id"/>
+      <Item Value="model.ERP.EO.TblProIssMaster.FrDeptId"/>
+      <Item Value="model.ERP.EO.TblProIssMaster.ProjectId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblProIssDetail"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblProIssDetail">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblProIssDetail"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblProIssDetail.ProIssMasterId"/>
+      <Item Value="model.ERP.EO.TblProIssDetail.FrDeptId"/>
+      <Item Value="model.ERP.EO.TblProIssDetail.ProjectId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

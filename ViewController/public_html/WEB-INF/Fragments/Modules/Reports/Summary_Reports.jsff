@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <af:panelAccordion discloseMany="false" id="pa1">
+        <af:showDetailItem id="pane1" text="Summary Category Reports">
+            <af:panelGridLayout id="pgl2">
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                      
+                            
+                       <af:panelGroupLayout id="pgl4" layout="horizontal">
+                            <af:inputDate label="From Date : " id="id3"
+                                           binding="#{backingBeanScope.SummaryReportsBackBean.fromDateParam}"/>
+                            <!--<af:inputDate label="From Date"
+                            binding="#{backingBeanScope.SummaryReportsBackBean.fromDateParam}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>-->
+                            <af:spacer width="30" height="10" id="s11"/>
+                            <af:inputDate label="To Date : " id="id4"
+                                          binding="#{backingBeanScope.SummaryReportsBackBean.toDateParam}"/>
+                            <!--<af:inputDate label="To Date"
+                            binding="#{backingBeanScope.Grant_Approval_Report_BackBean.toDateParam}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>-->
+                         <af:spacer width="30" height="10" id="s12"/>
+                            <af:selectOneChoice 
+                                                label="Project"
+                                                binding="#{backingBeanScope.SummaryReportsBackBean.projidparam}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
+                                                contentStyle="width:200px;">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+               
+               
+               <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="g786r4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="g45c4">
+                        <af:panelGroupLayout id="pgl1" valign="middle" halign="center" layout="horizontal">
+                            <af:spacer width="10" height="10" id="s7"/>
+                            <af:outputLabel value="Please select only One report at a time from the following : " id="ol2"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+            </af:gridRow>
+               
+               
+               
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                        <af:spacer width="10" height="10" id="s5"/>
+                        <af:selectOneChoice label="Select Category Wise" id="soc4" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                                binding="#{backingBeanScope.SummaryReportsBackBean.report_type}">
+                                                
+                                <af:selectItem label="Summary ITN Item Project" value="summaryITN" id="si9"/>
+                                <af:selectItem label="Summary IRN Item Project" value="summaryIRN" id="si1"/>
+                                <af:selectItem label="Summary GIR Item Project" value="summaryGIR" id="si8"/>
+                                <af:selectItem label="Summary GIN Item Project" value="summaryGIN" id="si7"/>
+                                <af:selectItem label="Summary DN Item Project" value="summaryDN" id="si3"/>
+                                <af:selectItem label="Summary Cash Purch Item Project" value="summaryCP" id="si6"/>
+                                <af:selectItem label="Summary GRN Item Project" value="summaryGRN" id="si11"/>
+                                <af:selectItem label="Summary OB Item Project" value="summaryOB" id="si5"/>
+                                <af:selectItem label="Summary PRO Iss Item Project" value="summaryPROIss" id="si18"/>
+                                <af:selectItem label="Summary FG TRN Item Project" value="summaryFGTRN" id="si19"/>
+                               
+                                
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s9"/>
+                            <af:selectOneChoice label="Select  Item Wise" id="soc2" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                                binding="#{backingBeanScope.SummaryReportsBackBean.itemreport_type}">
+                                                
+                                <af:selectItem label="Summary ITN Item L4 Project" value="summaryITNL4" id="si4"/>
+                                <af:selectItem label="Summary IRN Item L4 Project" value="summaryIRNL4" id="si10"/>
+                                <af:selectItem label="Summary GIR Item L4 Project" value="summaryGIRL4" id="si12"/>
+                                <af:selectItem label="Summary GIN Item L4 Project" value="summaryGINL4" id="si13"/>
+                                <af:selectItem label="Summary DN Item L4 Project" value="summaryDNL4" id="si14"/>
+                                <af:selectItem label="Summary Cash Purch Item L4 Project" value="summaryCPL4" id="si15"/>
+                                <af:selectItem label="Summary GRN Item L4 Project" value="summaryGRNL4" id="si16"/>
+                                <af:selectItem label="Summary OB Item L4 Project" value="summaryOBL4" id="si17"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s3"/>
+                            <af:selectOneChoice label="Select Center/Sub Center" id="soc3" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                                binding="#{backingBeanScope.SummaryReportsBackBean.centerreport_type}">
+                                                
+                                 <af:selectItem label="Summary PRO Iss Center Project" value="summaryPROIssCenter" id="si20"/>
+                                <af:selectItem label="Summary FG TRN Center Project" value="summaryFGTRNCenter" id="si21"/>
+                                 <af:selectItem label="Summary FG TRN Sub Center Project" value="summaryFGTRNSubCenter"
+                                                id="si22"/>
+                                
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s4"/>
+                             <af:selectOneChoice label="Select Day Wise" id="soc5" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                                binding="#{backingBeanScope.SummaryReportsBackBean.dayreport_type}">
+                                                
+                                <af:selectItem label="Summary ITN Day Project" value="summaryITNDay" id="si23"/>
+                                <af:selectItem label="Summary IRN Day Project" value="summaryIRNDay" id="si24"/>
+                                <af:selectItem label="Summary GIR Day Project" value="summaryGIRDay" id="si25"/>
+                                <af:selectItem label="Summary GIN Day Project" value="summaryGINDay" id="si26"/>
+                                <af:selectItem label="Summary DN Day Project" value="summaryDNDay" id="si27"/>
+                                <af:selectItem label="Summary Cash Purch Day Project" value="summaryCPDay"
+                                               id="si28"/>
+                                <af:selectItem label="Summary GRN Day Project" value="summaryGRNDay" id="si29"/>
+                                <af:selectItem label="Summary OB Day Project" value="summaryOBDay" id="si30"/>
+                            </af:selectOneChoice>
+                            </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                    <af:panelGroupLayout id="pgl5" layout="horizontal">
+                                                
+                                                 <af:spacer width="10" height="30" id="s1"/>
+                             <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                            binding="#{backingBeanScope.SummaryReportsBackBean.format_type}">
+                                                 <af:selectItem label="PDF" value="PDF" id="si55"/>
+                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
+                            </af:selectOneChoice>
+                             <af:spacer width="30" height="10" id="s2"/>
+                            <af:button text="Generate Report" id="b2"
+                                       action="#{backingBeanScope.SummaryReportsBackBean.gen_Report}"/>
+                            <af:spacer width="30" height="10" id="s6"/>
+                                            </af:panelGroupLayout>
+                                        </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+   
+                  
+           
+           
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="QC_M_LOVOperations">
+  <ExpressionCodeSource
+    Name="QC_M_LOV"
+    Type="Static"
+    URI="model/LOV/QC_M_LOV.bcs"/>
+</OperationDefinitions>

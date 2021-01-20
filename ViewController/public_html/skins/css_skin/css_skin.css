@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+.login_background {
+    /*background-color: #a5e6ec;*/
+    background-color: White;
+}
+
+.content_pannel_acc {
+    /*width:1030px !important;*/
+}
+
+.tabel_pannel_tab {
+    /*width:1015px !important;*/
+}
+
+.backColor {
+    background-color: White;
+}
+
+.position_fixed_button {
+    position: fixed;
+    right: 2%;
+    z-index: 10;
+}
+
+.header_module {
+    font-size: 15px;
+}
+
+.theme_color {
+    background-color: #075890;
+}
+
+.sidebar_style {
+    width: 223px !important;
+}
+
+.sidebar_detailitem_Style {
+    overflow: auto !important;
+}
+
+.sidebar_button {
+    width:190px;
+}
+
+
+.AFDefaultFontFamily:alias {
+    font-family: serif !important;
+}
+
+af|table::navbar {
+    margin-left:38% !important; 
+}
+
+
+/*af|panelFormLayout af|inputText::label{
+    border:10px solid black; 
+    text-align:left;
+}*/
+
+span.xf{
+    color: white !important;
+}
+af_selectOneChoice_label-text{
+    color: white !important;
+}
+
+af|panelFormLayout af|inputDate::label, af|inputText::label, af|selectOneChoice::label{
+    /*border:1px solid black;*/ 
+    text-align:left !important;
+    width:150px !important;
+    color: white !important;
+    background-color: #075890 !important;
+}
+
+/*af|panelFormLayout af|selectOneChoice::label{
+    border:10px solid black; 
+    text-align:left;
+}*/
+
+/*af|table {
+background: none;
+border: 1px solid #A65B1A;
+}*/
+
+af|table af|column::column-header-cell 
+{   
+/*height:35px;*/
+color:white; 
+/*text-align: center;*/
+font-size: 12px;
+font-weight: bold;
+/*background-image: none;*/
+background-color: #075890;
+/*vertical-align: middle;*/
+/*border-left: 1px solid #BF691E;*/
+}
+
+af|table::data-table-VH-lines af|column::data-cell
+{
+background-color:#fff;
+color: #7F4614;
+font-size:12px;
+font-family:'OpenSans-Regular';
+height:30px;
+vertical-align: middle;
+text-align: left;
+} 
+
+af|table::data-table-VH-lines af|column::banded-data-cell{ 
+background-color:#F0E5CC; 
+color: #7F4614;
+font-size:12px;   
+font-family:'OpenSans-Regular';  
+height:30px;   
+vertical-align: middle;
+text-align: left; 
+}
+
+/*af|table::data-row {
+background-color: #e8f4f8;
+border: 1px solid #A65B1A;
+}*/
+
+af|table::data-row:selected af|column::data-cell
+{  
+background-color: #a3c8d9; 
+border: 3px solid #075890;
+color: #ffffff;  
+}
+
+af|table::data-row:selected af|column::banded-data-cell
+{  
+background-color: #a3c8d9;  
+border: 3px solid #075890;
+color: #ffffff;  
+}
+
+af|table::data-row:selected:focused af|column::data-cell
+{  
+background-color: #a3c8d9;   
+border: 3px solid #075890;
+color: #ffffff; 
+}
+
+af|table::data-row:selected:focused af|column::banded-data-cell {
+background-color: #a3c8d9;   
+border: 3px solid #075890;
+color: #ffffff;    
+}
+
+af|table::data-row:hover af|column::data-cell
+{ 
+background-color: #9bafc8;  
+color: #ffffff;  
+}
+
+af|table::data-row:hover af|column::banded-data-cell { 
+background-color: #9bafc8;
+color: #ffffff; 
+}
+af|table::data-table-VH-lines af|column::data-cell{ 
+background-color:#e8f4f8;
+}
+
+
+.x14b.p_AFSelected.p_AFInactive .xi9, .xi9.p_AFSelected.p_AFInactive, .x14b.p_AFSelected.p_AFInactive .xia, .xia.p_AFSelected.p_AFInactive {
+    background-color: #a3c8d9;
+}

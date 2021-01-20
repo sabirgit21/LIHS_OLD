@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Production_TaskFlow">
+    <default-activity>Production</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="Production">
+      <page>/WEB-INF/Fragments/Modules/Production/Production.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

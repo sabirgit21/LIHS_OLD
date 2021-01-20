@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Employee_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblEmp.ID, 
+       TblEmp.NAME, 
+       TblEmp.FAT_NAME, 
+       TblEmp.PROJECT_ID"
+  FromList="TBL_EMP TblEmp"
+  Where="TblEmp.PROJECT_ID = :getProID">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Employee_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="getProID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Employee_Name_LOV"/>
+  </Variable>
+  <EntityUsage
+    Name="TblEmp"
+    Entity="model.ERP.EO.TblEmp"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblEmp"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblEmp"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="FatName"
+    PrecisionRule="true"
+    EntityAttrName="FatName"
+    EntityUsage="TblEmp"
+    AliasName="FAT_NAME"/>
+  <ViewAttribute
+    Name="ProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="TblEmp"
+    AliasName="PROJECT_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

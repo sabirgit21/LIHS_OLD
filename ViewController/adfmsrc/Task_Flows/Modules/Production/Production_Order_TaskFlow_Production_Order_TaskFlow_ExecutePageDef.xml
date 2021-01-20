@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Production_Order_TaskFlow_Production_Order_TaskFlow_ExecutePageDef"
+                Package="Task_Flows.Modules.Production" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="TblPorMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblPorMasterView1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="TblPorMasterView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

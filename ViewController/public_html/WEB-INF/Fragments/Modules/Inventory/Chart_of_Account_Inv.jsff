@@ -1,0 +1,453 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+                
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Chart of Account">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+        
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Level 1">
+                <af:panelGridLayout id="pgl11">
+                  <af:gridRow marginTop="5px" height="auto" id="gr14">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
+                     
+                      <af:panelTabbed position="above" id="pt6">
+                        <af:showDetailItem id="tab3" text="Level 1">
+                           <af:table value="#{bindings.TblItemL1View1.collectionModel}" var="row"
+                          rows="#{bindings.TblItemL1View1.rangeSize}"
+                          emptyText="#{bindings.TblItemL1View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblItemL1View1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblItemL1View1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblItemL1View1.rangeSize}"
+                          filterModel="#{bindings.TblItemL1View1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblItemL1View1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblItemL1View1.hints.ItemL1Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c1" align="right" visible="false">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ItemL1Id}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.ItemL1Id.inputValue}"
+                                  label="#{bindings.TblItemL1View1.hints.ItemL1Id.label}"
+                                  required="#{bindings.TblItemL1View1.hints.ItemL1Id.mandatory}"
+                                  columns="#{bindings.TblItemL1View1.hints.ItemL1Id.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL1View1.hints.ItemL1Id.precision}"
+                                  shortDesc="#{bindings.TblItemL1View1.hints.ItemL1Id.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.ItemL1Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblItemL1View1.hints.ItemL1Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblItemL1View1.hints.Name.name}" filterable="true" sortable="true"
+                             headerText="Name" id="c2" width="300">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Name}"
+                                   id="it13" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblItemL1View1.hints.Name.label}"
+                                  required="#{bindings.TblItemL1View1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblItemL1View1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL1View1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblItemL1View1.hints.Name.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Active" id="c3" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it3" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblItemL1View1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblItemL1View1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="5" height="10" id="s5"/>
+                 <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+               
+                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                 
+                  
+                  
+                </af:panelGridLayout>
+               
+              </af:showDetailItem>
+              <af:showDetailItem text="Level 2" id="sdi5">
+                <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="sdi1" text="Level 2">
+                <af:table value="#{bindings.TblItemL2View2.collectionModel}" var="row"
+                          rows="#{bindings.TblItemL2View2.rangeSize}"
+                          emptyText="#{bindings.TblItemL2View2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblItemL2View2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblItemL2View2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblItemL2View2.rangeSize}"
+                          filterModel="#{bindings.TblItemL2View2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblItemL2View2Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblItemL2View2.hints.ItemL2Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c4" align="right" visible="false">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ItemL2Id}"
+                                   id="it15" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.ItemL2Id.inputValue}"
+                                  label="#{bindings.TblItemL2View2.hints.ItemL2Id.label}"
+                                  required="#{bindings.TblItemL2View2.hints.ItemL2Id.mandatory}"
+                                  columns="#{bindings.TblItemL2View2.hints.ItemL2Id.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL2View2.hints.ItemL2Id.precision}"
+                                  shortDesc="#{bindings.TblItemL2View2.hints.ItemL2Id.tooltip}" id="it4" readOnly="true">
+                      <f:validator binding="#{row.bindings.ItemL2Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblItemL2View2.hints.ItemL2Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblItemL2View2.hints.Name.name}" filterable="true" sortable="true"
+                             headerText="Name" id="c5" width="300">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Name}"
+                                   id="it16" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblItemL2View2.hints.Name.label}"
+                                  required="#{bindings.TblItemL2View2.hints.Name.mandatory}"
+                                  columns="#{bindings.TblItemL2View2.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL2View2.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblItemL2View2.hints.Name.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Active" id="c6" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it6" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblItemL2View2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblItemL2View2.hints.Ast.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="5" height="10" id="s2"/>
+                <af:panelGroupLayout id="pgl2"  halign="center" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+               
+                <af:spacer width="5" height="10" id="s4"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+              </af:showDetailItem>
+              <af:showDetailItem text="Level 3" id="sdi6">
+                <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="sdi2" text="Level 3">
+                <af:table value="#{bindings.TblItemL3View3.collectionModel}" var="row"
+                          rows="#{bindings.TblItemL3View3.rangeSize}"
+                          emptyText="#{bindings.TblItemL3View3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblItemL3View3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblItemL3View3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblItemL3View3.rangeSize}"
+                          filterModel="#{bindings.TblItemL3View3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblItemL3View3Query.processQuery}" varStatus="vs" id="t3"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblItemL3View3.hints.ItemL3Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c7" align="right" visible="false">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ItemL3Id}"
+                                   id="it18" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.ItemL3Id.inputValue}"
+                                  label="#{bindings.TblItemL3View3.hints.ItemL3Id.label}"
+                                  required="#{bindings.TblItemL3View3.hints.ItemL3Id.mandatory}"
+                                  columns="#{bindings.TblItemL3View3.hints.ItemL3Id.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL3View3.hints.ItemL3Id.precision}"
+                                  shortDesc="#{bindings.TblItemL3View3.hints.ItemL3Id.tooltip}" id="it7" readOnly="true">
+                      <f:validator binding="#{row.bindings.ItemL3Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblItemL3View3.hints.ItemL3Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblItemL3View3.hints.Name.name}" filterable="true" sortable="true"
+                             headerText="Name" id="c8" width="300">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Name}"
+                                   id="it19" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblItemL3View3.hints.Name.label}"
+                                  required="#{bindings.TblItemL3View3.hints.Name.mandatory}"
+                                  columns="#{bindings.TblItemL3View3.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL3View3.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblItemL3View3.hints.Name.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Active" id="c9" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it9" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblItemL3View3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblItemL3View3.hints.Ast.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="5" height="10" id="s6"/>
+               <af:panelGroupLayout id="pgl6"  halign="center" layout="horizontal">
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                
+                <af:spacer width="5" height="10" id="s7"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+              </af:showDetailItem>
+              <af:showDetailItem text="Level 4" id="sdi7">
+                <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="sdi3" text="Level 4">
+                <af:table value="#{bindings.TblItemL4View3.collectionModel}" var="row"
+                          rows="#{bindings.TblItemL4View3.rangeSize}"
+                          emptyText="#{bindings.TblItemL4View3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblItemL4View3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblItemL4View3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblItemL4View3.rangeSize}"
+                          filterModel="#{bindings.TblItemL4View3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblItemL4View3Query.processQuery}" varStatus="vs" id="t4"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblItemL4View3.hints.ItemL4Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c10" align="right" visible="false">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+                                   id="it21" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.ItemL4Id.inputValue}"
+                                  label="#{bindings.TblItemL4View3.hints.ItemL4Id.label}"
+                                  required="#{bindings.TblItemL4View3.hints.ItemL4Id.mandatory}"
+                                  columns="#{bindings.TblItemL4View3.hints.ItemL4Id.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL4View3.hints.ItemL4Id.precision}"
+                                  shortDesc="#{bindings.TblItemL4View3.hints.ItemL4Id.tooltip}" id="it10" readOnly="true">
+                      <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblItemL4View3.hints.ItemL4Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblItemL4View3.hints.Name.name}" filterable="true" sortable="true"
+                             headerText="Name" id="c11" width="300">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Name}"
+                                   id="it22" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblItemL4View3.hints.Name.label}"
+                                  required="#{bindings.TblItemL4View3.hints.Name.mandatory}"
+                                  columns="#{bindings.TblItemL4View3.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL4View3.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblItemL4View3.hints.Name.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                            <af:column headerText="UOM" id="c17" sortable="true" filterable="true">
+                          <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.UomId}"
+                                   id="it25" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.UomId.inputValue}"
+                                                  label="#{row.bindings.UomId.label}"
+                                                  required="#{bindings.TblItemL4View3.hints.UomId.mandatory}"
+                                                  shortDesc="#{bindings.TblItemL4View3.hints.UomId.tooltip}" id="soc8">
+                                <f:selectItems value="#{row.bindings.UomId.items}" id="si8"/>
+                                <f:validator binding="#{row.bindings.UomId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Active" id="c12" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it12" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblItemL4View3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblItemL4View3.hints.Ast.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="5" height="10" id="s8"/>
+          <af:panelGroupLayout id="pgl8" halign="center"  layout="horizontal">
+                            <af:iterator id="i4" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}3"/>
+                                </af:button>
+                
+                <af:spacer width="5" height="10" id="s10"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+              </af:showDetailItem>
+              <af:showDetailItem text="Search" id="sdi4">
+                <af:panelGridLayout id="pgl10">
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
+                     <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}"
+                                 inlineStyle="float: right;"/>
+                      <af:panelTabbed position="above" id="pt5">
+                        <af:showDetailItem id="tab2" text="Search">
+                          <af:table value="#{bindings.TblItemL4View31.collectionModel}" var="row"
+                          rows="#{bindings.TblItemL4View31.rangeSize}"
+                          emptyText="#{bindings.TblItemL4View31.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblItemL4View31.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblItemL4View31.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblItemL4View31.rangeSize}"
+                          filterModel="#{bindings.TblItemL4View3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblItemL4View3Query.processQuery}" varStatus="vs" id="t5"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblItemL4View31.hints.ItemL3Id.name}" filterable="true"
+                             sortable="true" headerText="Level 3" id="c13" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL3Id}"
+       id="it14" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.ItemL3Id.inputValue}"
+                                        label="#{row.bindings.ItemL3Id.label}"
+                                        required="#{bindings.TblItemL4View31.hints.ItemL3Id.mandatory}"
+                                        shortDesc="#{bindings.TblItemL4View31.hints.ItemL3Id.tooltip}" id="soc5"
+                                        readOnly="true" >
+                      <f:selectItems value="#{row.bindings.ItemL3Id.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.ItemL3Id.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblItemL4View31.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="Level 4" id="c15" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblItemL4View31.hints.Name.label}"
+                                  required="#{bindings.TblItemL4View31.hints.Name.mandatory}"
+                                  columns="#{bindings.TblItemL4View31.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL4View31.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblItemL4View31.hints.Name.tooltip}" id="it17" readOnly="true">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                            <af:column headerText="UOM" id="c14" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UomId}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.UomId.inputValue}"
+                                                  label="#{row.bindings.UomId.label}"
+                                                  required="#{bindings.TblItemL4View31.hints.UomId.mandatory}"
+                                                  shortDesc="#{bindings.TblItemL4View31.hints.UomId.tooltip}" id="soc7" readOnly="true">
+                                <f:selectItems value="#{row.bindings.UomId.items}" id="si7"/>
+                                <f:validator binding="#{row.bindings.UomId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblItemL4View31.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="Active" id="c16">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblItemL4View31.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblItemL4View31.hints.Ast.tooltip}" id="soc6" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+     </af:panelGridLayout>
+     </af:showDetailItem>
+</af:panelAccordion>
+</ui:composition>
+

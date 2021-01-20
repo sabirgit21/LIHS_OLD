@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Chart_of_Account_InvPageDef"
+                Package="Fragments.Modules.Inventory">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblItemL1View1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblItemL1View1Iterator"/>
+    <searchRegion Binds="TblItemL1View1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblItemL1View1Query"/>
+    <iterator Binds="TblItemL2View2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblItemL2View2Iterator"/>
+    <searchRegion Binds="TblItemL2View2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblItemL2View2Query"/>
+    <iterator Binds="TblItemL3View3" RangeSize="8" DataControl="AppModuleDataControl1" id="TblItemL3View3Iterator"/>
+    <searchRegion Binds="TblItemL3View3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblItemL3View3Query"/>
+    <iterator Binds="TblItemL4View3" RangeSize="8" DataControl="AppModuleDataControl1" id="TblItemL4View3Iterator"/>
+    <searchRegion Binds="TblItemL4View3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblItemL4View3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblItemL1View1Iterator" id="TblItemL1View1">
+      <nodeDefinition DefName="model.ERP.VO.TblItemL1View" Name="TblItemL1View10">
+        <AttrNames>
+          <Item Value="ItemL1Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblItemL1View1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblItemL1View1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblItemL1View1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblItemL2View2Iterator" id="TblItemL2View2">
+      <nodeDefinition DefName="model.ERP.VO.TblItemL2View" Name="TblItemL2View20">
+        <AttrNames>
+          <Item Value="ItemL2Id"/>
+          <Item Value="ItemL1Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblItemL2View2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblItemL2View2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblItemL2View2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblItemL3View3Iterator" id="TblItemL3View3">
+      <nodeDefinition DefName="model.ERP.VO.TblItemL3View" Name="TblItemL3View30">
+        <AttrNames>
+          <Item Value="ItemL3Id"/>
+          <Item Value="ItemL2Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblItemL3View3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblItemL3View3Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblItemL3View3Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblItemL4View3Iterator" id="TblItemL4View3">
+      <nodeDefinition DefName="model.ERP.VO.TblItemL4View" Name="TblItemL4View30">
+        <AttrNames>
+          <Item Value="ItemL4Id"/>
+          <Item Value="ItemL3Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="UomId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblItemL4View3Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblItemL4View3Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblItemL4View3Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblItemL4View3Iterator" id="TblItemL4View31">
+      <nodeDefinition DefName="model.ERP.VO.TblItemL4View" Name="TblItemL4View310">
+        <AttrNames>
+          <Item Value="ItemL3Id"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="UomId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecutePageDef"
+                Package="Task_Flows.Modules.Inventory" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="TblPoMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblPoMView1Iterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="TblPoMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

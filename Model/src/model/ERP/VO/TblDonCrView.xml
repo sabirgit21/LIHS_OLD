@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblDonCrView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblDonCr.ID, 
+       TblDonCr.DATED, 
+       TblDonCr.PROJECT_ID, 
+       TblDonCr.DON_SETUP_ID, 
+       TblDonCr.DON_TYPE_ID, 
+       TblDonCr.REC_IN, 
+       TblDonCr.CASH_BANK_ID, 
+       TblDonCr.DOC_NO, 
+       TblDonCr.CHQ_DATE, 
+       TblDonCr.AMOUNT, 
+       TblDonCr.NARRATION, 
+       TblDonCr.CREATED_DATE, 
+       TblDonCr.CREATED_BY, 
+       TblDonCr.UPDATED_DATE, 
+       TblDonCr.UPDATED_BY, 
+       TblDonCr.CATEGORY"
+  FromList="TBL_DON_CR TblDonCr"
+  Where="TblDonCr.PROJECT_ID =  nvl(:getProId,TblDonCr.PROJECT_ID)">
+  <Variable
+    Name="getProId"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblDonCrView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Project_Name_LOV1"
+    ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Donation_Setup_LOV1"
+    ViewObjectName="model.LOV.Donation_Setup_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Donation_Type_LOV1"
+    ViewObjectName="model.LOV.Donation_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Bank_Cash_LOV1"
+    ViewObjectName="model.LOV.Bank_Cash_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="Project_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonSetupId"
+    ListVOName="Donation_Setup_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonSetupId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Dated"/>
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonTypeId"
+    ListVOName="Donation_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonTypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Narration"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CashBankId"
+    ListVOName="Bank_Cash_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CashBankId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblDonCr"
+    Entity="model.ERP.EO.TblDonCr"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblDonCr"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblDonCr"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="ProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="TblDonCr"
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DonSetupId"
+    PrecisionRule="true"
+    EntityAttrName="DonSetupId"
+    EntityUsage="TblDonCr"
+    AliasName="DON_SETUP_ID"
+    LOVName="LOV_DonSetupId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DonTypeId"
+    PrecisionRule="true"
+    EntityAttrName="DonTypeId"
+    EntityUsage="TblDonCr"
+    AliasName="DON_TYPE_ID"
+    LOVName="LOV_DonTypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RecIn"
+    PrecisionRule="true"
+    EntityAttrName="RecIn"
+    EntityUsage="TblDonCr"
+    AliasName="REC_IN"/>
+  <ViewAttribute
+    Name="CashBankId"
+    PrecisionRule="true"
+    EntityAttrName="CashBankId"
+    EntityUsage="TblDonCr"
+    AliasName="CASH_BANK_ID"
+    LOVName="LOV_CashBankId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DocNo"
+    PrecisionRule="true"
+    EntityAttrName="DocNo"
+    EntityUsage="TblDonCr"
+    AliasName="DOC_NO"/>
+  <ViewAttribute
+    Name="ChqDate"
+    PrecisionRule="true"
+    EntityAttrName="ChqDate"
+    EntityUsage="TblDonCr"
+    AliasName="CHQ_DATE"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblDonCr"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="Narration"
+    PrecisionRule="true"
+    EntityAttrName="Narration"
+    EntityUsage="TblDonCr"
+    AliasName="NARRATION"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblDonCr"
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblDonCr"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblDonCr"
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblDonCr"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Category"
+    PrecisionRule="true"
+    EntityAttrName="Category"
+    EntityUsage="TblDonCr"
+    AliasName="CATEGORY"/>
+</ViewObject>

@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+ 
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Bank Setup">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Bank Setup">
+                <af:table value="#{bindings.Bank_Setup1.collectionModel}" var="row"
+                          rows="#{bindings.Bank_Setup1.rangeSize}"
+                          emptyText="#{bindings.Bank_Setup1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.Bank_Setup1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.Bank_Setup1.collectionModel.makeCurrent}" rowSelection="single"
+                          fetchSize="#{bindings.Bank_Setup1.rangeSize}"
+                          filterModel="#{bindings.Bank_Setup1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.Bank_Setup1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                   <af:column sortProperty="#{bindings.Bank_Setup1.hints.Id.name}" filterable="true" sortable="true"
+                           headerText="ID" id="c1" visible="false">
+                           <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.Bank_Setup1.hints.Id.label}"
+                                required="#{bindings.Bank_Setup1.hints.Id.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.Id.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.Id.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.Id.tooltip}" id="it1" readOnly="true">
+                    <f:validator binding="#{row.bindings.Id.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Bank_Setup1.hints.Id.format}"/>
+                  </af:inputText>
+                </af:column>
+                <!--<af:column sortProperty="#{bindings.Bank_Setup1.hints.Type.name}" filterable="true" sortable="true"
+                           headerText="Type" id="c2" >
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Type}"
+       id="it12" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.Type.inputValue}" label="#{bindings.Bank_Setup1.hints.Type.label}"
+                                required="#{bindings.Bank_Setup1.hints.Type.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.Bank_Setup1.hints.Type.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.Type.tooltip}" id="it2">
+                    <f:validator binding="#{row.bindings.Type.validator}"/>
+                  </af:inputText>
+                </af:column>-->
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.Name.name}" filterable="true" sortable="true"
+                           headerText="Name" id="c3" width="200">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it13" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.Name.inputValue}" label="#{bindings.Bank_Setup1.hints.Name.label}"
+                                required="#{bindings.Bank_Setup1.hints.Name.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.Name.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.Name.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.Name.tooltip}" id="it3">
+                    <f:validator binding="#{row.bindings.Name.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.ContPerson.name}" filterable="true"
+                           sortable="true" headerText="Contact Person" id="c4">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ContPerson}"
+       id="it14" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.ContPerson.inputValue}"
+                                label="#{bindings.Bank_Setup1.hints.ContPerson.label}"
+                                required="#{bindings.Bank_Setup1.hints.ContPerson.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.ContPerson.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.ContPerson.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.ContPerson.tooltip}" id="it4">
+                    <f:validator binding="#{row.bindings.ContPerson.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.Desig.name}" filterable="true" sortable="true"
+                           headerText="Designation" id="c5">
+                           <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Desig}"
+       id="it15" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.Desig.inputValue}"
+                                label="#{bindings.Bank_Setup1.hints.Desig.label}"
+                                required="#{bindings.Bank_Setup1.hints.Desig.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.Desig.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.Desig.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.Desig.tooltip}" id="it5">
+                    <f:validator binding="#{row.bindings.Desig.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.BankName.name}" filterable="true" sortable="true"
+                           headerText="Bank Name" id="c6" width="200">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BankName}"
+       id="it16" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.BankName.inputValue}"
+                                label="#{bindings.Bank_Setup1.hints.BankName.label}"
+                                required="#{bindings.Bank_Setup1.hints.BankName.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.BankName.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.BankName.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.BankName.tooltip}" id="it6">
+                    <f:validator binding="#{row.bindings.BankName.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.Iban.name}" filterable="true" sortable="true"
+                           headerText="IBAN" id="c7" width="120">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Iban}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.Iban.inputValue}" label="#{bindings.Bank_Setup1.hints.Iban.label}"
+                                required="#{bindings.Bank_Setup1.hints.Iban.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.Iban.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.Iban.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.Iban.tooltip}" id="it7">
+                    <f:validator binding="#{row.bindings.Iban.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.AccountTitle.name}" filterable="true"
+                           sortable="true" headerText="Account Title" id="c8" width="150">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AccountTitle}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.AccountTitle.inputValue}"
+                                label="#{bindings.Bank_Setup1.hints.AccountTitle.label}"
+                                required="#{bindings.Bank_Setup1.hints.AccountTitle.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.AccountTitle.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.AccountTitle.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.AccountTitle.tooltip}" id="it8">
+                    <f:validator binding="#{row.bindings.AccountTitle.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.AccountNo.name}" filterable="true" sortable="true"
+                           headerText="Account No." id="c9" width="120">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AccountNo}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.AccountNo.inputValue}"
+                                label="#{bindings.Bank_Setup1.hints.AccountNo.label}"
+                                required="#{bindings.Bank_Setup1.hints.AccountNo.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.AccountNo.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.AccountNo.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.AccountNo.tooltip}" id="it9">
+                    <f:validator binding="#{row.bindings.AccountNo.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.BranchAddr.name}" filterable="true"
+                           sortable="true" headerText="Branch Address" id="c10" width="200">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BranchAddr}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.BranchAddr.inputValue}"
+                                label="#{bindings.Bank_Setup1.hints.BranchAddr.label}"
+                                required="#{bindings.Bank_Setup1.hints.BranchAddr.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.BranchAddr.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.BranchAddr.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.BranchAddr.tooltip}" id="it10">
+                    <f:validator binding="#{row.bindings.BranchAddr.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Bank_Setup1.hints.BranchCode.name}" filterable="true"
+                           sortable="true" headerText="Branch Code" id="c11">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BranchCode}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.BranchCode.inputValue}"
+                                label="#{bindings.Bank_Setup1.hints.BranchCode.label}"
+                                required="#{bindings.Bank_Setup1.hints.BranchCode.mandatory}"
+                                columns="#{bindings.Bank_Setup1.hints.BranchCode.displayWidth}"
+                                maximumLength="#{bindings.Bank_Setup1.hints.BranchCode.precision}"
+                                shortDesc="#{bindings.Bank_Setup1.hints.BranchCode.tooltip}" id="it11">
+                    <f:validator binding="#{row.bindings.BranchCode.validator}"/>
+                  </af:inputText>
+                </af:column>
+                </af:table>
+               
+                <af:spacer width="5" height="10" id="s2"/>
+                 <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s12"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+           
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

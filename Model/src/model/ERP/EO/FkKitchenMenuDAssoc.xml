@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkKitchenMenuDAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblKitchenMenuM"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblKitchenMenuM">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblKitchenMenuM"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblKitchenMenuM.PkKitchenMenuMId"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblKitchenMenuM.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblKitchenMenuD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblKitchenMenuD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblKitchenMenuD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblKitchenMenuD.FkKitchenMenuD"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblKitchenMenuD.KitchenMenuMId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Kitchen_MenuPageDef"
+                Package="Fragments.Modules.Production">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblKitchenMenuMView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblKitchenMenuMView1Iterator"/>
+    <searchRegion Binds="TblKitchenMenuMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblKitchenMenuMView1Query"/>
+    <iterator Binds="TblKitchenMenuDView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblKitchenMenuDView2Iterator"/>
+    <searchRegion Binds="TblKitchenMenuDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblKitchenMenuDView2Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblKitchenMenuDDView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblKitchenMenuDDView2Iterator"/>
+    <searchRegion Binds="TblKitchenMenuDDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblKitchenMenuDDView2Query"/>
+    <iterator Binds="TblKitchenMenuDLunchView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblKitchenMenuDLunchView2Iterator"/>
+    <searchRegion Binds="TblKitchenMenuDLunchView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblKitchenMenuDLunchView2Query"/>
+    <iterator Binds="TblKitchenMenuDDinnerView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblKitchenMenuDDinnerView3Iterator"/>
+    <searchRegion Binds="TblKitchenMenuDDinnerView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblKitchenMenuDDinnerView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblKitchenMenuMView1Iterator" id="TblKitchenMenuMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblKitchenMenuMView" Name="TblKitchenMenuMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="ProjectId"/>
+          <Item Value="FrDated"/>
+          <Item Value="ToDated"/>
+          <Item Value="ProjectDId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblKitchenMenuMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblKitchenMenuMView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblKitchenMenuMView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblKitchenMenuDView2Iterator" id="TblKitchenMenuDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblKitchenMenuDView" Name="TblKitchenMenuDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="DatedweekDay"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblKitchenMenuDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblKitchenMenuDView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblKitchenMenuDView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblKitchenMenuDDView2Iterator" id="TblKitchenMenuDDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblKitchenMenuDDView" Name="TblKitchenMenuDDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="TotalPerson"/>
+          <Item Value="UomId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblKitchenMenuDDView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblKitchenMenuDDView2Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblKitchenMenuDDView2Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblKitchenMenuDLunchView2Iterator" id="TblKitchenMenuDLunchView2">
+      <nodeDefinition DefName="model.ERP.VO.TblKitchenMenuDLunchView" Name="TblKitchenMenuDLunchView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="TotalPerson"/>
+          <Item Value="Dated"/>
+          <Item Value="UomId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblKitchenMenuDDinnerView3Iterator" id="TblKitchenMenuDDinnerView3">
+      <nodeDefinition DefName="model.ERP.VO.TblKitchenMenuDDinnerView" Name="TblKitchenMenuDDinnerView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="UomId"/>
+          <Item Value="TotalPerson"/>
+          <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblKitchenMenuDLunchView2Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblKitchenMenuDLunchView2Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblKitchenMenuDLunchView2Iterator" id="Delete3" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblKitchenMenuDDinnerView3Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblKitchenMenuDDinnerView3Iterator" id="Execute4" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblKitchenMenuDDinnerView3Iterator" id="Delete4" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

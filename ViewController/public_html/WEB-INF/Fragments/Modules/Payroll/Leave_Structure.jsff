@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Leave Structure">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Leave Structure">
+                <af:panelGridLayout id="pgl2">
+                  <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab2" text="Leave Structure Master">
+                          <af:table value="#{bindings.TblLeaveMView1.collectionModel}" var="row"
+                                    rows="#{bindings.TblLeaveMView1.rangeSize}"
+                                    emptyText="#{bindings.TblLeaveMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblLeaveMView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblLeaveMView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblLeaveMView1.rangeSize}"
+                                    filterModel="#{bindings.TblLeaveMView1Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblLeaveMView1Query.processQuery}" varStatus="vs" id="t1"
+                                    scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblLeaveMView1.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" id="c1" visible="false">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblLeaveMView1.hints.Id.label}"
+                                            required="#{bindings.TblLeaveMView1.hints.Id.mandatory}"
+                                            columns="#{bindings.TblLeaveMView1.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblLeaveMView1.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblLeaveMView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblLeaveMView1.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblLeaveMView1.hints.Dated.name}" filterable="true"
+                                       sortable="true" headerText="Date"
+                                       id="c2" width="105">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblLeaveMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                              id="id1" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.TblLeaveMView1.hints.Dated.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblLeaveMView1.hints.Dated.label}"
+                                            required="#{bindings.TblLeaveMView1.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblLeaveMView1.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblLeaveMView1.hints.Dated.tooltip}" id="id2">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblLeaveMView1.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblLeaveMView1.hints.Narration.name}" filterable="true"
+                                       sortable="true" headerText="Remarks"
+                                       id="c3" width="300">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Narration}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Narration.inputValue}"
+                                            label="#{bindings.TblLeaveMView1.hints.Narration.label}"
+                                            required="#{bindings.TblLeaveMView1.hints.Narration.mandatory}"
+                                            columns="#{bindings.TblLeaveMView1.hints.Narration.displayWidth}"
+                                            maximumLength="#{bindings.TblLeaveMView1.hints.Narration.precision}"
+                                            shortDesc="#{bindings.TblLeaveMView1.hints.Narration.tooltip}" id="it2">
+                                <f:validator binding="#{row.bindings.Narration.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                          <af:spacer width="5" height="10" id="s4"/>
+                        
+			<af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                     
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab3" text="Leave Structure Detail">
+                          <af:table value="#{bindings.TblLeaveDView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblLeaveDView2.rangeSize}"
+                                    emptyText="#{bindings.TblLeaveDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblLeaveDView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblLeaveDView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblLeaveDView2.rangeSize}"
+                                    filterModel="#{bindings.TblLeaveDView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblLeaveDView2Query.processQuery}" varStatus="vs" id="t2"
+                                    scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblLeaveDView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" id="c4" visible="false">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it8" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblLeaveDView2.hints.Id.label}"
+                                            required="#{bindings.TblLeaveDView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblLeaveDView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblLeaveDView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblLeaveDView2.hints.Id.tooltip}" id="it3" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblLeaveDView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblLeaveDView2.hints.Description.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Description" id="c5" width="250">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Description}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Description.inputValue}"
+                                            label="#{bindings.TblLeaveDView2.hints.Description.label}"
+                                            required="#{bindings.TblLeaveDView2.hints.Description.mandatory}"
+                                            columns="#{bindings.TblLeaveDView2.hints.Description.displayWidth}"
+                                            maximumLength="#{bindings.TblLeaveDView2.hints.Description.precision}"
+                                            shortDesc="#{bindings.TblLeaveDView2.hints.Description.tooltip}" id="it4">
+                                <f:validator binding="#{row.bindings.Description.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblLeaveDView2.hints.LeaveYear.name}" filterable="true"
+                                       sortable="true" headerText="Leave Year"
+                                       id="c6">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LeaveYear}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.LeaveYear.inputValue}"
+                                            label="#{bindings.TblLeaveDView2.hints.LeaveYear.label}"
+                                            required="#{bindings.TblLeaveDView2.hints.LeaveYear.mandatory}"
+                                            columns="#{bindings.TblLeaveDView2.hints.LeaveYear.displayWidth}"
+                                            maximumLength="#{bindings.TblLeaveDView2.hints.LeaveYear.precision}"
+                                            shortDesc="#{bindings.TblLeaveDView2.hints.LeaveYear.tooltip}" id="it5">
+                                <f:validator binding="#{row.bindings.LeaveYear.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblLeaveDView2.hints.LeaveYear.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblLeaveDView2.hints.LeaveMonth.name}" filterable="true"
+                                       sortable="true" headerText="Leave Month"
+                                       id="c7">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LeaveMonth}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.LeaveMonth.inputValue}"
+                                            label="#{bindings.TblLeaveDView2.hints.LeaveMonth.label}"
+                                            required="#{bindings.TblLeaveDView2.hints.LeaveMonth.mandatory}"
+                                            columns="#{bindings.TblLeaveDView2.hints.LeaveMonth.displayWidth}"
+                                            maximumLength="#{bindings.TblLeaveDView2.hints.LeaveMonth.precision}"
+                                            shortDesc="#{bindings.TblLeaveDView2.hints.LeaveMonth.tooltip}" id="it6">
+                                <f:validator binding="#{row.bindings.LeaveMonth.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblLeaveDView2.hints.LeaveMonth.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                          <af:spacer width="5" height="10" id="s5"/>
+                          <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
+                            
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                            
+                        </af:panelGroupLayout>
+                         </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+
+

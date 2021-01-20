@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblKitchenMenuD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_KITCHEN_MENU_D"
+  AliasName="TblKitchenMenuD"
+  BindingStyle="OracleName"
+  RowClass="model.ERP.EO.TblKitchenMenuDImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="KitchenMenuMId"
+    ColumnName="KITCHEN_MENU_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_KITCHEN_MENU_D"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_KITCHEN_MENU_D"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_KITCHEN_MENU_D"/>
+  <AccessorAttribute
+    Name="TblKitchenMenuM"
+    Association="model.ERP.EO.FkKitchenMenuDAssoc"
+    AssociationEnd="model.ERP.EO.FkKitchenMenuDAssoc.TblKitchenMenuM"
+    AssociationOtherEnd="model.ERP.EO.FkKitchenMenuDAssoc.TblKitchenMenuD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblKitchenMenuDD"
+    Association="model.ERP.EO.FKTblKitchenMenuDDFKAssoc"
+    AssociationEnd="model.ERP.EO.FKTblKitchenMenuDDFKAssoc.TblKitchenMenuDD"
+    AssociationOtherEnd="model.ERP.EO.FKTblKitchenMenuDDFKAssoc.TblKitchenMenuD"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblKitchenMenuDLunch"
+    Association="model.ERP.EO.FkKitchenLunchFkAssoc"
+    AssociationEnd="model.ERP.EO.FkKitchenLunchFkAssoc.TblKitchenMenuDLunch"
+    AssociationOtherEnd="model.ERP.EO.FkKitchenLunchFkAssoc.TblKitchenMenuD"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblKitchenMenuDDinner"
+    Association="model.ERP.EO.FkKitchenDinnerFkAssoc"
+    AssociationEnd="model.ERP.EO.FkKitchenDinnerFkAssoc.TblKitchenMenuDDinner"
+    AssociationOtherEnd="model.ERP.EO.FkKitchenDinnerFkAssoc.TblKitchenMenuD"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkKitchenMenuDId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_KITCHEN_MENU_D_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblKitchenMenuD.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkKitchenMenuD">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_KITCHEN_MENU_M_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_KITCHEN_MENU_D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblKitchenMenuD.KitchenMenuMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkKitchenMenuD2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_ITEM_L4_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_KITCHEN_MENU_D2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+</Entity>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblKitchenMenuDD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_KITCHEN_MENU_D_D"
+  AliasName="TblKitchenMenuDD"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D_D"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="KitchenMenuDId"
+    ColumnName="KITCHEN_MENU_D_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <Attribute
+    Name="ItemL4Id"
+    ColumnName="ITEM_L4_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <Attribute
+    Name="TotalPerson"
+    ColumnName="TOTAL_PERSON"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <Attribute
+    Name="UomId"
+    ColumnName="UOM_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_KITCHEN_MENU_D_D"/>
+  <AccessorAttribute
+    Name="TblKitchenMenuD"
+    Association="model.ERP.EO.FKTblKitchenMenuDDFKAssoc"
+    AssociationEnd="model.ERP.EO.FKTblKitchenMenuDDFKAssoc.TblKitchenMenuD"
+    AssociationOtherEnd="model.ERP.EO.FKTblKitchenMenuDDFKAssoc.TblKitchenMenuDD"
+    Type="model.ERP.EO.TblKitchenMenuDImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkKitchenMenuDDId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_KITCHEN_MENU_D_D_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblKitchenMenuDD.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkKitchenMenuDD">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_KITCHEN_MENU_D_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_KITCHEN_MENU_D_D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblKitchenMenuDD.KitchenMenuDId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkKitchenMenuDD2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_ITEM_L4_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_KITCHEN_MENU_D_D2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblKitchenMenuDD.ItemL4Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblKitchenMenuDD">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_KITCHEN_MENU_D_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_KITCHEN_MENU_DD"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblKitchenMenuDD.KitchenMenuDId"/>
+    </AttrArray>
+  </Key>
+</Entity>

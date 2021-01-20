@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Dashboard" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="160px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:pageTemplate viewId="Header.jsf" id="pt1">
+                            <?audit suppress oracle.adf.faces.pt-type-not-found?>
+                        </af:pageTemplate>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
+                            <!-- Content -->
+                            <af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 0%;">
+        <af:iterator id="i2" value="#{bindings.USERS_MODULE1.collectionModel}" var="item" varStatus="status">
+                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="width:75%;padding: 12%;">
+                    <af:link text="#{item.bindings.ModuleMenuName.inputValue}" id="l17"
+                    icon="/LIHS/faces/javax.faces.resource/#{item.bindings.ModuleMenuIcon.inputValue}?ln=images"
+                             destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"
+                             inlineStyle="font-size:x-large; color: #075890;font-weight: bold;" iconPosition="top"/>
+                </af:panelGroupLayout>
+        </af:iterator>
+    </af:panelFormLayout>
+                            
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

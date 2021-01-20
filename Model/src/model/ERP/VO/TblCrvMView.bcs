@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.VO.TblCrvMView
+
+package model.ERP.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="get_Proj_ID")
+def get_Proj_ID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessPrID')
+}
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFgTrnDetailDView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="Centers_SubCenters_Depn_LOV1"
+    ViewObjectName="model.LOV.Centers_SubCenters_Depn_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ProjectDDId"
+    ListVOName="Centers_SubCenters_Depn_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectDDId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblFgTrnDetailD"
+    Entity="model.ERP.EO.TblFgTrnDetailD"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblFgTrnDetailD"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Qty"
+    PrecisionRule="true"
+    EntityAttrName="Qty"
+    EntityUsage="TblFgTrnDetailD"
+    AliasName="QTY"/>
+  <ViewAttribute
+    Name="ProjectDDId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectDDId"
+    EntityUsage="TblFgTrnDetailD"
+    AliasName="PROJECT_D_D_ID"
+    LOVName="LOV_ProjectDDId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblFgTrnDetailD"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblFgTrnDetailD"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblFgTrnDetailD"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblFgTrnDetailD"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="FgTrnDetailId"
+    PrecisionRule="true"
+    EntityAttrName="FgTrnDetailId"
+    EntityUsage="TblFgTrnDetailD"
+    AliasName="FG_TRN_DETAIL_ID"/>
+</ViewObject>

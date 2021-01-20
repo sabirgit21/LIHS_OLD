@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblPoDView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblPoD.ID, 
+       TblPoD.PO_M_ID, 
+       TblPoD.ITEM_L4_ID, 
+       TblPoD.UOM_ID, 
+       TblPoD.DESCRIPTION, 
+       TblPoD.DO_QTY, 
+       TblPoD.QTY, 
+       TblPoD.BAL_QTY, 
+       TblPoD.CREATED_DATE, 
+       TblPoD.CREATED_BY, 
+       TblPoD.UPDATED_DATE, 
+       TblPoD.UPDATED_BY, 
+       TblPoD.AMOUNT, 
+       TblPoD.RATE, 
+       TblPoD.ITEM_L4_ID AS ITEM_L4ID1, 
+       TblItemL4.UOM_ID AS UOM_ID1, 
+       TblItemL4.ITEM_L4_ID AS ITEM_L4_ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_PO_D TblPoD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
+  Where="TblPoD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID     
+and TblItemL4.UOM_ID = TblUom.ID">
+  <ViewAccessor
+    Name="Item_Level4_LOV1"
+    ViewObjectName="model.LOV.Item_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Unit_of_Measurements_LOV1"
+    ViewObjectName="model.LOV.Unit_of_Measurements_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_UomId"
+    ListVOName="Unit_of_Measurements_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UomId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4IdStatic"
+    ListVOName="Item_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4IdStatic"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="Item_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="UomId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+      <Item Value="UomId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblPoD"
+    Entity="model.ERP.EO.TblPoD"/>
+  <EntityUsage
+    Name="TblItemL4"
+    Entity="model.ERP.EO.TblItemL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblPoD"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="PoMId"
+    PrecisionRule="true"
+    EntityAttrName="PoMId"
+    EntityUsage="TblPoD"
+    AliasName="PO_M_ID"/>
+  <ViewAttribute
+    Name="ItemL4Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblPoD"
+    AliasName="ITEM_L4_ID"
+    LOVName="LOV_ItemL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UomId"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="TblPoD"
+    AliasName="UOM_ID"
+    LOVName="LOV_UomId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="TblPoD"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="DoQty"
+    PrecisionRule="true"
+    EntityAttrName="DoQty"
+    EntityUsage="TblPoD"
+    AliasName="DO_QTY"/>
+  <ViewAttribute
+    Name="Qty"
+    PrecisionRule="true"
+    EntityAttrName="Qty"
+    EntityUsage="TblPoD"
+    AliasName="QTY"/>
+  <ViewAttribute
+    Name="BalQty"
+    PrecisionRule="true"
+    EntityAttrName="BalQty"
+    EntityUsage="TblPoD"
+    AliasName="BAL_QTY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblPoD"
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblPoD"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblPoD"
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblPoD"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblPoD"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="Rate"
+    PrecisionRule="true"
+    EntityAttrName="Rate"
+    EntityUsage="TblPoD"
+    AliasName="RATE"/>
+  <ViewAttribute
+    Name="ItemL4IdStatic"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblPoD"
+    AliasName="ITEM_L4ID1"
+    LOVName="LOV_ItemL4IdStatic">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UomId1"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="TblItemL4"
+    AliasName="UOM_ID1"/>
+  <ViewAttribute
+    Name="ItemL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblItemL4"
+    AliasName="ITEM_L4_ID1"/>
+  <ViewAttribute
+    Name="uomName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
+</ViewObject>

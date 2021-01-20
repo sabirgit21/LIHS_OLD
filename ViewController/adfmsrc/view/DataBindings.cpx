@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.11.57" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" usageId="view_General_LedgerPageDef"/>
+    <page path="/Main_Pages/Modules/Inventory/Inventory.jsf" usageId="view_InventoryPageDef"/>
+    <page path="/Main_Pages/Modules/User_Management/User_Management.jsf" usageId="view_User_ManagementPageDef"/>
+    <page path="/Main_Pages/Modules/Payable/Payable.jsf"
+          usageId="view_Payable_ReceivablePageDef"/>
+    <page path="/Main_Pages/Dashboard.jsf" usageId="view_DashboardPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Chart_of_Account_TaskFlow.xml#Chart_of_Account_TaskFlow@ExecuteWithParams"
+          usageId="view_Chart_of_Account_TaskFlow_Chart_of_Account_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Project_Setup_TaskFlow.xml#Project_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Project_Setup_TaskFlow_Project_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Unit_of_Measurement_TaskFlow.xml#Unit_of_Measurement_TaskFlow@ExecuteWithParams"
+          usageId="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Quality_Inspection_TaskFlow.xml#Quality_Inspection_TaskFlow@ExecuteWithParams"
+          usageId="view_Quality_Inspection_TaskFlow_Quality_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Purchase_Order_TaskFlow.xml#Purchase_Order_TaskFlow@ExecuteWithParams"
+          usageId="view_Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Opening_Balance_TaskFlow.xml#Opening_Balance_TaskFlow@ExecuteWithParams"
+          usageId="view_Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Inward_Gate_Pass_TaskFlow.xml#Inward_Gate_Pass_TaskFlow@ExecuteWithParams"
+          usageId="view_Inward_Gate_Pass_TaskFlow_Inward_Gate_Pass_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Goods_Receipt_Notes_TaskFlow.xml#Goods_Receipt_Notes_TaskFlow@ExecuteWithParams"
+          usageId="view_Goods_Receipt_Notes_TaskFlow_Goods_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Department_Setup_TaskFlow.xml#Department_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Demand_Order_TaskFlow.xml#Demand_Order_TaskFlow@ExecuteWithParams"
+          usageId="view_Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payable/Supplier_Setup_TaskFlow.xml#Supplier_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Supplier_Setup_TaskFlow_Supplier_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Department_Setup.jsff" usageId="view_Department_SetupPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Project_Setup.jsff" usageId="view_Project_SetupPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Chart_of_Account.jsff"
+          usageId="view_Chart_of_AccountPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Unit_of_Measurement.jsff"
+          usageId="view_Unit_of_MeasurementPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Opening_Balance.jsff" usageId="view_Opening_BalancePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Demand_Order.jsff" usageId="view_Demand_OrderPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Goods_Receipt_Notes.jsff"
+          usageId="view_Goods_Receipt_NotesPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Inward_Gate_Pass.jsff" usageId="view_Inward_Gate_PassPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Quality_Inspection.jsff" usageId="view_Quality_InspectionPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Purchase_Order.jsff" usageId="view_Purchase_OrderPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payable/Supplier_Setup.jsff"
+          usageId="view_Supplier_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Chart_of_Account_Inv_TaskFlow.xml#Chart_of_Account_Inv_TaskFlow@ExecuteWithParams"
+          usageId="view_Chart_of_Account_Inv_TaskFlow_Chart_of_Account_Inv_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Chart_of_Account_Inv.jsff"
+          usageId="view_Chart_of_Account_InvPageDef"/>
+    <page path="/Main_Pages/Modules/Production/Production.jsf" usageId="view_ProductionPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Batch_Order_Quantity_TaskFlow.xml#Batch_Order_Quantity_TaskFlow@ExecuteWithParams"
+          usageId="view_Batch_Order_Quantity_TaskFlow_Batch_Order_Quantity_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Finished_Goods_Transfer_TaskFlow.xml#Finished_Goods_Transfer_TaskFlow@ExecuteWithParams"
+          usageId="view_Finished_Goods_Transfer_TaskFlow_Finished_Goods_Transfer_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Production_Order_TaskFlow.xml#Production_Order_TaskFlow@ExecuteWithParams"
+          usageId="view_Production_Order_TaskFlow_Production_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Production_Issuance_TaskFlow.xml#Production_Issuance_TaskFlow@ExecuteWithParams"
+          usageId="view_Production_Issuance_TaskFlow_Production_Issuance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Production_Finished_Goods_TaskFlow.xml#Production_Finished_Goods_TaskFlow@ExecuteWithParams"
+          usageId="view_Production_Finished_Goods_TaskFlow_Production_Finished_Goods_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Production/Production_Order.jsff" usageId="view_Production_OrderPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Production/Finished_Goods_Transfer.jsff"
+          usageId="view_Finished_Goods_TransferPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Production/Production_Finished_Goods.jsff"
+          usageId="view_Production_Finished_GoodsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Production/Production_Issuance.jsff"
+          usageId="view_Production_IssuancePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Production/Batch_Order_Quantity.jsff"
+          usageId="view_Batch_Order_QuantityPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Debit_Notes_TaskFlow.xml#Debit_Notes_TaskFlow@ExecuteWithParams"
+          usageId="view_Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Debit_Notes.jsff" usageId="view_Debit_NotesPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Journal_Voucher_TaskFlow.xml#Journal_Voucher_TaskFlow@ExecuteWithParams"
+          usageId="view_Journal_Voucher_TaskFlow_Journal_Voucher_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Cash_Payment_TaskFlow.xml#Cash_Payment_TaskFlow@ExecuteWithParams"
+          usageId="view_Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Cash_Receipt_TaskFlow.xml#Cash_Receipt_TaskFlow@ExecuteWithParams"
+          usageId="view_Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Bank_Receipt_TaskFlow.xml#Bank_Receipt_TaskFlow@ExecuteWithParams"
+          usageId="view_Bank_Receipt_TaskFlow_Bank_Receipt_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Bank_Payment_TaskFlow.xml#Bank_Payment_TaskFlow@ExecuteWithParams"
+          usageId="view_Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Kitchen_Menu_TaskFlow.xml#Kitchen_Menu_TaskFlow@ExecuteWithParams"
+          usageId="view_Kitchen_Menu_TaskFlow_Kitchen_Menu_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Cash_Purchase_TaskFlow.xml#Cash_Purchase_TaskFlow@ExecuteWithParams"
+          usageId="view_Cash_Purchase_TaskFlow_Cash_Purchase_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payable/Cash_Payment_TaskFlow.xml#Cash_Payment_TaskFlow@ExecuteWithParams"
+          usageId="view_Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payable/Bank_Payment_TaskFlow.xml#Bank_Payment_TaskFlow@ExecuteWithParams"
+          usageId="view_Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/Main_Pages/Modules/Fixed_Assets/Fixed_Assets.jsf" usageId="view_Fixed_AssetsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Goods_Issue_Notes_TaskFlow.xml#Goods_Issue_Notes_TaskFlow@ExecuteWithParams"
+          usageId="view_Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Inter_Transfer_Notes_TaskFlow.xml#Inter_Transfer_Notes_TaskFlow@ExecuteWithParams"
+          usageId="view_Inter_Transfer_Notes_TaskFlow_Inter_Transfer_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Goods_Issue_Notes.jsff" usageId="view_Goods_Issue_NotesPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Inter_Transfer_Notes.jsff"
+          usageId="view_Inter_Transfer_NotesPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Production/Kitchen_Menu.jsff" usageId="view_Kitchen_MenuPageDef"/>
+    <page path="/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf" usageId="view_Bank_CashPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Bank_Cash/Bank_Setup_TaskFlow.xml#Bank_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Bank_Setup_TaskFlow_Bank_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Bank_Cash/Cash_Setup_TaskFlow.xml#Cash_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Cash_Setup_TaskFlow_Cash_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Bank_Cash.jsff" usageId="view_Bank_CashPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Bank_Setup.jsff" usageId="view_Bank_SetupPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Cash_Setup.jsff" usageId="view_Cash_SetupPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payable/Bank_Payment.jsff" usageId="view_Bank_PaymentPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payable/Cash_Payment.jsff" usageId="view_Cash_PaymentPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Bank_Payment.jsff" usageId="view_Bank_PaymentPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Bank_Receipt.jsff" usageId="view_Bank_ReceiptPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Cash_Payment.jsff" usageId="view_Cash_PaymentPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Cash_Receipt.jsff" usageId="view_Cash_ReceiptPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Journal_Voucher.jsff" usageId="view_Journal_VoucherPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Cash_Purchase.jsff" usageId="view_Cash_PurchasePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/User_Management/Users_Role_TaskFlow.xml#Users_Role_TaskFlow@ExecuteWithParams"
+          usageId="view_Users_Role_TaskFlow_Users_Role_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/User_Management/Users_Role.jsff" usageId="view_Users_RolePageDef"/>
+    <page path="/Main_Pages/Modules/Payroll/Payroll.jsf" usageId="view_PayrollPageDef"/>
+    <page path="/Main_Pages/Modules/Donation/Donation.jsf" usageId="view_DonationPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Bank_Payment_TaskFlow.xml#Bank_Payment_TaskFlow@Execute"
+          usageId="view_Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Bank_Receipt_TaskFlow.xml#Bank_Receipt_TaskFlow@Execute"
+          usageId="view_Bank_Receipt_TaskFlow_Bank_Receipt_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Cash_Payment_TaskFlow.xml#Cash_Payment_TaskFlow@Execute"
+          usageId="view_Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Cash_Receipt_TaskFlow.xml#Cash_Receipt_TaskFlow@Execute"
+          usageId="view_Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Donation_Types_TaskFlow.xml#Donation_Types_TaskFlow@ExecuteWithParams"
+          usageId="view_Donation_Types_TaskFlow_Donation_Types_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Donor_Setup_TaskFlow.xml#Donor_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Donor_Setup_TaskFlow_Donor_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Cash_Receipt_TaskFlow.xml#Cash_Receipt_TaskFlow@ExecuteWithParams"
+          usageId="view_Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Donation_Inkind_TaskFlow.xml#Donation_Inkind_TaskFlow@ExecuteWithParams"
+          usageId="view_Donation_Inkind_TaskFlow_Donation_Inkind_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Donation/Cash_Receipt.jsff" usageId="view_Cash_ReceiptPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Donation/Donation_Inkind.jsff" usageId="view_Donation_InkindPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Donation/Donation_Types.jsff" usageId="view_Donation_TypesPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Donation/Donor_Setup.jsff" usageId="view_Donor_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Promotion_TaskFlow.xml#Promotion_TaskFlow@ExecuteWithParams"
+          usageId="view_Promotion_TaskFlow_Promotion_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Transfer_TaskFlow.xml#Transfer_TaskFlow@ExecuteWithParams"
+          usageId="view_Transfer_TaskFlow_Transfer_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Salary_Generation_TaskFlow.xml#Salary_Generation_TaskFlow@ExecuteWithParams"
+          usageId="view_Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Attendance_TaskFlow.xml#Attendance_TaskFlow@ExecuteWithParams"
+          usageId="view_Attendance_TaskFlow_Attendance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Advance_Loan_Request_TaskFlow.xml#Advance_Loan_Request_TaskFlow@ExecuteWithParams"
+          usageId="view_Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Employee_Setup_TaskFlow.xml#Employee_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Leave_Structure_TaskFlow.xml#Leave_Structure_TaskFlow@ExecuteWithParams"
+          usageId="view_Leave_Structure_TaskFlow_Leave_Structure_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Income_Tax_TaskFlow.xml#Income_Tax_TaskFlow@ExecuteWithParams"
+          usageId="view_Income_Tax_TaskFlow_Income_Tax_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Grade_TaskFlow.xml#Grade_TaskFlow@ExecuteWithParams"
+          usageId="view_Grade_TaskFlow_Grade_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Designation_TaskFlow.xml#Designation_TaskFlow@ExecuteWithParams"
+          usageId="view_Designation_TaskFlow_Designation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Designation.jsff" usageId="view_DesignationPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Grade.jsff" usageId="view_GradePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Leave_Structure.jsff" usageId="view_Leave_StructurePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Employee_Setup.jsff" usageId="view_Employee_SetupPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Attendance.jsff" usageId="view_AttendancePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Advance_Loan_Request.jsff"
+          usageId="view_Advance_Loan_RequestPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Transfer.jsff" usageId="view_TransferPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Promotion.jsff" usageId="view_PromotionPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Salary_Generation.jsff" usageId="view_Salary_GenerationPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Demand_Order_TaskFlow.xml#Demand_Order_TaskFlow@Execute"
+          usageId="view_Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Purchase_Order_TaskFlow.xml#Purchase_Order_TaskFlow@Execute"
+          usageId="view_Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Goods_Receipt_Notes_TaskFlow.xml#Goods_Receipt_Notes_TaskFlow@Execute"
+          usageId="view_Goods_Receipt_Notes_TaskFlow_Goods_Receipt_Notes_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Cash_Purchase_TaskFlow.xml#Cash_Purchase_TaskFlow@Execute"
+          usageId="view_Cash_Purchase_TaskFlow_Cash_Purchase_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Debit_Notes_TaskFlow.xml#Debit_Notes_TaskFlow@Execute"
+          usageId="view_Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Employee_Setup_TaskFlow.xml#Employee_Setup_TaskFlow@Execute"
+          usageId="view_Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Advance_Loan_Request_TaskFlow.xml#Advance_Loan_Request_TaskFlow@Execute"
+          usageId="view_Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Attendance_TaskFlow.xml#Attendance_TaskFlow@Execute"
+          usageId="view_Attendance_TaskFlow_Attendance_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Salary_Generation_TaskFlow.xml#Salary_Generation_TaskFlow@Execute"
+          usageId="view_Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Kitchen_Menu_TaskFlow.xml#Kitchen_Menu_TaskFlow@Execute"
+          usageId="view_Kitchen_Menu_TaskFlow_Kitchen_Menu_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Production_Order_TaskFlow.xml#Production_Order_TaskFlow@Execute"
+          usageId="view_Production_Order_TaskFlow_Production_Order_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Production_Issuance_TaskFlow.xml#Production_Issuance_TaskFlow@Execute"
+          usageId="view_Production_Issuance_TaskFlow_Production_Issuance_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Journal_Voucher_TaskFlow.xml#Journal_Voucher_TaskFlow@Execute"
+          usageId="view_Journal_Voucher_TaskFlow_Journal_Voucher_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Donor_Setup_TaskFlow.xml#Donor_Setup_TaskFlow@Execute"
+          usageId="view_Donor_Setup_TaskFlow_Donor_Setup_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Cash_Receipt_TaskFlow.xml#Cash_Receipt_TaskFlow@Execute"
+          usageId="view_Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecutePageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Donation/Donation_Inkind_TaskFlow.xml#Donation_Inkind_TaskFlow@Execute"
+          usageId="view_Donation_Inkind_TaskFlow_Donation_Inkind_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Opening_Balance_TaskFlow.xml#Opening_Balance_TaskFlow@Execute"
+          usageId="view_Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Allowance_Setup_TaskFlow.xml#Allowance_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Allowance_Setup_TaskFlow_Allowance_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Allowance_Setup.jsff" usageId="view_Allowance_SetupPageDef"/>
+    <page path="/Main_Pages/Modules/Reports/Reports.jsf" usageId="view_ReportsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Item_Wise.jsff" usageId="view_Item_WisePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Party_Wise.jsff" usageId="view_Party_WisePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Goods_Issue_Notes_TaskFlow.xml#Goods_Issue_Notes_TaskFlow@Execute"
+          usageId="view_Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Inventory_Reports.jsff" usageId="view_Inventory_ReportsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Summary_Reports.jsff" usageId="view_Summary_ReportsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Opening_Balance_TaskFlow.xml#Opening_Balance_TaskFlow@ExecuteWithParams"
+          usageId="view_Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Opening_Balance.jsff" usageId="view_Opening_BalancePageDef1"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
+    <page id="view_InventoryPageDef" path="Main_Pages.Modules.Inventory.InventoryPageDef"/>
+    <page id="view_User_ManagementPageDef" path="Main_Pages.Modules.User_Management.User_ManagementPageDef"/>
+    <page id="view_Payable_ReceivablePageDef" path="Main_Pages.Modules.Payable_Receivable.Payable_ReceivablePageDef"/>
+    <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
+    <page id="view_Chart_of_Account_TaskFlow_Chart_of_Account_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Chart_of_Account_TaskFlow_Chart_of_Account_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Project_Setup_TaskFlow_Project_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Project_Setup_TaskFlow_Project_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Unit_of_Measurement_TaskFlow_Unit_of_Measurement_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Quality_Inspection_TaskFlow_Quality_Inspection_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Quality_Inspection_TaskFlow_Quality_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Inward_Gate_Pass_TaskFlow_Inward_Gate_Pass_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Inward_Gate_Pass_TaskFlow_Inward_Gate_Pass_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Goods_Receipt_Notes_TaskFlow_Goods_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Goods_Receipt_Notes_TaskFlow_Goods_Receipt_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Supplier_Setup_TaskFlow_Supplier_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payable_Receivable.Supplier_Setup_TaskFlow_Supplier_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Department_SetupPageDef" path="Fragments.Modules.Inventory.Department_SetupPageDef"/>
+    <page id="view_Project_SetupPageDef" path="Fragments.Modules.General_Ledger.Project_SetupPageDef"/>
+    <page id="view_Chart_of_AccountPageDef" path="Fragments.Modules.General_Ledger.Chart_of_AccountPageDef"/>
+    <page id="view_Unit_of_MeasurementPageDef" path="Fragments.Modules.Inventory.Unit_of_MeasurementPageDef"/>
+    <page id="view_Opening_BalancePageDef" path="Fragments.Modules.Inventory.Opening_BalancePageDef"/>
+    <page id="view_Demand_OrderPageDef" path="Fragments.Modules.Inventory.Demand_OrderPageDef"/>
+    <page id="view_Goods_Receipt_NotesPageDef" path="Fragments.Modules.Inventory.Goods_Receipt_NotesPageDef"/>
+    <page id="view_Inward_Gate_PassPageDef" path="Fragments.Modules.Inventory.Inward_Gate_PassPageDef"/>
+    <page id="view_Quality_InspectionPageDef" path="Fragments.Modules.Inventory.Quality_InspectionPageDef"/>
+    <page id="view_Purchase_OrderPageDef" path="Fragments.Modules.Inventory.Purchase_OrderPageDef"/>
+    <page id="view_Supplier_SetupPageDef" path="Fragments.Modules.Payable_Receivable.Supplier_SetupPageDef"/>
+    <page id="view_Chart_of_Account_Inv_TaskFlow_Chart_of_Account_Inv_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Chart_of_Account_Inv_TaskFlow_Chart_of_Account_Inv_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Chart_of_Account_InvPageDef" path="Fragments.Modules.Inventory.Chart_of_Account_InvPageDef"/>
+    <page id="view_ProductionPageDef" path="Main_Pages.Modules.Production.ProductionPageDef"/>
+    <page id="view_Batch_Order_Quantity_TaskFlow_Batch_Order_Quantity_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Production.Batch_Order_Quantity_TaskFlow_Batch_Order_Quantity_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Finished_Goods_Transfer_TaskFlow_Finished_Goods_Transfer_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Production.Finished_Goods_Transfer_TaskFlow_Finished_Goods_Transfer_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Production_Order_TaskFlow_Production_Order_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Production.Production_Order_TaskFlow_Production_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Production_Issuance_TaskFlow_Production_Issuance_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Production.Production_Issuance_TaskFlow_Production_Issuance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Production_Finished_Goods_TaskFlow_Production_Finished_Goods_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Production.Production_Finished_Goods_TaskFlow_Production_Finished_Goods_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Production_OrderPageDef" path="Fragments.Modules.Production.Production_OrderPageDef"/>
+    <page id="view_Finished_Goods_TransferPageDef" path="Fragments.Modules.Production.Finished_Goods_TransferPageDef"/>
+    <page id="view_Production_Finished_GoodsPageDef"
+          path="Fragments.Modules.Production.Production_Finished_GoodsPageDef"/>
+    <page id="view_Production_IssuancePageDef" path="Fragments.Modules.Production.Production_IssuancePageDef"/>
+    <page id="view_Batch_Order_QuantityPageDef" path="Fragments.Modules.Production.Batch_Order_QuantityPageDef"/>
+    <page id="view_Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Debit_NotesPageDef" path="Fragments.Modules.Inventory.Debit_NotesPageDef"/>
+    <page id="view_Journal_Voucher_TaskFlow_Journal_Voucher_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Journal_Voucher_TaskFlow_Journal_Voucher_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Bank_Receipt_TaskFlow_Bank_Receipt_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Bank_Receipt_TaskFlow_Bank_Receipt_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Kitchen_Menu_TaskFlow_Kitchen_Menu_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Production.Kitchen_Menu_TaskFlow_Kitchen_Menu_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Cash_Purchase_TaskFlow_Cash_Purchase_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Cash_Purchase_TaskFlow_Cash_Purchase_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Payable_Receivable.Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Payable_Receivable.Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Fixed_AssetsPageDef" path="Main_Pages.Modules.Fixed_Assets.Fixed_AssetsPageDef"/>
+    <page id="view_Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Inter_Transfer_Notes_TaskFlow_Inter_Transfer_Notes_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Inter_Transfer_Notes_TaskFlow_Inter_Transfer_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Goods_Issue_NotesPageDef" path="Fragments.Modules.Inventory.Goods_Issue_NotesPageDef"/>
+    <page id="view_Inter_Transfer_NotesPageDef" path="Fragments.Modules.Inventory.Inter_Transfer_NotesPageDef"/>
+    <page id="view_Kitchen_MenuPageDef" path="Fragments.Modules.Production.Kitchen_MenuPageDef"/>
+    <page id="view_Bank_CashPageDef" path="Main_Pages.Modules.Bank_Cash.Bank_CashPageDef"/>
+    <page id="view_Bank_Setup_TaskFlow_Bank_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Bank_Cash.Bank_Setup_TaskFlow_Bank_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Cash_Setup_TaskFlow_Cash_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Bank_Cash.Cash_Setup_TaskFlow_Cash_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Bank_CashPageDef1" path="Fragments.Modules.Bank_Cash.Bank_CashPageDef"/>
+    <page id="view_Bank_SetupPageDef" path="Fragments.Modules.Bank_Cash.Bank_SetupPageDef"/>
+    <page id="view_Cash_SetupPageDef" path="Fragments.Modules.Bank_Cash.Cash_SetupPageDef"/>
+    <page id="view_Bank_PaymentPageDef" path="Fragments.Modules.Payable.Bank_PaymentPageDef"/>
+    <page id="view_Cash_PaymentPageDef" path="Fragments.Modules.Payable.Cash_PaymentPageDef"/>
+    <page id="view_Bank_PaymentPageDef1" path="Fragments.Modules.General_Ledger.Bank_PaymentPageDef"/>
+    <page id="view_Bank_ReceiptPageDef" path="Fragments.Modules.General_Ledger.Bank_ReceiptPageDef"/>
+    <page id="view_Cash_PaymentPageDef1" path="Fragments.Modules.General_Ledger.Cash_PaymentPageDef"/>
+    <page id="view_Cash_ReceiptPageDef" path="Fragments.Modules.General_Ledger.Cash_ReceiptPageDef"/>
+    <page id="view_Journal_VoucherPageDef" path="Fragments.Modules.General_Ledger.Journal_VoucherPageDef"/>
+    <page id="view_Cash_PurchasePageDef" path="Fragments.Modules.Inventory.Cash_PurchasePageDef"/>
+    <page id="view_Users_Role_TaskFlow_Users_Role_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.User_Management.Users_Role_TaskFlow_Users_Role_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Users_RolePageDef" path="Fragments.Modules.User_Management.Users_RolePageDef"/>
+    <page id="view_PayrollPageDef" path="Main_Pages.Modules.Payroll.PayrollPageDef"/>
+    <page id="view_DonationPageDef" path="Main_Pages.Modules.Donation.DonationPageDef"/>
+    <page id="view_Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.General_Ledger.Bank_Payment_TaskFlow_Bank_Payment_TaskFlow_ExecutePageDef"/>
+    <page id="view_Bank_Receipt_TaskFlow_Bank_Receipt_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.General_Ledger.Bank_Receipt_TaskFlow_Bank_Receipt_TaskFlow_ExecutePageDef"/>
+    <page id="view_Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.General_Ledger.Cash_Payment_TaskFlow_Cash_Payment_TaskFlow_ExecutePageDef"/>
+    <page id="view_Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.General_Ledger.Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecutePageDef"/>
+    <page id="view_Donation_Types_TaskFlow_Donation_Types_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Donation.Donation_Types_TaskFlow_Donation_Types_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Donor_Setup_TaskFlow_Donor_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Donation.Donor_Setup_TaskFlow_Donor_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Donation.Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Donation_Inkind_TaskFlow_Donation_Inkind_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Donation.Donation_Inkind_TaskFlow_Donation_Inkind_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Cash_ReceiptPageDef1" path="Fragments.Modules.Donation.Cash_ReceiptPageDef"/>
+    <page id="view_Donation_InkindPageDef" path="Fragments.Modules.Donation.Donation_InkindPageDef"/>
+    <page id="view_Donation_TypesPageDef" path="Fragments.Modules.Donation.Donation_TypesPageDef"/>
+    <page id="view_Donor_SetupPageDef" path="Fragments.Modules.Donation.Donor_SetupPageDef"/>
+    <page id="view_Promotion_TaskFlow_Promotion_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Promotion_TaskFlow_Promotion_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Transfer_TaskFlow_Transfer_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Transfer_TaskFlow_Transfer_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Attendance_TaskFlow_Attendance_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Attendance_TaskFlow_Attendance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Leave_Structure_TaskFlow_Leave_Structure_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Leave_Structure_TaskFlow_Leave_Structure_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Income_Tax_TaskFlow_Income_Tax_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Income_Tax_TaskFlow_Income_Tax_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Grade_TaskFlow_Grade_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Grade_TaskFlow_Grade_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Designation_TaskFlow_Designation_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Designation_TaskFlow_Designation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_DesignationPageDef" path="Fragments.Modules.Payroll.DesignationPageDef"/>
+    <page id="view_GradePageDef" path="Fragments.Modules.Payroll.GradePageDef"/>
+    <page id="view_Leave_StructurePageDef" path="Fragments.Modules.Payroll.Leave_StructurePageDef"/>
+    <page id="view_Employee_SetupPageDef" path="Fragments.Modules.Payroll.Employee_SetupPageDef"/>
+    <page id="view_AttendancePageDef" path="Fragments.Modules.Payroll.AttendancePageDef"/>
+    <page id="view_Advance_Loan_RequestPageDef" path="Fragments.Modules.Payroll.Advance_Loan_RequestPageDef"/>
+    <page id="view_TransferPageDef" path="Fragments.Modules.Payroll.TransferPageDef"/>
+    <page id="view_PromotionPageDef" path="Fragments.Modules.Payroll.PromotionPageDef"/>
+    <page id="view_Salary_GenerationPageDef" path="Fragments.Modules.Payroll.Salary_GenerationPageDef"/>
+    <page id="view_Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Inventory.Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecutePageDef"/>
+    <page id="view_Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Inventory.Purchase_Order_TaskFlow_Purchase_Order_TaskFlow_ExecutePageDef"/>
+    <page id="view_Goods_Receipt_Notes_TaskFlow_Goods_Receipt_Notes_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Inventory.Goods_Receipt_Notes_TaskFlow_Goods_Receipt_Notes_TaskFlow_ExecutePageDef"/>
+    <page id="view_Cash_Purchase_TaskFlow_Cash_Purchase_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Inventory.Cash_Purchase_TaskFlow_Cash_Purchase_TaskFlow_ExecutePageDef"/>
+    <page id="view_Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Inventory.Debit_Notes_TaskFlow_Debit_Notes_TaskFlow_ExecutePageDef"/>
+    <page id="view_Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Payroll.Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecutePageDef"/>
+    <page id="view_Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Payroll.Advance_Loan_Request_TaskFlow_Advance_Loan_Request_TaskFlow_ExecutePageDef"/>
+    <page id="view_Attendance_TaskFlow_Attendance_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Payroll.Attendance_TaskFlow_Attendance_TaskFlow_ExecutePageDef"/>
+    <page id="view_Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Payroll.Salary_Generation_TaskFlow_Salary_Generation_TaskFlow_ExecutePageDef"/>
+    <page id="view_Kitchen_Menu_TaskFlow_Kitchen_Menu_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Production.Kitchen_Menu_TaskFlow_Kitchen_Menu_TaskFlow_ExecutePageDef"/>
+    <page id="view_Production_Order_TaskFlow_Production_Order_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Production.Production_Order_TaskFlow_Production_Order_TaskFlow_ExecutePageDef"/>
+    <page id="view_Production_Issuance_TaskFlow_Production_Issuance_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Production.Production_Issuance_TaskFlow_Production_Issuance_TaskFlow_ExecutePageDef"/>
+    <page id="view_Journal_Voucher_TaskFlow_Journal_Voucher_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.General_Ledger.Journal_Voucher_TaskFlow_Journal_Voucher_TaskFlow_ExecutePageDef"/>
+    <page id="view_Donor_Setup_TaskFlow_Donor_Setup_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Donation.Donor_Setup_TaskFlow_Donor_Setup_TaskFlow_ExecutePageDef"/>
+    <page id="view_Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecutePageDef1"
+          path="Task_Flows.Modules.Donation.Cash_Receipt_TaskFlow_Cash_Receipt_TaskFlow_ExecutePageDef"/>
+    <page id="view_Donation_Inkind_TaskFlow_Donation_Inkind_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Donation.Donation_Inkind_TaskFlow_Donation_Inkind_TaskFlow_ExecutePageDef"/>
+    <page id="view_Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Inventory.Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecutePageDef"/>
+    <page id="view_Allowance_Setup_TaskFlow_Allowance_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payroll.Allowance_Setup_TaskFlow_Allowance_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Allowance_SetupPageDef" path="Fragments.Modules.Payroll.Allowance_SetupPageDef"/>
+    <page id="view_ReportsPageDef" path="Main_Pages.Modules.Reports.ReportsPageDef"/>
+    <page id="view_Item_WisePageDef" path="Fragments.Modules.Reports.Item_WisePageDef"/>
+    <page id="view_Party_WisePageDef" path="Fragments.Modules.Reports.Party_WisePageDef"/>
+    <page id="view_Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Inventory.Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecutePageDef"/>
+    <page id="view_Inventory_ReportsPageDef" path="Fragments.Modules.Reports.Inventory_ReportsPageDef"/>
+    <page id="view_Summary_ReportsPageDef" path="Fragments.Modules.Reports.Summary_ReportsPageDef"/>
+    <page id="view_Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.General_Ledger.Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Opening_BalancePageDef1" path="Fragments.Modules.General_Ledger.Opening_BalancePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModuleDataControl1" Package="model.ERP"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

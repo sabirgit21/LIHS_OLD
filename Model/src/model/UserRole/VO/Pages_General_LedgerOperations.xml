@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="Pages_General_LedgerOperations">
+  <ExpressionCodeSource
+    Name="Pages_General_Ledger"
+    Type="Static"
+    URI="model/UserRole/VO/Pages_General_Ledger.bcs"/>
+</OperationDefinitions>
