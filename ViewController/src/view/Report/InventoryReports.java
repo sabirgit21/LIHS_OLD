@@ -98,26 +98,26 @@ public class InventoryReports {
                 reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
 
                 //working for procedure call//
-                String sendItemL4IDLgrCnvrt = gotitemL4id;
-                int sendItemL4IDLgrfinal = Integer.parseInt(sendItemL4IDLgrCnvrt);
+//                String sendItemL4IDLgrCnvrt = gotitemL4id;
+//                int sendItemL4IDLgrfinal = Integer.parseInt(sendItemL4IDLgrCnvrt);
+//
+//                String sendFDateCnvrt = getFromDate();
+//                java.util.Date sendFDateFinal;
+////                    sendFDateFinal = new SimpleDateFormat("dd/MMM/yy").parse(sendFDateCnvrt);
+//                    SimpleDateFormat df= new SimpleDateFormat("dd/MMM/yy");
+//                    try {
+//                    sendFDateFinal = new java.util.Date(df.parse(sendFDateCnvrt).getTime());
+//                } catch (ParseException pe) {
+//                    // TODO: Add catch code
+//                    pe.printStackTrace();
+//                }
+//                
 
-                String sendFDateCnvrt = getFromDate();
-                java.util.Date sendFDateFinal;
-//                    sendFDateFinal = new SimpleDateFormat("dd/MMM/yy").parse(sendFDateCnvrt);
-                    SimpleDateFormat df= new SimpleDateFormat("dd/MMM/yy");
-                    try {
-                    sendFDateFinal = new java.util.Date(df.parse(sendFDateCnvrt).getTime());
-                } catch (ParseException pe) {
-                    // TODO: Add catch code
-                    pe.printStackTrace();
-                }
-                
-
-                String sendProjectIDCnvrt = gotprojectId.toString();
-                int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
-
-                String sendDeptIDCnvrt = gotDepartmentidId.toString();
-                int sendDeptIDFinal = Integer.parseInt(sendDeptIDCnvrt);
+//                String sendProjectIDCnvrt = gotprojectId.toString();
+//                int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
+//
+//                String sendDeptIDCnvrt = gotDepartmentidId.toString();
+//                int sendDeptIDFinal = Integer.parseInt(sendDeptIDCnvrt);
 
 
                 //calling procedure start//
