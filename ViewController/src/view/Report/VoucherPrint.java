@@ -195,7 +195,7 @@ public class VoucherPrint {
         Number sendBOQID = (Number) actionEvent.getComponent().getAttributes().get("sendBOQID");
         reportBean.setReportParameter("P_Boq_M_id", sendBOQID.toString());
         
-        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Inter_Transfer__Notes_Detail&");
+        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Batch_Order_Quantity_Detail&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
