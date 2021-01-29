@@ -222,6 +222,20 @@
     <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Opening_Balance_TaskFlow.xml#Opening_Balance_TaskFlow@ExecuteWithParams"
           usageId="view_Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/General_Ledger/Opening_Balance.jsff" usageId="view_Opening_BalancePageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Chart_of_Account_TaskFlow.xml#Chart_of_Account_TaskFlow@ExecuteWithParams"
+          usageId="view_Chart_of_Account_TaskFlow_Chart_of_Account_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Assets_Requisition_TaskFlow.xml#Assets_Requisition_TaskFlow@ExecuteWithParams"
+          usageId="view_Assets_Requisition_TaskFlow_Assets_Requisition_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Assets_Order_TaskFlow.xml#Assets_Order_TaskFlow@ExecuteWithParams"
+          usageId="view_Assets_Order_TaskFlow_Assets_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Assets_Purchase_TaskFlow.xml#Assets_Purchase_TaskFlow@ExecuteWithParams"
+          usageId="view_Assets_Purchase_TaskFlow_Assets_Purchase_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Assets_Return_TaskFlow.xml#Assets_Return_TaskFlow@ExecuteWithParams"
+          usageId="view_Assets_Return_TaskFlow_Assets_Return_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Assets_Waranty_Claim_TaskFlow.xml#Assets_Waranty_Claim_TaskFlow@ExecuteWithParams"
+          usageId="view_Assets_Waranty_Claim_TaskFlow_Assets_Waranty_Claim_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Assets_Depriciation_TaskFlow.xml#Assets_Depriciation_TaskFlow@ExecuteWithParams"
+          usageId="view_Assets_Depriciation_TaskFlow_Assets_Depriciation_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -428,6 +442,20 @@
     <page id="view_Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef1"
           path="Task_Flows.Modules.General_Ledger.Opening_Balance_TaskFlow_Opening_Balance_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Opening_BalancePageDef1" path="Fragments.Modules.General_Ledger.Opening_BalancePageDef"/>
+    <page id="view_Chart_of_Account_TaskFlow_Chart_of_Account_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Fixed_Assets.Chart_of_Account_TaskFlow_Chart_of_Account_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Assets_Requisition_TaskFlow_Assets_Requisition_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fixed_Assets.Assets_Requisition_TaskFlow_Assets_Requisition_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Assets_Order_TaskFlow_Assets_Order_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fixed_Assets.Assets_Order_TaskFlow_Assets_Order_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Assets_Purchase_TaskFlow_Assets_Purchase_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fixed_Assets.Assets_Purchase_TaskFlow_Assets_Purchase_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Assets_Return_TaskFlow_Assets_Return_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fixed_Assets.Assets_Return_TaskFlow_Assets_Return_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Assets_Waranty_Claim_TaskFlow_Assets_Waranty_Claim_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fixed_Assets.Assets_Waranty_Claim_TaskFlow_Assets_Waranty_Claim_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Assets_Depriciation_TaskFlow_Assets_Depriciation_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Fixed_Assets.Assets_Depriciation_TaskFlow_Assets_Depriciation_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
