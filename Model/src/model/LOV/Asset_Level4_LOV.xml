@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Asset_Level4_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblAssetL4.ASSET_L4_ID, 
+       TblAssetL4.NAME, 
+       TblAssetL4.UOM_ID, 
+       TblAssetL4.AST"
+  FromList="TBL_ASSET_L4 TblAssetL4"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Asset_Level4_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblAssetL4"
+    Entity="model.ERP.EO.TblAssetL4"/>
+  <ViewAttribute
+    Name="AssetL4Id"
+    PrecisionRule="true"
+    EntityAttrName="AssetL4Id"
+    EntityUsage="TblAssetL4"
+    AliasName="ASSET_L4_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblAssetL4"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="UomId"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="TblAssetL4"
+    AliasName="UOM_ID"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblAssetL4"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Asset_Level2_LOV1"
+    ViewObjectName="model.LOV.Asset_Level2_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AssetL2Id"
+    ListVOName="Asset_Level2_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssetL2Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AssetL2Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblAssetL3"
     Entity="model.ERP.EO.TblAssetL3"/>
@@ -29,7 +73,15 @@
     PrecisionRule="true"
     EntityAttrName="AssetL2Id"
     EntityUsage="TblAssetL3"
-    AliasName="ASSET_L2_ID"/>
+    AliasName="ASSET_L2_ID"
+    LOVName="LOV_AssetL2Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Name"
     IsUnique="true"
@@ -44,7 +96,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblAssetL3"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

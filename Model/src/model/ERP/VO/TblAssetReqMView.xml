@@ -13,6 +13,72 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Voucher_Type1"
+    ViewObjectName="model.LOV.Voucher_Type"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Department_Name_LOV1"
+    ViewObjectName="model.LOV.Department_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Project_Name_LOV1"
+    ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="Department_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="Project_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblAssetReqM"
     Entity="model.ERP.EO.TblAssetReqM"/>
@@ -34,7 +100,15 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblAssetReqM"
-    AliasName="VTP"/>
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     IsNotNull="true"
@@ -47,13 +121,29 @@
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="TblAssetReqM"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ProjectId"
     PrecisionRule="true"
     EntityAttrName="ProjectId"
     EntityUsage="TblAssetReqM"
-    AliasName="PROJECT_ID"/>
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
