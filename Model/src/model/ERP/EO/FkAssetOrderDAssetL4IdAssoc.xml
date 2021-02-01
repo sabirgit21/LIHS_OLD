@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkAssetOrderDAssetL4IdAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblAssetL4"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblAssetL4">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblAssetL4"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblAssetL4.PkTblAssetL4Pk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssetL4.AssetL4Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblAssetOrderD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblAssetOrderD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblAssetOrderD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblAssetOrderD.FkAssetOrderDAssetL4Id"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssetOrderD.AssetL4Id"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkAssetReturnDMAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblAssetReturnM"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblAssetReturnM">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblAssetReturnM"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblAssetReturnM.PkAssetReturnMId"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssetReturnM.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblAssetReturnD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblAssetReturnD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblAssetReturnD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblAssetReturnD.FkAssetReturnDM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssetReturnD.AssetReturnMId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

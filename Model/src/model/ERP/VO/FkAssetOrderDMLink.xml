@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkAssetOrderDMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkAssetOrderDMAssoc">
+  <ViewLinkDefEnd
+    Name="TblAssetOrderMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblAssetOrderMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblAssetOrderMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblAssetOrderMView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblAssetOrderDView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblAssetOrderDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblAssetOrderDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblAssetOrderDView.AssetOrderMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
