@@ -571,6 +571,12 @@
   <ViewUsage
     Name="TblAssetReturnMView2"
     ViewObjectName="model.ERP.VO.TblAssetReturnMView"/>
+  <ViewUsage
+    Name="TblAssetL3View3"
+    ViewObjectName="model.ERP.VO.TblAssetL3View"/>
+  <ViewUsage
+    Name="TblAssetL4View3"
+    ViewObjectName="model.ERP.VO.TblAssetL4View"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1080,5 +1086,17 @@
     ViewLinkObjectName="model.ERP.VO.FkAssetReturnMGrnLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssetPurchMView1"
     DstViewUsageName="model.ERP.AppModule.TblAssetReturnMView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblAssetL3FkLink2"
+    ViewLinkObjectName="model.ERP.VO.FkTblAssetL3FkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssetL2View2"
+    DstViewUsageName="model.ERP.AppModule.TblAssetL3View3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblAssetL4FkLink2"
+    ViewLinkObjectName="model.ERP.VO.FkTblAssetL4FkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssetL3View3"
+    DstViewUsageName="model.ERP.AppModule.TblAssetL4View3"
     Reversed="false"/>
 </AppModule>

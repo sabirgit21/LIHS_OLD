@@ -6,13 +6,26 @@
   Name="TblAssetReqDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblAssetReqD.ID, 
+       TblAssetReqD.ASSET_REQ_M_ID, 
+       TblAssetReqD.SR_NO, 
+       TblAssetReqD.ASSET_L4_ID, 
+       TblAssetReqD.DESCRIPTION, 
+       TblAssetReqD.QTY, 
+       TblAssetReqD.CREATED_DATE, 
+       TblAssetReqD.CREATED_BY, 
+       TblAssetReqD.UPDATED_DATE, 
+       TblAssetReqD.UPDATED_BY, 
+       TblAssetL4.ASSET_L4_ID AS ASSET_L4ID1, 
+       TblAssetL4.UOM_ID, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_ASSET_REQ_D TblAssetReqD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
+  Where="TblAssetReqD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)    
+and TblAssetL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="Asset_Level4_LOV1"
     ViewObjectName="model.LOV.Asset_Level4_LOV"
@@ -38,6 +51,34 @@
   <EntityUsage
     Name="TblAssetReqD"
     Entity="model.ERP.EO.TblAssetReqD"/>
+  <EntityUsage
+    Name="TblAssetL4"
+    Entity="model.ERP.EO.TblAssetL4"
+    Association="model.ERP.EO.FkAssetReqDAssetL4IdAssoc"
+    AssociationEnd="model.ERP.EO.FkAssetReqDAssetL4IdAssoc.TblAssetL4"
+    SourceUsage="model.ERP.VO.TblAssetReqDView.TblAssetReqD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblAssetL4.AssetL4Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblAssetReqD.AssetL4Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -108,4 +149,32 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblAssetReqD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="AssetL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="AssetL4Id"
+    EntityUsage="TblAssetL4"
+    AliasName="ASSET_L4ID1"/>
+  <ViewAttribute
+    Name="UomId"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="TblAssetL4"
+    AliasName="UOM_ID"/>
+  <ViewAttribute
+    Name="UOMName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+    <Item Value="Id1"/>
+  </AttrArray>
 </ViewObject>

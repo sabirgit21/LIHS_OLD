@@ -6,13 +6,29 @@
   Name="TblAssetPurchDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblAssetPurchD.ID, 
+       TblAssetPurchD.ASSET_PURCH_M_ID, 
+       TblAssetPurchD.SR_NO, 
+       TblAssetPurchD.ASSET_L4_ID, 
+       TblAssetPurchD.DESCRIPTION, 
+       TblAssetPurchD.QTY, 
+       TblAssetPurchD.RATE, 
+       TblAssetPurchD.AMOUNT, 
+       TblAssetPurchD.CREATED_DATE, 
+       TblAssetPurchD.CREATED_BY, 
+       TblAssetPurchD.UPDATED_DATE, 
+       TblAssetPurchD.UPDATED_BY, 
+       TblAssetPurchD.QC_M_ID, 
+       TblAssetL4.ASSET_L4_ID AS ASSET_L4ID1, 
+       TblAssetL4.UOM_ID, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_ASSET_PURCH_D TblAssetPurchD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
+  Where="TblAssetPurchD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)   
+And TblAssetL4.UOM_ID=TblUom.ID">
   <ViewAccessor
     Name="Asset_Level4_LOV1"
     ViewObjectName="model.LOV.Asset_Level4_LOV"
@@ -61,6 +77,34 @@
   <EntityUsage
     Name="TblAssetPurchD"
     Entity="model.ERP.EO.TblAssetPurchD"/>
+  <EntityUsage
+    Name="TblAssetL4"
+    Entity="model.ERP.EO.TblAssetL4"
+    Association="model.ERP.EO.FkAssetPurchDAssetL4IdAssoc"
+    AssociationEnd="model.ERP.EO.FkAssetPurchDAssetL4IdAssoc.TblAssetL4"
+    SourceUsage="model.ERP.VO.TblAssetPurchDView.TblAssetPurchD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblAssetL4.AssetL4Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblAssetPurchD.AssetL4Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -157,4 +201,32 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="AssetL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="AssetL4Id"
+    EntityUsage="TblAssetL4"
+    AliasName="ASSET_L4ID1"/>
+  <ViewAttribute
+    Name="UomId"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="TblAssetL4"
+    AliasName="UOM_ID"/>
+  <ViewAttribute
+    Name="UOMName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+    <Item Value="Id1"/>
+  </AttrArray>
 </ViewObject>

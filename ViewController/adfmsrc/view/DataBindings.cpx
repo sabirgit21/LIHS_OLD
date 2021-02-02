@@ -236,6 +236,12 @@
           usageId="view_Assets_Waranty_Claim_TaskFlow_Assets_Waranty_Claim_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Assets_Depriciation_TaskFlow.xml#Assets_Depriciation_TaskFlow@ExecuteWithParams"
           usageId="view_Assets_Depriciation_TaskFlow_Assets_Depriciation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Chart_of_Account.jsff" usageId="view_Chart_of_AccountPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Return.jsff" usageId="view_Assets_ReturnPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Order.jsff" usageId="view_Assets_OrderPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Requisition.jsff"
+          usageId="view_Assets_RequisitionPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Purchase.jsff" usageId="view_Assets_PurchasePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -456,6 +462,11 @@
           path="Task_Flows.Modules.Fixed_Assets.Assets_Waranty_Claim_TaskFlow_Assets_Waranty_Claim_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Assets_Depriciation_TaskFlow_Assets_Depriciation_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fixed_Assets.Assets_Depriciation_TaskFlow_Assets_Depriciation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Chart_of_AccountPageDef1" path="Fragments.Modules.Fixed_Assets.Chart_of_AccountPageDef"/>
+    <page id="view_Assets_ReturnPageDef" path="Fragments.Modules.Fixed_Assets.Assets_ReturnPageDef"/>
+    <page id="view_Assets_OrderPageDef" path="Fragments.Modules.Fixed_Assets.Assets_OrderPageDef"/>
+    <page id="view_Assets_RequisitionPageDef" path="Fragments.Modules.Fixed_Assets.Assets_RequisitionPageDef"/>
+    <page id="view_Assets_PurchasePageDef" path="Fragments.Modules.Fixed_Assets.Assets_PurchasePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
