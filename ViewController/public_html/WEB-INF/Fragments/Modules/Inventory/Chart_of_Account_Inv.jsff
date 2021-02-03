@@ -361,11 +361,12 @@
                 <af:panelGridLayout id="pgl10">
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
-                     <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
-                                 actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}"
-                                 inlineStyle="float: right;"/>
+                    
                       <af:panelTabbed position="above" id="pt5">
                         <af:showDetailItem id="tab2" text="Search">
+                         <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}"
+                                 inlineStyle="float: right;"/>
                           <af:table value="#{bindings.TblItemL4View31.collectionModel}" var="row"
                           rows="#{bindings.TblItemL4View31.rangeSize}"
                           emptyText="#{bindings.TblItemL4View31.viewable ? 'No data to display.' : 'Access Denied.'}"
