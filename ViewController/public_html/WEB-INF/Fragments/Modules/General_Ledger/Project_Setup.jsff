@@ -28,6 +28,10 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab3" text="Project">
+                         <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: right;"
+                         actionListener="#{backingBeanScope.VoucherPrintBean.getProjectReport}"/>
                           <af:table value="#{bindings.TblProjectView1.collectionModel}" var="row"
                           rows="#{bindings.TblProjectView1.rangeSize}"
                           emptyText="#{bindings.TblProjectView1.viewable ? 'No data to display.' : 'Access Denied.'}"

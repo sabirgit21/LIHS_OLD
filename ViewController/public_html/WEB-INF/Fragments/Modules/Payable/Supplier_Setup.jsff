@@ -177,24 +177,7 @@
                           filterModel="#{bindings.TblPblSuppView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblPblSuppView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6">
-                  <af:column sortProperty="#{bindings.TblPblSuppView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1" align="right" visible="false">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblPblSuppView1.hints.Id.label}"
-                                  required="#{bindings.TblPblSuppView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblPblSuppView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblPblSuppView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblPblSuppView1.hints.Id.tooltip}" id="it15" readOnly="true">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblPblSuppView1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
+                 
                   <af:column sortProperty="#{bindings.TblPblSuppView1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Supplier" id="c2">
                               <f:facet name="filter">
@@ -421,8 +404,23 @@
                       <f:validator binding="#{row.bindings.Url.validator}"/>
                     </af:inputText>
                   </af:column>
+                  
+                  <af:column sortProperty="#{bindings.TblPblSuppView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblPblSuppView1.hints.Id.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getSupplReport}">
+                   <f:attribute name="sendSUPPID" value="#{row.bindings.Id.inputValue}"/>
+                </af:link>
+                    
+                  </af:column>
+                  
+                  
+                  
+                  
                 </af:table>
-              </af:showDetailItem>
+                
+                 </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>

@@ -24,6 +24,10 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Bank Setup">
+              <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: right;"
+                         actionListener="#{backingBeanScope.VoucherPrintBean.getBankSetupReport}"/>
                 <af:table value="#{bindings.Bank_Setup1.collectionModel}" var="row"
                           rows="#{bindings.Bank_Setup1.rangeSize}"
                           emptyText="#{bindings.Bank_Setup1.viewable ? 'No data to display.' : 'Access Denied.'}"

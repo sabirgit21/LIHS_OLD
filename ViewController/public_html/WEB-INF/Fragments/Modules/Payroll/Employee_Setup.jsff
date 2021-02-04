@@ -29,6 +29,10 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Employee Setup Master">
+                        <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: right;"
+                         actionListener="#{backingBeanScope.VoucherPrintBean.getEmpSetReport}"/>
                           <af:table value="#{bindings.TblEmpView1.collectionModel}" var="row"
                                     rows="#{bindings.TblEmpView1.rangeSize}"
                                     emptyText="#{bindings.TblEmpView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -38,7 +42,7 @@
                                     rowSelection="single" fetchSize="#{bindings.TblEmpView1.rangeSize}"
                                     filterModel="#{bindings.TblEmpView1Query.queryDescriptor}" filterVisible="true"
                                     queryListener="#{bindings.TblEmpView1Query.processQuery}" varStatus="vs" id="t1"
-                                    scrollPolicy="page" autoHeightRows="0">
+                                    scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6">
                             <af:column sortProperty="#{bindings.TblEmpView1.hints.Id.name}" filterable="true"
                                        sortable="true" headerText="ID" id="c1" visible="false">
                                        <f:facet name="filter">
@@ -336,7 +340,7 @@
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="center" id="pgl5">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"
-                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
                                 <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                            disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
                                 <af:button actionListener="#{bindings.Next.execute}" text="Next"
