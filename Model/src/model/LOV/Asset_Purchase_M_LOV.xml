@@ -41,6 +41,24 @@
     EntityAttrName="Dated"
     EntityUsage="TblAssetPurchM"
     AliasName="DATED"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="TblAssetPurchM"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="Carrier"
+    PrecisionRule="true"
+    EntityAttrName="Carrier"
+    EntityUsage="TblAssetPurchM"
+    AliasName="CARRIER"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblAssetPurchM"
+    AliasName="PBL_SUPP_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

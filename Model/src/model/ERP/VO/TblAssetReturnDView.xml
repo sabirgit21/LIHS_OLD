@@ -21,16 +21,19 @@
        TblAssetReturnD.CREATED_BY, 
        TblAssetReturnD.UPDATED_DATE, 
        TblAssetReturnD.UPDATED_BY, 
-       TblAssetReturnD.GRND_QTY, 
+       TblAssetReturnD.PURCH_QTY, 
        TblAssetReturnD.ASSET_PURCH_M_ID, 
        TblAssetReturnD.ASSET_PURCH_M_VTP, 
        TblAssetL4.ASSET_L4_ID AS ASSET_L4ID1, 
        TblAssetL4.UOM_ID, 
        TblUom.NAME, 
-       TblUom.ID AS ID1"
-  FromList="TBL_ASSET_RETURN_D TblAssetReturnD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
-  Where="TblAssetReturnD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)   
-AND TblAssetL4.UOM_ID=TblUom.ID">
+       TblUom.ID AS ID1, 
+       TblAssetReturnM.ASSET_PURCH_M_ID AS ASSET_PURCH_MID1, 
+       TblAssetReturnM.ID AS ID2"
+  FromList="TBL_ASSET_RETURN_D TblAssetReturnD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom, TBL_ASSET_RETURN_M TblAssetReturnM"
+  Where="(TblAssetReturnD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+))  
+AND (TblAssetReturnD.ASSET_RETURN_M_ID = TblAssetReturnM.ID)    
+AND TblAssetL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="Asset_Level4_LOV1"
     ViewObjectName="model.LOV.Asset_Level4_LOV"
@@ -39,24 +42,18 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
     Name="Asset_Purchase_M_LOV1"
     ViewObjectName="model.LOV.Asset_Purchase_M_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_AssetL4Id"
-    ListVOName="Asset_Level4_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="AssetL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="AssetL4Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="Asset_Purchase_L4_ID1"
+    ViewObjectName="model.LOV.Asset_Purchase_L4_ID"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getAssPurchMId">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[AssetPurchMId1]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_AssetPurchMId"
     ListVOName="Asset_Purchase_M_LOV1"
@@ -73,6 +70,32 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Vno"/>
       <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AssetL4Id"
+    ListVOName="Asset_Purchase_L4_ID1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssetL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="PurchQty"/>
+      <Item Value="Rate"/>
+      <Item Value="Qty"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AssetL4Id"/>
+      <Item Value="Qty"/>
+      <Item Value="Rate"/>
+      <Item Value="Qty"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -107,6 +130,25 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
       <Attr Name="_customjoin" Value="true"/>
     </DesignTime>
   </EntityUsage>
+  <EntityUsage
+    Name="TblAssetReturnM"
+    Entity="model.ERP.EO.TblAssetReturnM"
+    Association="model.ERP.EO.FkAssetReturnDMAssoc"
+    AssociationEnd="model.ERP.EO.FkAssetReturnDMAssoc.TblAssetReturnM"
+    SourceUsage="model.ERP.VO.TblAssetReturnDView.TblAssetReturnD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblAssetReturnM.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblAssetReturnD.AssetReturnMId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -137,7 +179,7 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -190,11 +232,11 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
     EntityUsage="TblAssetReturnD"
     AliasName="UPDATED_BY"/>
   <ViewAttribute
-    Name="GrndQty"
+    Name="PurchQty"
     PrecisionRule="true"
-    EntityAttrName="GrndQty"
+    EntityAttrName="PurchQty"
     EntityUsage="TblAssetReturnD"
-    AliasName="GRND_QTY"/>
+    AliasName="PURCH_QTY"/>
   <ViewAttribute
     Name="AssetPurchMId"
     PrecisionRule="true"
@@ -239,6 +281,19 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
     EntityAttrName="Id"
     EntityUsage="TblUom"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="AssetPurchMId1"
+    PrecisionRule="true"
+    EntityAttrName="AssetPurchMId"
+    EntityUsage="TblAssetReturnM"
+    AliasName="ASSET_PURCH_MID1"/>
+  <ViewAttribute
+    Name="Id2"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblAssetReturnM"
+    AliasName="ID2"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="Id1"/>

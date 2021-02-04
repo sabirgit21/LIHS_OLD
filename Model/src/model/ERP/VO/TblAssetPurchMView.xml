@@ -84,8 +84,16 @@
       <Item Value="AssetOrderMId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Carrier"/>
+      <Item Value="PblSuppId"/>
+      <Item Value="DepartmentId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+      <Item Value="Carrier"/>
+      <Item Value="PblSuppId"/>
+      <Item Value="DepartmentId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Vno"/>

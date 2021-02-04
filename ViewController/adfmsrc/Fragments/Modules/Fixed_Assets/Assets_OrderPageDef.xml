@@ -79,7 +79,7 @@
           <Item Value="Id"/>
           <Item Value="AssetL4Id"/>
           <Item Value="Description"/>
-          <Item Value="DoQty"/>
+          <Item Value="ArQty"/>
           <Item Value="Qty"/>
           <Item Value="BalQty"/>
           <Item Value="Rate"/>

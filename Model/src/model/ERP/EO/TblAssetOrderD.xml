@@ -57,8 +57,8 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="DoQty"
-    ColumnName="DO_QTY"
+    Name="ArQty"
+    ColumnName="AR_QTY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"

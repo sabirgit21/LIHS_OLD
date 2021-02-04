@@ -78,7 +78,7 @@
           <Item Value="Qty"/>
           <Item Value="Rate"/>
           <Item Value="Amount"/>
-          <Item Value="GrndQty"/>
+          <Item Value="PurchQty"/>
           <Item Value="UOMName"/>
         </AttrNames>
       </nodeDefinition>

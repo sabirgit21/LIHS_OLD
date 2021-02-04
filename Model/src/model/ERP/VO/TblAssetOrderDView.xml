@@ -14,7 +14,7 @@
        TblAssetOrderD.SR_NO, 
        TblAssetOrderD.ASSET_L4_ID, 
        TblAssetOrderD.DESCRIPTION, 
-       TblAssetOrderD.DO_QTY, 
+       TblAssetOrderD.AR_QTY, 
        TblAssetOrderD.QTY, 
        TblAssetOrderD.BAL_QTY, 
        TblAssetOrderD.CREATED_DATE, 
@@ -29,8 +29,8 @@
        TblUom.NAME, 
        TblUom.ID AS ID1"
   FromList="TBL_ASSET_ORDER_D TblAssetOrderD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
-  Where="TblAssetOrderD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)  
-AND TblAssetL4.UOM_ID=TblUom.ID">
+  Where="TblAssetOrderD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)   
+AND TblAssetL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="Asset_Level4_LOV1"
     ViewObjectName="model.LOV.Asset_Level4_LOV"
@@ -39,24 +39,10 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
     Name="Asset_Requisition_M_LOV1"
     ViewObjectName="model.LOV.Asset_Requisition_M_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_AssetL4Id"
-    ListVOName="Asset_Level4_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="AssetL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="AssetL4Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="Asset_Req_L4_ID1"
+    ViewObjectName="model.LOV.Asset_Req_L4_ID"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AssetReqMId"
     ListVOName="Asset_Requisition_M_LOV1"
@@ -73,6 +59,28 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Vno"/>
       <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AssetL4Id"
+    ListVOName="Asset_Req_L4_ID1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssetL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="ArQty"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AssetL4Id"/>
+      <Item Value="Qty"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -148,11 +156,11 @@ AND TblAssetL4.UOM_ID=TblUom.ID">
     EntityUsage="TblAssetOrderD"
     AliasName="DESCRIPTION"/>
   <ViewAttribute
-    Name="DoQty"
+    Name="ArQty"
     PrecisionRule="true"
-    EntityAttrName="DoQty"
+    EntityAttrName="ArQty"
     EntityUsage="TblAssetOrderD"
-    AliasName="DO_QTY"/>
+    AliasName="AR_QTY"/>
   <ViewAttribute
     Name="Qty"
     PrecisionRule="true"

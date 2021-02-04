@@ -221,21 +221,17 @@
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="GRN Qty" id="c11" sortable="true" filterable="true">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.GrndQty}"
-       id="it13" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.GrndQty.inputValue}" readOnly="true"
-                                            label="#{bindings.TblAssetReturnDView3.hints.GrndQty.label}"
-                                            required="#{bindings.TblAssetReturnDView3.hints.GrndQty.mandatory}"
-                                            columns="#{bindings.TblAssetReturnDView3.hints.GrndQty.displayWidth}"
-                                            maximumLength="#{bindings.TblAssetReturnDView3.hints.GrndQty.precision}"
-                                            shortDesc="#{bindings.TblAssetReturnDView3.hints.GrndQty.tooltip}" id="it8">
-                                <f:validator binding="#{row.bindings.GrndQty.validator}"/>
+                            <af:column headerText="Purchase Qty" id="c11">
+                              <af:inputText value="#{row.bindings.PurchQty.inputValue}" readOnly="true"
+                                            label="#{bindings.TblAssetReturnDView3.hints.PurchQty.label}"
+                                            required="#{bindings.TblAssetReturnDView3.hints.PurchQty.mandatory}"
+                                            columns="#{bindings.TblAssetReturnDView3.hints.PurchQty.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetReturnDView3.hints.PurchQty.precision}"
+                                            shortDesc="#{bindings.TblAssetReturnDView3.hints.PurchQty.tooltip}"
+                                            id="it8">
+                                <f:validator binding="#{row.bindings.PurchQty.validator}"/>
                                 <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblAssetReturnDView3.hints.GrndQty.format}"/>
+                                                  pattern="#{bindings.TblAssetReturnDView3.hints.PurchQty.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblAssetReturnDView3.hints.Qty.name}" filterable="true"

@@ -106,8 +106,8 @@
     ColumnType="NUMBER"
     TableName="TBL_ASSET_RETURN_D"/>
   <Attribute
-    Name="GrndQty"
-    ColumnName="GRND_QTY"
+    Name="PurchQty"
+    ColumnName="PURCH_QTY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"

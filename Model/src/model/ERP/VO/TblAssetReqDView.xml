@@ -24,8 +24,8 @@
        TblUom.NAME, 
        TblUom.ID AS ID1"
   FromList="TBL_ASSET_REQ_D TblAssetReqD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
-  Where="TblAssetReqD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)    
-and TblAssetL4.UOM_ID = TblUom.ID">
+  Where="TblAssetReqD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)     
+and TblAssetL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="Asset_Level4_LOV1"
     ViewObjectName="model.LOV.Asset_Level4_LOV"

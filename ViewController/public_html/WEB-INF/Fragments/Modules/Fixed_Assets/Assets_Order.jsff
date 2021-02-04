@@ -190,7 +190,7 @@
       </af:inputText>
 </f:facet>
                               <af:selectOneChoice value="#{row.bindings.AssetL4Id.inputValue}"
-                                                  label="#{row.bindings.AssetL4Id.label}" 
+                                                  label="#{row.bindings.AssetL4Id.label}" autoSubmit="true"
                                                   required="#{bindings.TblAssetOrderDView3.hints.AssetL4Id.mandatory}"
                                                   shortDesc="#{bindings.TblAssetOrderDView3.hints.AssetL4Id.tooltip}"
                                                   id="soc18">
@@ -233,59 +233,16 @@
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
                               </af:inputText>
                             </af:column>
-                            
-                            <af:column sortProperty="#{bindings.TblAssetOrderDView3.hints.DoQty.name}" filterable="true"
-                                       sortable="true" headerText="DO Qty" id="c11">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.DoQty}"
-       id="it24" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.DoQty.inputValue}"
-                                            label="#{bindings.TblAssetOrderDView3.hints.DoQty.label}"
-                                            required="#{bindings.TblAssetOrderDView3.hints.DoQty.mandatory}"
-                                            columns="#{bindings.TblAssetOrderDView3.hints.DoQty.displayWidth}"
-                                            maximumLength="#{bindings.TblAssetOrderDView3.hints.DoQty.precision}"
-                                            shortDesc="#{bindings.TblAssetOrderDView3.hints.DoQty.tooltip}" id="it16" readOnly="true">
-                                <f:validator binding="#{row.bindings.DoQty.validator}"/>
+                            <af:column headerText="AR Qty" id="c4">
+                              <af:inputText value="#{row.bindings.ArQty.inputValue}" readOnly="true"
+                                            label="#{bindings.TblAssetOrderDView3.hints.ArQty.label}"
+                                            required="#{bindings.TblAssetOrderDView3.hints.ArQty.mandatory}"
+                                            columns="#{bindings.TblAssetOrderDView3.hints.ArQty.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetOrderDView3.hints.ArQty.precision}"
+                                            shortDesc="#{bindings.TblAssetOrderDView3.hints.ArQty.tooltip}" id="it9">
+                                <f:validator binding="#{row.bindings.ArQty.validator}"/>
                                 <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblAssetOrderDView3.hints.DoQty.format}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblAssetOrderDView3.hints.Qty.name}" filterable="true"
-                                       sortable="true" headerText="Qty" id="c10">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Qty}"
-       id="it23" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.Qty.inputValue}"
-                                            label="#{bindings.TblAssetOrderDView3.hints.Qty.label}"
-                                            required="#{bindings.TblAssetOrderDView3.hints.Qty.mandatory}"
-                                            columns="#{bindings.TblAssetOrderDView3.hints.Qty.displayWidth}"
-                                            maximumLength="#{bindings.TblAssetOrderDView3.hints.Qty.precision}"
-                                            shortDesc="#{bindings.TblAssetOrderDView3.hints.Qty.tooltip}" id="it6">
-                                <f:validator binding="#{row.bindings.Qty.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblAssetOrderDView3.hints.Qty.format}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblAssetOrderDView3.hints.BalQty.name}" filterable="true"
-                                       sortable="true" headerText="Bal Qty" id="c12">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.BalQty}"
-       id="it25" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.BalQty.inputValue}"
-                                            label="#{bindings.TblAssetOrderDView3.hints.BalQty.label}"
-                                            required="#{bindings.TblAssetOrderDView3.hints.BalQty.mandatory}"
-                                            columns="#{bindings.TblAssetOrderDView3.hints.BalQty.displayWidth}"
-                                            maximumLength="#{bindings.TblAssetOrderDView3.hints.BalQty.precision}"
-                                            shortDesc="#{bindings.TblAssetOrderDView3.hints.BalQty.tooltip}" id="it17" readOnly="true">
-                                <f:validator binding="#{row.bindings.BalQty.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblAssetOrderDView3.hints.BalQty.format}"/>
+                                                  pattern="#{bindings.TblAssetOrderDView3.hints.ArQty.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Rate" id="c13" sortable="true" filterable="true">

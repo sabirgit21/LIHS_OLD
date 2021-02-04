@@ -41,6 +41,24 @@
     EntityAttrName="Dated"
     EntityUsage="TblAssetOrderM"
     AliasName="DATED"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="TblAssetOrderM"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="Carrier"
+    PrecisionRule="true"
+    EntityAttrName="Carrier"
+    EntityUsage="TblAssetOrderM"
+    AliasName="CARRIER"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblAssetOrderM"
+    AliasName="PBL_SUPP_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
