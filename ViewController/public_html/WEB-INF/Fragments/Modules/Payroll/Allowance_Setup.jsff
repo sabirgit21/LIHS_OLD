@@ -29,7 +29,11 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Allowance">
-                         
+                         <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: right;"
+                         actionListener="#{backingBeanScope.VoucherPrintBean.getAllowanceSetupReport}"/>
+
                           <af:table value="#{bindings.TblAllowanceView1.collectionModel}" var="row"
                                     rows="#{bindings.TblAllowanceView1.rangeSize}"
                                     emptyText="#{bindings.TblAllowanceView1.viewable ? 'No data to display.' : 'Access Denied.'}"

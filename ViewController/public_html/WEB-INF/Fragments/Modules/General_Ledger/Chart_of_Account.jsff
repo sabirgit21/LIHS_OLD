@@ -514,6 +514,10 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc24">
                       <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi3" text="Search">
+               <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: right;"
+                        actionListener="#{backingBeanScope.VoucherPrintBean.getCOAGLReport}"/>
                 <af:table value="#{bindings.TblGlL4View3.collectionModel}" var="row"
                           rows="#{bindings.TblGlL4View3.rangeSize}"
                           emptyText="#{bindings.TblGlL4View3.viewable ? 'No data to display.' : 'Access Denied.'}"

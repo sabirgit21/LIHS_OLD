@@ -29,6 +29,10 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Leave Structure Master">
+                        <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: right;"
+                        actionListener="#{backingBeanScope.VoucherPrintBean.getLeaveReport}"/>
                           <af:table value="#{bindings.TblLeaveMView1.collectionModel}" var="row"
                                     rows="#{bindings.TblLeaveMView1.rangeSize}"
                                     emptyText="#{bindings.TblLeaveMView1.viewable ? 'No data to display.' : 'Access Denied.'}"

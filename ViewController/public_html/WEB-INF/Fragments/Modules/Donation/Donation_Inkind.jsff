@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Donation In kind Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
                             <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
@@ -112,6 +112,8 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s13"/>
                             <af:spacer  id="s14"/>
+                            <af:spacer  id="s16"/>
+                            <af:spacer  id="s17"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="17"
@@ -342,23 +344,7 @@
                           filterModel="#{bindings.TblDonKindMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblDonKindMView1Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblDonKindMView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c8" visible="false">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Id}"
-       id="it22" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblDonKindMView1.hints.Id.label}"
-                                  required="#{bindings.TblDonKindMView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblDonKindMView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblDonKindMView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblDonKindMView1.hints.Id.tooltip}" id="it10" readOnly="true">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblDonKindMView1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
+                 
                   <af:column sortProperty="#{bindings.TblDonKindMView1.hints.Vno.name}" filterable="true"
                              sortable="true" headerText="Voucher No." id="c9">
                              <f:facet name="filter">
@@ -499,6 +485,25 @@
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>
+                  
+                  
+               
+                  
+                  
+                  
+                  
+                  
+                  <af:column sortProperty="#{bindings.TblDonKindMView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblDonKindMView1.hints.Id.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getDonInKindReport}">
+                   <f:attribute name="sendDonInKindMID" value="#{row.bindings.Id.inputValue}"/>
+                </af:link>
+                    
+                  </af:column>
+                  
+                  
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

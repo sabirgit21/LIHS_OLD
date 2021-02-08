@@ -23,6 +23,10 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Unit of Measurement">
+               <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
+                                 
+                                 inlineStyle="float: right;"
+                          actionListener="#{backingBeanScope.VoucherPrintBean.getUOMReport}"/>
                 <af:table value="#{bindings.TblUomView1.collectionModel}" var="row"
                           rows="#{bindings.TblUomView1.rangeSize}"
                           emptyText="#{bindings.TblUomView1.viewable ? 'No data to display.' : 'Access Denied.'}"
