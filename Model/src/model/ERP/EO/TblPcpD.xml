@@ -103,12 +103,26 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_PCP_D"/>
+  <Attribute
+    Name="BankCashId"
+    ColumnName="BANK_CASH_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PCP_D"/>
   <AccessorAttribute
     Name="TblPcpM"
     Association="model.ERP.EO.FkPcpDMAssoc"
     AssociationEnd="model.ERP.EO.FkPcpDMAssoc.TblPcpM"
     AssociationOtherEnd="model.ERP.EO.FkPcpDMAssoc.TblPcpD"
     Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblBankCash"
+    Association="model.ERP.EO.FkPcpDIdAssoc"
+    AssociationEnd="model.ERP.EO.FkPcpDIdAssoc.TblBankCash"
+    AssociationOtherEnd="model.ERP.EO.FkPcpDIdAssoc.TblPcpD"
+    Type="model.ERP.EO.TblBankCashImpl"
     IsUpdateable="true"/>
   <Key
     Name="PkPcpDId"

@@ -41,7 +41,7 @@ public class InventoryReports {
     private static String gotFormat = "";
     private static BigDecimal gotprojectId;
     private static BigDecimal gotDepartmentidId;
-    private static String gotitemL4id;
+    private static BigDecimal gotitemL4id;
 
     public String gen_Report() {
         // Add event code here...
@@ -49,7 +49,7 @@ public class InventoryReports {
         gotFormat = (String) this.getFormat_type().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         gotDepartmentidId = (BigDecimal) this.getDepartmentidparam().getValue();
-        gotitemL4id = (String) this.getItemL4idparam().getValue();
+        gotitemL4id = (BigDecimal) this.getItemL4idparam().getValue();
 
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -95,47 +95,57 @@ public class InventoryReports {
                 break;
             case "mGTdailyfeeding2":
 
-                reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
-
                 //working for procedure call//
-//                String sendItemL4IDLgrCnvrt = gotitemL4id;
-//                int sendItemL4IDLgrfinal = Integer.parseInt(sendItemL4IDLgrCnvrt);
-//
-//                String sendFDateCnvrt = getFromDate();
-//                java.util.Date sendFDateFinal;
-////                    sendFDateFinal = new SimpleDateFormat("dd/MMM/yy").parse(sendFDateCnvrt);
-//                    SimpleDateFormat df= new SimpleDateFormat("dd/MMM/yy");
-//                    try {
-//                    sendFDateFinal = new java.util.Date(df.parse(sendFDateCnvrt).getTime());
-//                } catch (ParseException pe) {
-//                    // TODO: Add catch code
-//                    pe.printStackTrace();
-//                }
-//                
+                
+                if (getFromDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
+                        
+                        BigDecimal sendItemL4IDLgrfinal = gotitemL4id;
+                        
+                        String sendFDateFINAL = getFromDate();
+                
+                        String sendProjectIDCnvrt = gotprojectId.toString();
+                        int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
 
-//                String sendProjectIDCnvrt = gotprojectId.toString();
-//                int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
-//
-//                String sendDeptIDCnvrt = gotDepartmentidId.toString();
-//                int sendDeptIDFinal = Integer.parseInt(sendDeptIDCnvrt);
+                        String sendDeptIDCnvrt = gotDepartmentidId.toString();
+                        int sendDeptIDFinal = Integer.parseInt(sendDeptIDCnvrt);
 
+                        //calling procedure start//
+                        Connection conn;
+                        ResultSet rs;
+                        CallableStatement cstmt = null;
+                        try {
+                            conn = DatabaseConnection.getConnection();
+                            String SQL = "{call P_IL(?,?,?,?)}";
+                            cstmt = conn.prepareCall(SQL);
+                            
+                            cstmt.setBigDecimal(1, sendItemL4IDLgrfinal);
+                            cstmt.setString(2, sendFDateFINAL );
+                            cstmt.setInt(3, sendProjectIDFinal);
+                            cstmt.setInt(4, sendDeptIDFinal);
+                            
+                            rs = cstmt.executeQuery();
+                        } catch (SQLException e) {
+                            System.out.println(e);
+                        }
+                        
+                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
 
-                //calling procedure start//
-//                Connection conn;
-//                ResultSet rs;
-//                CallableStatement cstmt = null;
-//                try {
-//                    conn = DatabaseConnection.getConnection();
-//                    String SQL = "{call P_IL(?,?,?,?)}";
-//                    cstmt = conn.prepareCall(SQL);
-//                    cstmt.setInt(1, sendItemL4IDLgrfinal);
-//                    cstmt.setDate(2, Date.valueOf(sendFDateFinal) );
-//                    cstmt.setInt(3, sendProjectIDFinal);
-//                    cstmt.setInt(4, sendDeptIDFinal);
-//                    rs = cstmt.executeQuery();
-//                } catch (SQLException e) {
-//                    System.out.println(e);
-//                }
+                        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                        gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                        reportBean.setReportParameter("paramform", "no");
+
+                        url = reportBean.getReportServerURL();
+                        System.out.println("Url => " + url);
+                        reportBean.openUrlInNewWindow(url);
+                        
+                    }
+                else{
+                    showMessage("Please Select From Date, Project, Item & Department");
+                }
+                
+               
                 break;
                 //calling procedure end//
             default:
@@ -144,16 +154,6 @@ public class InventoryReports {
 
             }
 
-
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
         }
         return null;
     }

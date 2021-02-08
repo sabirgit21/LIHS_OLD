@@ -159,6 +159,12 @@
     EntityAttrName="Id"
     EntityUsage="TblPcpM"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="BankCashId"
+    PrecisionRule="true"
+    EntityAttrName="BankCashId"
+    EntityUsage="TblPcpD"
+    AliasName="BANK_CASH_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

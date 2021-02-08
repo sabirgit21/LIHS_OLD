@@ -33,7 +33,9 @@ public class TblPcpDImpl extends EntityImpl {
         UpdatedBy,
         PoMId,
         Amount,
-        TblPcpM;
+        BankCashId,
+        TblPcpM,
+        TblBankCash;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -56,6 +58,7 @@ public class TblPcpDImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int PCPMID = AttributesEnum.PcpMId.index();
     public static final int DESCRIPTION = AttributesEnum.Description.index();
@@ -67,12 +70,21 @@ public class TblPcpDImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int POMID = AttributesEnum.PoMId.index();
     public static final int AMOUNT = AttributesEnum.Amount.index();
+    public static final int BANKCASHID = AttributesEnum.BankCashId.index();
     public static final int TBLPCPM = AttributesEnum.TblPcpM.index();
+    public static final int TBLBANKCASH = AttributesEnum.TblBankCash.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblPcpDImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblPcpD");
     }
 
     /**
@@ -236,18 +248,49 @@ public class TblPcpDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for BankCashId, using the alias name BankCashId.
+     * @return the value of BankCashId
+     */
+    public BigDecimal getBankCashId() {
+        return (BigDecimal) getAttributeInternal(BANKCASHID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BankCashId.
+     * @param value value to set the BankCashId
+     */
+    public void setBankCashId(BigDecimal value) {
+        setAttributeInternal(BANKCASHID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblPcpM() {
-        return (EntityImpl) getAttributeInternal(TBLPCPM);
+    public TblPcpMImpl getTblPcpM() {
+        return (TblPcpMImpl) getAttributeInternal(TBLPCPM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblPcpM(EntityImpl value) {
+    public void setTblPcpM(TblPcpMImpl value) {
         setAttributeInternal(TBLPCPM, value);
     }
+
+    /**
+     * @return the associated entity TblBankCashImpl.
+     */
+    public TblBankCashImpl getTblBankCash() {
+        return (TblBankCashImpl) getAttributeInternal(TBLBANKCASH);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblBankCashImpl.
+     */
+    public void setTblBankCash(TblBankCashImpl value) {
+        setAttributeInternal(TBLBANKCASH, value);
+    }
+
 
     /**
      * @param id key constituent
@@ -256,13 +299,6 @@ public class TblPcpDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblPcpD");
     }
 
     /**

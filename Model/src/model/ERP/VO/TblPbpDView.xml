@@ -21,7 +21,8 @@
        TblPbpD.UPDATED_DATE, 
        TblPbpD.UPDATED_BY, 
        TblPbpM.PBL_SUPP_ID, 
-       TblPbpM.ID AS ID1"
+       TblPbpM.ID AS ID1, 
+       TblPbpD.BANK_CASH_ID"
   FromList="TBL_PBP_D TblPbpD, TBL_PBP_M TblPbpM"
   Where="TblPbpD.PBP_M_ID = TblPbpM.ID(+)">
   <ViewAccessor
@@ -170,6 +171,12 @@
     EntityAttrName="Id"
     EntityUsage="TblPbpM"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="BankCashId"
+    PrecisionRule="true"
+    EntityAttrName="BankCashId"
+    EntityUsage="TblPbpD"
+    AliasName="BANK_CASH_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
