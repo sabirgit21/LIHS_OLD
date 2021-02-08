@@ -38,13 +38,10 @@
         <Item Value="DocNo"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblDonCrView1Iterator" id="RecIn">
-      <AttrNames>
-        <Item Value="RecIn"/>
-      </AttrNames>
-    </attributeValues>
     <list IterBinding="TblDonCrView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblDonCrView1Iterator" StaticList="false" Uses="LOV_RecIn" id="RecIn1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
     <list IterBinding="TblDonCrView1Iterator" StaticList="false" Uses="LOV_CashBankId" id="CashBankId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblDonCrView1Iterator" StaticList="false" Uses="LOV_DonSetupId" id="DonSetupId"

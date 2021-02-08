@@ -56,14 +56,14 @@
                               <f:validator binding="#{bindings.DocNo.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s5"/>
-                            <af:inputText value="#{bindings.RecIn.inputValue}" label="Record In"
-                                          required="#{bindings.RecIn.hints.mandatory}"
-                                          columns="#{bindings.RecIn.hints.displayWidth}"
-                                          maximumLength="#{bindings.RecIn.hints.precision}"
-                                          shortDesc="#{bindings.RecIn.hints.tooltip}" id="it3"
-                                          contentStyle="width:150px;">
-                              <f:validator binding="#{bindings.RecIn.validator}"/>
-                            </af:inputText>
+                           
+                            <af:selectOneChoice value="#{bindings.RecIn1.inputValue}" label="Received In"
+                                                required="#{bindings.RecIn1.hints.mandatory}"
+                                                shortDesc="#{bindings.RecIn1.hints.tooltip}" id="soc10"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.RecIn1.items}" id="si10"/>
+                              <f:validator binding="#{bindings.RecIn1.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s6"/>
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project"

@@ -55,6 +55,10 @@
     Name="Category_LOV1"
     ViewObjectName="model.LOV.Category_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Received_In_LOV1"
+    ViewObjectName="model.LOV.Received_In_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ProjectId"
     ListVOName="Project_Name_LOV1"
@@ -146,6 +150,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_RecIn"
+    ListVOName="Received_In_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RecIn"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblDonCr"
     Entity="model.ERP.EO.TblDonCr"/>
@@ -209,7 +231,15 @@
     PrecisionRule="true"
     EntityAttrName="RecIn"
     EntityUsage="TblDonCr"
-    AliasName="REC_IN"/>
+    AliasName="REC_IN"
+    LOVName="LOV_RecIn">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CashBankId"
     PrecisionRule="true"
