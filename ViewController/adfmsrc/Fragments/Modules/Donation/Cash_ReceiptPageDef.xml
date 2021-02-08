@@ -91,5 +91,10 @@
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <list IterBinding="TblProjectView1Iterator" StaticList="false" Uses="LOV_Category" id="Category"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblDonCrView1Iterator" id="Exp">
+      <AttrNames>
+        <Item Value="Exp"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

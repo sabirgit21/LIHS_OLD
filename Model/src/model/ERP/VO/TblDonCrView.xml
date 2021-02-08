@@ -14,6 +14,7 @@
        TblDonCr.PROJECT_ID, 
        TblDonCr.DON_SETUP_ID, 
        TblDonCr.DON_TYPE_ID, 
+       TblDonCr.EXP, 
        TblDonCr.REC_IN, 
        TblDonCr.CASH_BANK_ID, 
        TblDonCr.DOC_NO, 
@@ -226,6 +227,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Exp"
+    PrecisionRule="true"
+    EntityAttrName="Exp"
+    EntityUsage="TblDonCr"
+    AliasName="EXP"/>
   <ViewAttribute
     Name="RecIn"
     PrecisionRule="true"

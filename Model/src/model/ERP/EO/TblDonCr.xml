@@ -179,6 +179,13 @@
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Exp"
+    ColumnName="EXP"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DON_CR"/>
   <AccessorAttribute
     Name="TblDonSetup"
     Association="model.ERP.EO.FkDonCrDonSetupAssoc"

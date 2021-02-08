@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Donation Cash Receipt">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
                             <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
@@ -56,6 +56,15 @@
                               <f:validator binding="#{bindings.DocNo.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s5"/>
+                            <af:inputText value="#{bindings.Exp.inputValue}" label="Expense"
+                                          required="#{bindings.Exp.hints.mandatory}"
+                                          columns="#{bindings.Exp.hints.displayWidth}"
+                                          maximumLength="#{bindings.Exp.hints.precision}"
+                                          shortDesc="#{bindings.Exp.hints.tooltip}" id="it3" contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.Exp.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.Exp.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s14"/>
                            
                             <af:selectOneChoice value="#{bindings.RecIn1.inputValue}" label="Received In"
                                                 required="#{bindings.RecIn1.hints.mandatory}"

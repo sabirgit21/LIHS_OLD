@@ -38,6 +38,7 @@ public class TblDonCrImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         Category,
+        Exp,
         TblDonSetup,
         TblDonType;
         private static AttributesEnum[] vals = null;
@@ -63,6 +64,7 @@ public class TblDonCrImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
@@ -79,6 +81,7 @@ public class TblDonCrImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int CATEGORY = AttributesEnum.Category.index();
+    public static final int EXP = AttributesEnum.Exp.index();
     public static final int TBLDONSETUP = AttributesEnum.TblDonSetup.index();
     public static final int TBLDONTYPE = AttributesEnum.TblDonType.index();
 
@@ -94,6 +97,7 @@ public class TblDonCrImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblDonCr");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -333,6 +337,22 @@ public class TblDonCrImpl extends EntityImpl {
      */
     public void setCategory(String value) {
         setAttributeInternal(CATEGORY, value);
+    }
+
+    /**
+     * Gets the attribute value for Exp, using the alias name Exp.
+     * @return the value of Exp
+     */
+    public BigDecimal getExp() {
+        return (BigDecimal) getAttributeInternal(EXP);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Exp.
+     * @param value value to set the Exp
+     */
+    public void setExp(BigDecimal value) {
+        setAttributeInternal(EXP, value);
     }
 
     /**
