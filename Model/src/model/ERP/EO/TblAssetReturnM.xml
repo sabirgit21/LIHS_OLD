@@ -86,7 +86,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_ASSET_RETURN_M"/>
+    TableName="TBL_ASSET_RETURN_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblAssetReturnMRow"/>
+  </Attribute>
   <Attribute
     Name="PblSuppId"
     ColumnName="PBL_SUPP_ID"

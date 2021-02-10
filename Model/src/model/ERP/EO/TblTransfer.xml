@@ -95,7 +95,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_TRANSFER"/>
+    TableName="TBL_TRANSFER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblTransferRow"/>
+  </Attribute>
   <Attribute
     Name="EmpId"
     ColumnName="EMP_ID"

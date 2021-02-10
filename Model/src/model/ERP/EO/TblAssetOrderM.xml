@@ -129,7 +129,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_ASSET_ORDER_M"/>
+    TableName="TBL_ASSET_ORDER_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblAssetOrderMRow"/>
+  </Attribute>
   <Attribute
     Name="AssetReqMId"
     ColumnName="ASSET_REQ_M_ID"

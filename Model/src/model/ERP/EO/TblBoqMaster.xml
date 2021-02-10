@@ -116,6 +116,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_BOQ_MASTER"/>
+  <Attribute
+    Name="ProjectId"
+    ColumnName="PROJECT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_BOQ_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblBoqMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblBoqDetail"
     Association="model.ERP.EO.FkBoqDetailMasterAssoc"

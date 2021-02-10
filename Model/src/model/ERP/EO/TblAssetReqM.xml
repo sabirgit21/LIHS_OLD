@@ -67,7 +67,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_ASSET_REQ_M"/>
+    TableName="TBL_ASSET_REQ_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblAssetReqMRow"/>
+  </Attribute>
   <Attribute
     Name="Narration"
     Precision="300"
