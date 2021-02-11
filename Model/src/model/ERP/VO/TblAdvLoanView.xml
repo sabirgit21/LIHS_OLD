@@ -49,7 +49,15 @@
   <ViewAccessor
     Name="Employee_Name_LOV1"
     ViewObjectName="model.LOV.Employee_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getProID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[ProjectId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="Payment_Type_LOV1"
     ViewObjectName="model.LOV.Payment_Type_LOV"

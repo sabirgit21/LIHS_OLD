@@ -22,56 +22,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblAdvLoanView1Iterator" id="Id">
-      <AttrNames>
-        <Item Value="Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblAdvLoanView1Iterator" id="Dated">
-      <AttrNames>
-        <Item Value="Dated"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblAdvLoanView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblAdvLoanView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblAdvLoanView1Iterator" id="Narration">
-      <AttrNames>
-        <Item Value="Narration"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblAdvLoanView1Iterator" StaticList="false" Uses="LOV_EmpId" id="EmpId" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblAdvLoanView1Iterator" StaticList="false" Uses="LOV_PaymentType" id="PaymentType"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblAdvLoanView1Iterator" id="Amount">
-      <AttrNames>
-        <Item Value="Amount"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblAdvLoanView1Iterator" id="PeriodDed">
-      <AttrNames>
-        <Item Value="PeriodDed"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblAdvLoanView1Iterator" id="Vno">
-      <AttrNames>
-        <Item Value="Vno"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblAdvLoanView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblAdvLoanView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblAdvLoanView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblAdvLoanView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblAdvLoanView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <action IterBinding="TblAdvLoanView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblAdvLoanView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblAdvLoanView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <tree IterBinding="TblAdvLoanView1Iterator" id="TblAdvLoanView1">
       <nodeDefinition DefName="model.ERP.VO.TblAdvLoanView" Name="TblAdvLoanView10">
         <AttrNames>
@@ -89,5 +39,11 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="TblAdvLoanView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblAdvLoanView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblAdvLoanView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
   </bindings>
 </pageDefinition>

@@ -24,12 +24,7 @@
   <Variable
     Name="getProID"
     Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      trustMode="trusted"
-      CodeSourceName="Employee_Name_LOV"/>
-  </Variable>
+    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblEmp"
     Entity="model.ERP.EO.TblEmp"/>
