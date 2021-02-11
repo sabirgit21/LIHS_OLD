@@ -23,7 +23,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <!--<af:showDetailItem id="tab1" text="Donation Cash Receipt">
+              <af:showDetailItem id="tab1" text="Donation Cash Receipt">
                 <af:panelGridLayout id="pgl2">
                   <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
@@ -75,7 +75,7 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s6"/>
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
-                                                label="Project" autoSubmit="true"
+                                                label="Project"
                                                 required="#{bindings.ProjectId.hints.mandatory}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1" readOnly="${sessionScope.sessPrID != ''}"
                                                 contentStyle="width:150px;">
@@ -188,8 +188,9 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
                   </af:gridRow>
                 </af:panelGridLayout>
-              </af:showDetailItem>-->
-              <af:showDetailItem text="Donation Cash Receipt" id="sdi1">
+              </af:showDetailItem>
+
+              <af:showDetailItem  id="sdi1" text="Search">
                 <af:table value="#{bindings.TblDonCrView1.collectionModel}" var="row"
                           rows="#{bindings.TblDonCrView1.rangeSize}"
                           emptyText="#{bindings.TblDonCrView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -212,7 +213,7 @@
                                   label="#{bindings.TblDonCrView1.hints.Dated.label}"
                                   required="#{bindings.TblDonCrView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblDonCrView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblDonCrView1.hints.Dated.tooltip}" id="id7">
+                                  shortDesc="#{bindings.TblDonCrView1.hints.Dated.tooltip}" id="id7" readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblDonCrView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -229,7 +230,7 @@
                                   required="#{bindings.TblDonCrView1.hints.DocNo.mandatory}"
                                   columns="#{bindings.TblDonCrView1.hints.DocNo.displayWidth}"
                                   maximumLength="#{bindings.TblDonCrView1.hints.DocNo.precision}"
-                                  shortDesc="#{bindings.TblDonCrView1.hints.DocNo.tooltip}" id="it7">
+                                  shortDesc="#{bindings.TblDonCrView1.hints.DocNo.tooltip}" id="it7" readOnly="true">
                       <f:validator binding="#{row.bindings.DocNo.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -245,7 +246,7 @@
                                   required="#{bindings.TblDonCrView1.hints.RecIn.mandatory}"
                                   columns="#{bindings.TblDonCrView1.hints.RecIn.displayWidth}"
                                   maximumLength="#{bindings.TblDonCrView1.hints.RecIn.precision}"
-                                  shortDesc="#{bindings.TblDonCrView1.hints.RecIn.tooltip}" id="it8">
+                                  shortDesc="#{bindings.TblDonCrView1.hints.RecIn.tooltip}" id="it8" readOnly="true">
                       <f:validator binding="#{row.bindings.RecIn.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -257,9 +258,10 @@
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}"
-                                        label="#{row.bindings.ProjectId.label}" autoSubmit="true"
+                                        label="#{row.bindings.ProjectId.label}" 
                                         required="#{bindings.TblDonCrView1.hints.ProjectId.mandatory}"
-                                        shortDesc="#{bindings.TblDonCrView1.hints.ProjectId.tooltip}" id="soc5">
+                                        shortDesc="#{bindings.TblDonCrView1.hints.ProjectId.tooltip}" id="soc5"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.ProjectId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.ProjectId.validator}"/>
                     </af:selectOneChoice>
@@ -274,13 +276,14 @@
                     <af:selectOneChoice value="#{row.bindings.CashBankId.inputValue}"
                                         label="#{row.bindings.CashBankId.label}"
                                         required="#{bindings.TblDonCrView1.hints.CashBankId.mandatory}"
-                                        shortDesc="#{bindings.TblDonCrView1.hints.CashBankId.tooltip}" id="soc6">
+                                        shortDesc="#{bindings.TblDonCrView1.hints.CashBankId.tooltip}" id="soc6"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.CashBankId.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.CashBankId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblDonCrView1.hints.DonSetupId.name}" filterable="true"
-                             sortable="true" headerText="Donor" id="c7">
+                             sortable="true"  id="c7" headerText="Donor">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.DonSetupId}"
        id="it15" placeholder="Search ">
@@ -289,7 +292,8 @@
                     <af:selectOneChoice value="#{row.bindings.DonSetupId.inputValue}"
                                         label="#{row.bindings.DonSetupId.label}"
                                         required="#{bindings.TblDonCrView1.hints.DonSetupId.mandatory}"
-                                        shortDesc="#{bindings.TblDonCrView1.hints.DonSetupId.tooltip}" id="soc7">
+                                        shortDesc="#{bindings.TblDonCrView1.hints.DonSetupId.tooltip}" id="soc7"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.DonSetupId.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.DonSetupId.validator}"/>
                     </af:selectOneChoice>
@@ -304,7 +308,8 @@
                     <af:selectOneChoice value="#{row.bindings.DonTypeId.inputValue}"
                                         label="#{row.bindings.DonTypeId.label}"
                                         required="#{bindings.TblDonCrView1.hints.DonTypeId.mandatory}"
-                                        shortDesc="#{bindings.TblDonCrView1.hints.DonTypeId.tooltip}" id="soc8">
+                                        shortDesc="#{bindings.TblDonCrView1.hints.DonTypeId.tooltip}" id="soc8"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.DonTypeId.items}" id="si8"/>
                       <f:validator binding="#{row.bindings.DonTypeId.validator}"/>
                     </af:selectOneChoice>
@@ -321,7 +326,7 @@
                                   label="#{bindings.TblDonCrView1.hints.ChqDate.label}"
                                   required="#{bindings.TblDonCrView1.hints.ChqDate.mandatory}"
                                   columns="#{bindings.TblDonCrView1.hints.ChqDate.displayWidth}"
-                                  shortDesc="#{bindings.TblDonCrView1.hints.ChqDate.tooltip}" id="id6">
+                                  shortDesc="#{bindings.TblDonCrView1.hints.ChqDate.tooltip}" id="id6" readOnly="true">
                       <f:validator binding="#{row.bindings.ChqDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblDonCrView1.hints.ChqDate.format}"/>
                     </af:inputDate>
@@ -338,7 +343,7 @@
                                   required="#{bindings.TblDonCrView1.hints.Amount.mandatory}"
                                   columns="#{bindings.TblDonCrView1.hints.Amount.displayWidth}"
                                   maximumLength="#{bindings.TblDonCrView1.hints.Amount.precision}"
-                                  shortDesc="#{bindings.TblDonCrView1.hints.Amount.tooltip}" id="it9">
+                                  shortDesc="#{bindings.TblDonCrView1.hints.Amount.tooltip}" id="it9" readOnly="true">
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblDonCrView1.hints.Amount.format}"/>
                     </af:inputText>
@@ -355,7 +360,8 @@
                                   required="#{bindings.TblDonCrView1.hints.Narration.mandatory}"
                                   columns="#{bindings.TblDonCrView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblDonCrView1.hints.Narration.precision}"
-                                  shortDesc="#{bindings.TblDonCrView1.hints.Narration.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblDonCrView1.hints.Narration.tooltip}" id="it10"
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -379,17 +385,7 @@
                   
                   
                 </af:table>
-             <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
-                            <af:iterator id="i2" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
-                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s3"/>
-                            </af:iterator>
-                        </af:panelGroupLayout>
+             
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>

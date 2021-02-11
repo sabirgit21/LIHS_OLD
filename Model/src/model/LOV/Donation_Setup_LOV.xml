@@ -13,18 +13,13 @@
        TblDonSetup.DATED, 
        TblDonSetup.NAME, 
        TblDonSetup.PROJECT_ID"
-  FromList="TBL_DON_SETUP TblDonSetup"
-  Where="TblDonSetup.PROJECT_ID = :getProID">
+  FromList="TBL_DON_SETUP TblDonSetup">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.LOV.Donation_Setup_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <Variable
-    Name="getProID"
-    Kind="where"
-    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblDonSetup"
     Entity="model.ERP.EO.TblDonSetup"/>
