@@ -14,7 +14,7 @@
        TblEmp.FAT_NAME, 
        TblEmp.PROJECT_ID"
   FromList="TBL_EMP TblEmp"
-  Where="TblEmp.PROJECT_ID = :getProID">
+  Where="TblEmp.PROJECT_ID = nvl(:getProID,TblEmp.PROJECT_ID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

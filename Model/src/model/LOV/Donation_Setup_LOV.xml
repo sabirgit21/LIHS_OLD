@@ -24,12 +24,7 @@
   <Variable
     Name="getProID"
     Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      trustMode="trusted"
-      CodeSourceName="Donation_Setup_LOV"/>
-  </Variable>
+    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblDonSetup"
     Entity="model.ERP.EO.TblDonSetup"/>

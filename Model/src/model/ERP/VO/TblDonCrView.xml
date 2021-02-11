@@ -43,7 +43,15 @@
   <ViewAccessor
     Name="Donation_Setup_LOV1"
     ViewObjectName="model.LOV.Donation_Setup_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getProID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[ProjectId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="Donation_Type_LOV1"
     ViewObjectName="model.LOV.Donation_Type_LOV"

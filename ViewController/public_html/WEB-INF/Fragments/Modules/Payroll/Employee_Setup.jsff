@@ -62,37 +62,6 @@
                                                   pattern="#{bindings.TblEmpView1.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblEmpView1.hints.Vno.name}" filterable="true"
-                                       sortable="true" headerText="Vocher No." id="c2">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Vno}"
-       id="it14" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.Vno.inputValue}"
-                                            label="#{bindings.TblEmpView1.hints.Vno.label}"
-                                            required="#{bindings.TblEmpView1.hints.Vno.mandatory}"
-                                            columns="#{bindings.TblEmpView1.hints.Vno.displayWidth}"
-                                            maximumLength="#{bindings.TblEmpView1.hints.Vno.precision}"
-                                            shortDesc="#{bindings.TblEmpView1.hints.Vno.tooltip}" id="it2" readOnly="true">
-                                <f:validator binding="#{row.bindings.Vno.validator}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblEmpView1.hints.Vtp.name}" filterable="true"
-                                       sortable="true" headerText="Vocher Type" id="c3">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Vtp}"
-       id="it15" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}"
-                                                  label="#{row.bindings.Vtp.label}"
-                                                  required="#{bindings.TblEmpView1.hints.Vtp.mandatory}"
-                                                  shortDesc="#{bindings.TblEmpView1.hints.Vtp.tooltip}" id="soc1" readOnly="true">
-                                <f:selectItems value="#{row.bindings.Vtp.items}" id="si1"/>
-                                <f:validator binding="#{row.bindings.Vtp.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
                             <af:column sortProperty="#{bindings.TblEmpView1.hints.Dated.name}" filterable="true"
                                        sortable="true" headerText="Date" id="c4" width="105">
                               <f:facet name="filter">
