@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Income_TaxPageDef"
+                Package="Fragments.Modules.Payroll">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblIncTaxMView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblIncTaxMView1Iterator"/>
+    <iterator Binds="TblIncTaxDView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblIncTaxDView2Iterator"/>
+    <searchRegion Binds="TblIncTaxDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIncTaxDView2Query"/>
+    <searchRegion Binds="TblIncTaxMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIncTaxMView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblIncTaxMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIncTaxMView1Iterator" id="Vdate">
+      <AttrNames>
+        <Item Value="Vdate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblIncTaxMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblIncTaxMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIncTaxMView1Iterator" id="Fdate">
+      <AttrNames>
+        <Item Value="Fdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIncTaxMView1Iterator" id="Tdate">
+      <AttrNames>
+        <Item Value="Tdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIncTaxMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblIncTaxMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblIncTaxMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblIncTaxMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblIncTaxMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblIncTaxMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblIncTaxMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblIncTaxMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblIncTaxMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblIncTaxDView2Iterator" id="TblIncTaxDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblIncTaxDView" Name="TblIncTaxDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="FrAmount"/>
+          <Item Value="ToAmount"/>
+          <Item Value="SlabRate"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblIncTaxDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblIncTaxDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblIncTaxDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblIncTaxMView1Iterator" id="TblIncTaxMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblIncTaxMView" Name="TblIncTaxMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="Vdate"/>
+          <Item Value="ProjectId"/>
+          <Item Value="Fdate"/>
+          <Item Value="Tdate"/>
+          <Item Value="Narration"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

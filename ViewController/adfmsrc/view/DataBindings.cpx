@@ -242,6 +242,7 @@
     <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Requisition.jsff"
           usageId="view_Assets_RequisitionPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Purchase.jsff" usageId="view_Assets_PurchasePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Income_Tax.jsff" usageId="view_Income_TaxPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -467,6 +468,7 @@
     <page id="view_Assets_OrderPageDef" path="Fragments.Modules.Fixed_Assets.Assets_OrderPageDef"/>
     <page id="view_Assets_RequisitionPageDef" path="Fragments.Modules.Fixed_Assets.Assets_RequisitionPageDef"/>
     <page id="view_Assets_PurchasePageDef" path="Fragments.Modules.Fixed_Assets.Assets_PurchasePageDef"/>
+    <page id="view_Income_TaxPageDef" path="Fragments.Modules.Payroll.Income_TaxPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
