@@ -33,7 +33,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblAdvLoanView1.rangeSize}"
                           filterModel="#{bindings.TblAdvLoanView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblAdvLoanView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4">
+                          >
                   <af:column sortProperty="#{bindings.TblAdvLoanView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="#{bindings.TblAdvLoanView1.hints.Id.label}" id="c1">
                     <af:inputText value="#{row.bindings.Id.inputValue}"
