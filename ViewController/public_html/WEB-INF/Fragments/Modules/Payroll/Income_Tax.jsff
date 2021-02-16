@@ -30,61 +30,76 @@
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Income Tax Master">
                           <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
-                            <af:inputText value="#{bindings.Id.inputValue}" label="ID"
+                            <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
                                           maximumLength="#{bindings.Id.hints.precision}"
-                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
+                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1" disabled="true">
                               <f:validator binding="#{bindings.Id.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                             </af:inputText>
                             <af:inputDate value="#{bindings.Vdate.inputValue}" label="Date"
                                           required="#{bindings.Vdate.hints.mandatory}"
                                           columns="#{bindings.Vdate.hints.displayWidth}"
-                                          shortDesc="#{bindings.Vdate.hints.tooltip}" id="id1">
+                                          shortDesc="#{bindings.Vdate.hints.tooltip}" id="id1"
+                                          contentStyle="width:140px;">
                               <f:validator binding="#{bindings.Vdate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.Vdate.format}"/>
                             </af:inputDate>
+                            <af:spacer  id="s6"/>
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project"
                                                 required="#{bindings.ProjectId.hints.mandatory}"
-                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1">
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1" disabled="true"
+                                                contentStyle="width:140px;">
                               <f:selectItems value="#{bindings.ProjectId.items}" id="si1"/>
                               <f:validator binding="#{bindings.ProjectId.validator}"/>
                             </af:selectOneChoice>
+                            <af:spacer  id="s7"/>
                             <af:inputText value="#{bindings.Narration.inputValue}"
                                           label="Remarks"
                                           required="#{bindings.Narration.hints.mandatory}"
-                                          columns="#{bindings.Narration.hints.displayWidth}"
+                                          columns="20"
                                           maximumLength="#{bindings.Narration.hints.precision}"
-                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it2">
+                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it2"
+                                          contentStyle="width:140px;" rows="10">
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
+                            
                             <af:inputDate value="#{bindings.Fdate.inputValue}" label="From Date"
                                           required="#{bindings.Fdate.hints.mandatory}"
                                           columns="#{bindings.Fdate.hints.displayWidth}"
-                                          shortDesc="#{bindings.Fdate.hints.tooltip}" id="id2">
+                                          shortDesc="#{bindings.Fdate.hints.tooltip}" id="id2"
+                                          contentStyle="width:140px;">
                               <f:validator binding="#{bindings.Fdate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.Fdate.format}"/>
                             </af:inputDate>
+                            <af:spacer  id="s10"/>
                             <af:inputDate value="#{bindings.Tdate.inputValue}" label="From Date"
                                           required="#{bindings.Tdate.hints.mandatory}"
                                           columns="#{bindings.Tdate.hints.displayWidth}"
-                                          shortDesc="#{bindings.Tdate.hints.tooltip}" id="id3">
+                                          shortDesc="#{bindings.Tdate.hints.tooltip}" id="id3"
+                                          contentStyle="width:140px;">
                               <f:validator binding="#{bindings.Tdate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.Tdate.format}"/>
                             </af:inputDate>
+                            <af:spacer  id="s11"/>
+                            <af:spacer  id="s13"/>
+                            <af:spacer  id="s14"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No"
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="#{bindings.Vno.hints.displayWidth}"
                                           maximumLength="#{bindings.Vno.hints.precision}"
-                                          shortDesc="#{bindings.Vno.hints.tooltip}" id="it3">
+                                          shortDesc="#{bindings.Vno.hints.tooltip}" id="it3" disabled="true"
+                                          contentStyle="width:140px;">
                               <f:validator binding="#{bindings.Vno.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.Vno.format}"/>
                             </af:inputText>
+                            <af:spacer  id="s12"/>
                             <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
                                                 required="#{bindings.Vtp.hints.mandatory}"
-                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc2">
+                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc2" disabled="true"
+                                                contentStyle="width:140px;">
                               <f:selectItems value="#{bindings.Vtp.items}" id="si2"/>
                               <f:validator binding="#{bindings.Vtp.validator}"/>
                             </af:selectOneChoice>
@@ -137,13 +152,13 @@
                                     queryListener="#{bindings.TblIncTaxDView2Query.processQuery}" varStatus="vs"
                                     id="t1" scrollPolicy="page" autoHeightRows="0">
                             <af:column sortProperty="#{bindings.TblIncTaxDView2.hints.Id.name}" filterable="true"
-                                       sortable="true" headerText="ID" id="c1">
+                                       sortable="true" headerText="ID" id="c1" visible="false">
                               <af:inputText value="#{row.bindings.Id.inputValue}"
                                             label="#{bindings.TblIncTaxDView2.hints.Id.label}"
                                             required="#{bindings.TblIncTaxDView2.hints.Id.mandatory}"
                                             columns="#{bindings.TblIncTaxDView2.hints.Id.displayWidth}"
                                             maximumLength="#{bindings.TblIncTaxDView2.hints.Id.precision}"
-                                            shortDesc="#{bindings.TblIncTaxDView2.hints.Id.tooltip}" id="it4">
+                                            shortDesc="#{bindings.TblIncTaxDView2.hints.Id.tooltip}" id="it4" readOnly="true">
                                 <f:validator binding="#{row.bindings.Id.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblIncTaxDView2.hints.Id.format}"/>
@@ -152,6 +167,11 @@
                             <af:column sortProperty="#{bindings.TblIncTaxDView2.hints.FrAmount.name}" filterable="true"
                                        sortable="true" headerText="From Amount"
                                        id="c2">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FrAmount}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                               <af:inputText value="#{row.bindings.FrAmount.inputValue}"
                                             label="#{bindings.TblIncTaxDView2.hints.FrAmount.label}"
                                             required="#{bindings.TblIncTaxDView2.hints.FrAmount.mandatory}"
@@ -166,6 +186,11 @@
                             <af:column sortProperty="#{bindings.TblIncTaxDView2.hints.ToAmount.name}" filterable="true"
                                        sortable="true" headerText="To Amount"
                                        id="c3">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ToAmount}"
+       id="it12" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                               <af:inputText value="#{row.bindings.ToAmount.inputValue}"
                                             label="#{bindings.TblIncTaxDView2.hints.ToAmount.label}"
                                             required="#{bindings.TblIncTaxDView2.hints.ToAmount.mandatory}"
@@ -180,6 +205,11 @@
                             <af:column sortProperty="#{bindings.TblIncTaxDView2.hints.SlabRate.name}" filterable="true"
                                        sortable="true" headerText="Slab Rate"
                                        id="c4">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SlabRate}"
+       id="it13" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                               <af:inputText value="#{row.bindings.SlabRate.inputValue}"
                                             label="#{bindings.TblIncTaxDView2.hints.SlabRate.label}"
                                             required="#{bindings.TblIncTaxDView2.hints.SlabRate.mandatory}"
@@ -194,6 +224,11 @@
                             <af:column sortProperty="#{bindings.TblIncTaxDView2.hints.Amount.name}" filterable="true"
                                        sortable="true" headerText="Amount"
                                        id="c5">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it14" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                               <af:inputText value="#{row.bindings.Amount.inputValue}"
                                             label="#{bindings.TblIncTaxDView2.hints.Amount.label}"
                                             required="#{bindings.TblIncTaxDView2.hints.Amount.mandatory}"
@@ -240,43 +275,53 @@
                           queryListener="#{bindings.TblIncTaxMView1Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblIncTaxMView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblIncTaxMView1.hints.Id.label}" id="c6">
+                             headerText="#{bindings.TblIncTaxMView1.hints.Id.label}" id="c6" visible="false">
                     <af:inputText value="#{row.bindings.Id.inputValue}"
                                   label="#{bindings.TblIncTaxMView1.hints.Id.label}"
                                   required="#{bindings.TblIncTaxMView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblIncTaxMView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblIncTaxMView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Id.tooltip}" id="it9">
+                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Id.tooltip}" id="it9" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblIncTaxMView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIncTaxMView1.hints.Vno.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblIncTaxMView1.hints.Vno.label}" id="c7">
+                             headerText="Voucher No." id="c7">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vno}"
+       id="it15" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Vno.inputValue}"
                                   label="#{bindings.TblIncTaxMView1.hints.Vno.label}"
                                   required="#{bindings.TblIncTaxMView1.hints.Vno.mandatory}"
                                   columns="#{bindings.TblIncTaxMView1.hints.Vno.displayWidth}"
                                   maximumLength="#{bindings.TblIncTaxMView1.hints.Vno.precision}"
-                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Vno.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Vno.tooltip}" id="it10" readOnly="true">
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblIncTaxMView1.hints.Vno.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIncTaxMView1.hints.Vtp.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblIncTaxMView1.hints.Vtp.label}" id="c8">
+                             headerText="Voucher Type" id="c8">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it16" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
                                         required="#{bindings.TblIncTaxMView1.hints.Vtp.mandatory}"
-                                        shortDesc="#{bindings.TblIncTaxMView1.hints.Vtp.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblIncTaxMView1.hints.Vtp.tooltip}" id="soc3" readOnly="true">
                       <f:selectItems value="#{row.bindings.Vtp.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Vtp.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIncTaxMView1.hints.Vdate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblIncTaxMView1.hints.Vdate.label}" id="c9">
+                             sortable="true" headerText="Date" id="c9">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblIncTaxMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Vdate.value}"
-                                    id="id4">
+                                    id="id10" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblIncTaxMView1.hints.Vdate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -284,26 +329,31 @@
                                   label="#{bindings.TblIncTaxMView1.hints.Vdate.label}"
                                   required="#{bindings.TblIncTaxMView1.hints.Vdate.mandatory}"
                                   columns="#{bindings.TblIncTaxMView1.hints.Vdate.displayWidth}"
-                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Vdate.tooltip}" id="id5">
+                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Vdate.tooltip}" id="id5" readOnly="true">
                       <f:validator binding="#{row.bindings.Vdate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblIncTaxMView1.hints.Vdate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIncTaxMView1.hints.ProjectId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblIncTaxMView1.hints.ProjectId.label}" id="c10">
+                             sortable="true" headerText="Project" id="c10" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ProjectId}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}"
                                         label="#{row.bindings.ProjectId.label}"
                                         required="#{bindings.TblIncTaxMView1.hints.ProjectId.mandatory}"
-                                        shortDesc="#{bindings.TblIncTaxMView1.hints.ProjectId.tooltip}" id="soc4">
+                                        shortDesc="#{bindings.TblIncTaxMView1.hints.ProjectId.tooltip}" id="soc4" readOnly="true">
                       <f:selectItems value="#{row.bindings.ProjectId.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.ProjectId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIncTaxMView1.hints.Fdate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblIncTaxMView1.hints.Fdate.label}" id="c11">
+                             sortable="true" headerText="From Date" id="c11">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblIncTaxMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Fdate.value}"
-                                    id="id6">
+                                    id="id6" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblIncTaxMView1.hints.Fdate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -311,16 +361,16 @@
                                   label="#{bindings.TblIncTaxMView1.hints.Fdate.label}"
                                   required="#{bindings.TblIncTaxMView1.hints.Fdate.mandatory}"
                                   columns="#{bindings.TblIncTaxMView1.hints.Fdate.displayWidth}"
-                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Fdate.tooltip}" id="id7">
+                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Fdate.tooltip}" id="id7" readOnly="true">
                       <f:validator binding="#{row.bindings.Fdate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblIncTaxMView1.hints.Fdate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIncTaxMView1.hints.Tdate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblIncTaxMView1.hints.Tdate.label}" id="c12">
+                             sortable="true" headerText="To Date" id="c12">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblIncTaxMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Tdate.value}"
-                                    id="id8">
+                                    id="id8" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblIncTaxMView1.hints.Tdate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -328,19 +378,24 @@
                                   label="#{bindings.TblIncTaxMView1.hints.Tdate.label}"
                                   required="#{bindings.TblIncTaxMView1.hints.Tdate.mandatory}"
                                   columns="#{bindings.TblIncTaxMView1.hints.Tdate.displayWidth}"
-                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Tdate.tooltip}" id="id9">
+                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Tdate.tooltip}" id="id9" readOnly="true">
                       <f:validator binding="#{row.bindings.Tdate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblIncTaxMView1.hints.Tdate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIncTaxMView1.hints.Narration.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblIncTaxMView1.hints.Narration.label}" id="c13">
+                             sortable="true" headerText="Remarks" id="c13" width="300">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Narration}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Narration.inputValue}"
                                   label="#{bindings.TblIncTaxMView1.hints.Narration.label}"
                                   required="#{bindings.TblIncTaxMView1.hints.Narration.mandatory}"
                                   columns="#{bindings.TblIncTaxMView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblIncTaxMView1.hints.Narration.precision}"
-                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Narration.tooltip}" id="it11">
+                                  shortDesc="#{bindings.TblIncTaxMView1.hints.Narration.tooltip}" id="it11" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>
