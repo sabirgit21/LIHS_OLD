@@ -36,6 +36,7 @@ public class TblSalaryMImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        MonthDays,
         TblSalaryD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -59,6 +60,7 @@ public class TblSalaryMImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int VNO = AttributesEnum.Vno.index();
     public static final int VTP = AttributesEnum.Vtp.index();
@@ -72,12 +74,20 @@ public class TblSalaryMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int MONTHDAYS = AttributesEnum.MonthDays.index();
     public static final int TBLSALARYD = AttributesEnum.TblSalaryD.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblSalaryMImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblSalaryM");
     }
 
     /**
@@ -273,11 +283,28 @@ public class TblSalaryMImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for MonthDays, using the alias name MonthDays.
+     * @return the value of MonthDays
+     */
+    public BigDecimal getMonthDays() {
+        return (BigDecimal) getAttributeInternal(MONTHDAYS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MonthDays.
+     * @param value value to set the MonthDays
+     */
+    public void setMonthDays(BigDecimal value) {
+        setAttributeInternal(MONTHDAYS, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblSalaryD() {
         return (RowIterator) getAttributeInternal(TBLSALARYD);
     }
+
 
     /**
      * @param id key constituent
@@ -286,13 +313,6 @@ public class TblSalaryMImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblSalaryM");
     }
 
     /**

@@ -21,7 +21,8 @@
        TblSalaryM.CREATED_DATE, 
        TblSalaryM.CREATED_BY, 
        TblSalaryM.UPDATED_DATE, 
-       TblSalaryM.UPDATED_BY"
+       TblSalaryM.UPDATED_BY, 
+       TblSalaryM.MONTH_DAYS"
   FromList="TBL_SALARY_M TblSalaryM"
   Where="TblSalaryM.PROJECT_ID = nvl(:getProID,TblSalaryM.PROJECT_ID)">
   <Variable
@@ -43,6 +44,14 @@
   <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Month_Name_LOV1"
+    ViewObjectName="model.LOV.Month_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Year_List_LOV1"
+    ViewObjectName="model.LOV.Year_List_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -95,6 +104,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SalMonth"
+    ListVOName="Month_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SalMonth"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SalYear"
+    ListVOName="Year_List_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SalYear"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -173,13 +218,29 @@
     PrecisionRule="true"
     EntityAttrName="SalMonth"
     EntityUsage="TblSalaryM"
-    AliasName="SAL_MONTH"/>
+    AliasName="SAL_MONTH"
+    LOVName="LOV_SalMonth">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SalYear"
     PrecisionRule="true"
     EntityAttrName="SalYear"
     EntityUsage="TblSalaryM"
-    AliasName="SAL_YEAR"/>
+    AliasName="SAL_YEAR"
+    LOVName="LOV_SalYear">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
@@ -206,6 +267,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblSalaryM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="MonthDays"
+    PrecisionRule="true"
+    EntityAttrName="MonthDays"
+    EntityUsage="TblSalaryM"
+    AliasName="MONTH_DAYS"/>
   <ViewLinkAccessor
     Name="TblSalaryDView"
     ViewLink="model.ERP.VO.FkSalaryDMLink"

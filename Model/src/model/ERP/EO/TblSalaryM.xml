@@ -152,6 +152,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SALARY_M"/>
+  <Attribute
+    Name="MonthDays"
+    ColumnName="MONTH_DAYS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALARY_M"/>
   <AccessorAttribute
     Name="TblSalaryD"
     Association="model.ERP.EO.FkSalaryDMAssoc"

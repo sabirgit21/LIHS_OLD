@@ -115,5 +115,14 @@
             Action="createInsertRow"/>
     <action IterBinding="TblSalaryDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblSalaryDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="TblSalaryMView1Iterator" StaticList="false" Uses="LOV_SalMonth" id="SalMonth1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSalaryMView1Iterator" StaticList="false" Uses="LOV_SalYear" id="SalYear1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSalaryMView1Iterator" id="MonthDays">
+      <AttrNames>
+        <Item Value="MonthDays"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
