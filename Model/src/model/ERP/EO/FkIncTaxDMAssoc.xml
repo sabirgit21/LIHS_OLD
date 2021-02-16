@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkIncTaxDMAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblIncTaxM"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblIncTaxM">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblIncTaxM"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblIncTaxM.PkIncTaxMId"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblIncTaxM.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblIncTaxD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblIncTaxD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblIncTaxD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblIncTaxD.FkIncTaxDM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblIncTaxD.IncTaxMId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

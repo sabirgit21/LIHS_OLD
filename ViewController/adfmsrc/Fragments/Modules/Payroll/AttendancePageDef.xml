@@ -80,6 +80,7 @@
           <Item Value="EmpId"/>
           <Item Value="AttType"/>
           <Item Value="Description"/>
+          <Item Value="LeaveMId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

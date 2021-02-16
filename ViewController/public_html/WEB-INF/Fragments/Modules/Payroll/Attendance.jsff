@@ -69,14 +69,7 @@
                               <f:validator binding="#{bindings.ProjectId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s8"/>
-                            <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
-                                                label="Department"
-                                                required="#{bindings.DepartmentId.hints.mandatory}"
-                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc3"
-                                                contentStyle="width:150px;">
-                              <f:selectItems value="#{bindings.DepartmentId.items}" id="si3"/>
-                              <f:validator binding="#{bindings.DepartmentId.validator}"/>
-                            </af:selectOneChoice>
+                            <af:spacer  id="s832"/>
                             <af:spacer  id="s10"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
@@ -186,6 +179,15 @@
                                                   shortDesc="#{bindings.TblAttDView2.hints.AttType.tooltip}" id="soc8">
                                 <f:selectItems value="#{row.bindings.AttType.items}" id="si8"/>
                                 <f:validator binding="#{row.bindings.AttType.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Leave Type" id="c1">
+                              <af:selectOneChoice value="#{row.bindings.LeaveMId.inputValue}"
+                                                  label="#{row.bindings.LeaveMId.label}"
+                                                  required="#{bindings.TblAttDView2.hints.LeaveMId.mandatory}"
+                                                  shortDesc="#{bindings.TblAttDView2.hints.LeaveMId.tooltip}" id="soc3">
+                                <f:selectItems value="#{row.bindings.LeaveMId.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.LeaveMId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblAttDView2.hints.Description.name}" filterable="true"

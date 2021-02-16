@@ -577,6 +577,15 @@
   <ViewUsage
     Name="TblAssetL4View3"
     ViewObjectName="model.ERP.VO.TblAssetL4View"/>
+  <ViewUsage
+    Name="TblIncTaxDView1"
+    ViewObjectName="model.ERP.VO.TblIncTaxDView"/>
+  <ViewUsage
+    Name="TblIncTaxMView1"
+    ViewObjectName="model.ERP.VO.TblIncTaxMView"/>
+  <ViewUsage
+    Name="TblIncTaxDView2"
+    ViewObjectName="model.ERP.VO.TblIncTaxDView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1098,5 +1107,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblAssetL4FkLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssetL3View3"
     DstViewUsageName="model.ERP.AppModule.TblAssetL4View3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkIncTaxDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkIncTaxDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblIncTaxMView1"
+    DstViewUsageName="model.ERP.AppModule.TblIncTaxDView2"
     Reversed="false"/>
 </AppModule>

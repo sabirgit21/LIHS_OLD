@@ -31,6 +31,7 @@ public class TblAttDImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        LeaveMId,
         TblAttM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -65,6 +66,7 @@ public class TblAttDImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int LEAVEMID = AttributesEnum.LeaveMId.index();
     public static final int TBLATTM = AttributesEnum.TblAttM.index();
 
     /**
@@ -210,16 +212,32 @@ public class TblAttDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for LeaveMId, using the alias name LeaveMId.
+     * @return the value of LeaveMId
+     */
+    public BigDecimal getLeaveMId() {
+        return (BigDecimal) getAttributeInternal(LEAVEMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LeaveMId.
+     * @param value value to set the LeaveMId
+     */
+    public void setLeaveMId(BigDecimal value) {
+        setAttributeInternal(LEAVEMID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblAttM() {
-        return (EntityImpl) getAttributeInternal(TBLATTM);
+    public TblAttMImpl getTblAttM() {
+        return (TblAttMImpl) getAttributeInternal(TBLATTM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblAttM(EntityImpl value) {
+    public void setTblAttM(TblAttMImpl value) {
         setAttributeInternal(TBLATTM, value);
     }
 
