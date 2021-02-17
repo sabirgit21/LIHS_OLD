@@ -97,15 +97,12 @@
                               <f:validator binding="#{bindings.ToProjectId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s4"/>
-                            <af:inputText value="#{bindings.ItnNo.inputValue}" label="ITN No."
-                                          required="#{bindings.ItnNo.hints.mandatory}"
-                                          columns="#{bindings.ItnNo.hints.displayWidth}"
-                                          maximumLength="#{bindings.ItnNo.hints.precision}"
-                                          shortDesc="#{bindings.ItnNo.hints.tooltip}" id="it23" readOnly="true"
-                                          contentStyle="width:150px;">
+                            <af:selectOneChoice value="#{bindings.ItnNo.inputValue}" label="ITN No."
+                                                required="#{bindings.ItnNo.hints.mandatory}"
+                                                shortDesc="#{bindings.ItnNo.hints.tooltip}" id="soc12" contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.ItnNo.items}" id="si12"/>
                               <f:validator binding="#{bindings.ItnNo.validator}"/>
-                              <af:convertNumber groupingUsed="false" pattern="#{bindings.ItnNo.format}"/>
-                            </af:inputText>
+                            </af:selectOneChoice>
                             <af:spacer  id="s17"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"

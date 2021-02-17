@@ -97,10 +97,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="Tbl_ITN_R_M1Iterator" id="ItnNo">
-      <AttrNames>
-        <Item Value="ItnNo"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="Tbl_ITN_R_M1Iterator" StaticList="false" Uses="LOV_ItnNo" id="ItnNo" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
