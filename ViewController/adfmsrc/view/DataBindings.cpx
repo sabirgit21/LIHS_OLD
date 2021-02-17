@@ -245,6 +245,8 @@
     <page path="/WEB-INF/Fragments/Modules/Payroll/Income_Tax.jsff" usageId="view_Income_TaxPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Inventory/Inter_Transfer_Receipt_TaskFlow.xml#Inter_Transfer_Receipt_TaskFlow@ExecuteWithParams"
           usageId="view_Inter_Transfer_Receipt_TaskFlow_Inter_Transfer_Receipt_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Inter_Transfer_Receipt.jsff"
+          usageId="view_Inter_Transfer_ReceiptPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -473,6 +475,7 @@
     <page id="view_Income_TaxPageDef" path="Fragments.Modules.Payroll.Income_TaxPageDef"/>
     <page id="view_Inter_Transfer_Receipt_TaskFlow_Inter_Transfer_Receipt_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Inventory.Inter_Transfer_Receipt_TaskFlow_Inter_Transfer_Receipt_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Inter_Transfer_ReceiptPageDef" path="Fragments.Modules.Inventory.Inter_Transfer_ReceiptPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
