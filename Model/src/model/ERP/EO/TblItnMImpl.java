@@ -37,6 +37,7 @@ public class TblItnMImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        ItnNo,
         TblItnD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -75,6 +76,7 @@ public class TblItnMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ITNNO = AttributesEnum.ItnNo.index();
     public static final int TBLITND = AttributesEnum.TblItnD.index();
 
     /**
@@ -281,6 +283,22 @@ public class TblItnMImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for ItnNo, using the alias name ItnNo.
+     * @return the value of ItnNo
+     */
+    public BigDecimal getItnNo() {
+        return (BigDecimal) getAttributeInternal(ITNNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItnNo.
+     * @param value value to set the ItnNo
+     */
+    public void setItnNo(BigDecimal value) {
+        setAttributeInternal(ITNNO, value);
     }
 
     /**

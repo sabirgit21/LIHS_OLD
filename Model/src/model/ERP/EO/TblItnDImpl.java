@@ -57,6 +57,7 @@ public class TblItnDImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int ITNMID = AttributesEnum.ItnMId.index();
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
@@ -75,6 +76,13 @@ public class TblItnDImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblItnDImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblItnD");
     }
 
     /**
@@ -256,16 +264,17 @@ public class TblItnDImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblItnM() {
-        return (EntityImpl) getAttributeInternal(TBLITNM);
+    public TblItnMImpl getTblItnM() {
+        return (TblItnMImpl) getAttributeInternal(TBLITNM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblItnM(EntityImpl value) {
+    public void setTblItnM(TblItnMImpl value) {
         setAttributeInternal(TBLITNM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -274,13 +283,6 @@ public class TblItnDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblItnD");
     }
 
     /**

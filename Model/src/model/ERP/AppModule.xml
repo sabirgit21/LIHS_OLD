@@ -586,6 +586,12 @@
   <ViewUsage
     Name="TblIncTaxDView2"
     ViewObjectName="model.ERP.VO.TblIncTaxDView"/>
+  <ViewUsage
+    Name="Tbl_ITN_R_M1"
+    ViewObjectName="model.ERP.VO.Tbl_ITN_R_M"/>
+  <ViewUsage
+    Name="Tbl_ITN_R_D1"
+    ViewObjectName="model.ERP.VO.Tbl_ITN_R_D"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1113,5 +1119,11 @@
     ViewLinkObjectName="model.ERP.VO.FkIncTaxDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblIncTaxMView1"
     DstViewUsageName="model.ERP.AppModule.TblIncTaxDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblITNRFkLink"
+    ViewLinkObjectName="model.ERP.VO.FkTblITNRFkLink"
+    SrcViewUsageName="model.ERP.AppModule.Tbl_ITN_R_M1"
+    DstViewUsageName="model.ERP.AppModule.Tbl_ITN_R_D1"
     Reversed="false"/>
 </AppModule>

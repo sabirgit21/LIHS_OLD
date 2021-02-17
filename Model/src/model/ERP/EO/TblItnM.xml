@@ -86,7 +86,6 @@
     TableName="TBL_ITN_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblItnMRow"/>
   </Attribute>
   <Attribute
@@ -132,6 +131,13 @@
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_ITN_M"/>
+  <Attribute
+    Name="ItnNo"
+    ColumnName="ITN_NO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ITN_M"/>
   <AccessorAttribute
