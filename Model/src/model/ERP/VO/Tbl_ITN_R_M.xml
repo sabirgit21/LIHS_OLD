@@ -24,7 +24,8 @@
        TblItnM.VTP, 
        TblItnM.ITN_NO"
   FromList="TBL_ITN_M TblItnM"
-  Where="TblItnM.FROM_PROJECT_ID= nvl(:getProId,TblItnM.FROM_PROJECT_ID)">
+  Where="TblItnM.FROM_PROJECT_ID= nvl(:getProId,TblItnM.FROM_PROJECT_ID)  
+and TblItnM.ITN_NO is not null">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -156,7 +157,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Vno"/>
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Vno"/>
