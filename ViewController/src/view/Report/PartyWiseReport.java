@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,13 +31,13 @@ public class PartyWiseReport {
     }
     private static String selectedReportType = "";
     private static String gotFormat = "";
-    private static Number  gotPblSuppId;
+    private static BigDecimal  gotPblSuppId;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
-        gotPblSuppId = (Number)this.getPblSuppIdParam().getValue();
+        gotPblSuppId = (BigDecimal)this.getPblSuppIdParam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);

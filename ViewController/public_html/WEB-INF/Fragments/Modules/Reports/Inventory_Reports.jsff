@@ -72,7 +72,7 @@
                             <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.InventoryReportsBackBean.report_type}"
-                                                contentStyle="width:300px;">
+                                                contentStyle="width:150px;">
                                                 
                                 <af:selectItem label="Inventory Report" value="inventoryReport" id="si9"/>
                                 <af:selectItem label="Current Stock" value="currentStock" id="si1"/>

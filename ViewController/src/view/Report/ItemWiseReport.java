@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,13 +31,13 @@ public class ItemWiseReport {
 
     private static String selectedReportType = "";
     private static String gotFormat = "";
-    private static Number  gotItemL4Id;
+    private static BigDecimal  gotItemL4Id;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
-        gotItemL4Id = (Number)this.getItemL4IdParam().getValue();
+        gotItemL4Id = (BigDecimal)this.getItemL4IdParam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
