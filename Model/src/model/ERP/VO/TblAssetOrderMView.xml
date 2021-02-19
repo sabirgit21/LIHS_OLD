@@ -22,7 +22,7 @@
        TblAssetOrderM.UPDATED_DATE, 
        TblAssetOrderM.UPDATED_BY, 
        TblAssetOrderM.PROJECT_ID, 
-       TblAssetOrderM.ASSET_REQ_M_ID"
+       TblAssetOrderM.ASSET_APPR_M_ID"
   FromList="TBL_ASSET_ORDER_M TblAssetOrderM"
   Where="TblAssetOrderM.PROJECT_ID= nvl(:getProId,TblAssetOrderM.PROJECT_ID)">
   <Variable
@@ -31,7 +31,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblAssetOrderMView"/>
   </Variable>
   <ViewAccessor
@@ -53,6 +52,10 @@
   <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Asset_Appr_M_LOV1"
+    ViewObjectName="model.LOV.Asset_Appr_M_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -109,25 +112,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_AssetReqMId"
-    ListVOName="Asset_Requisition_M_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="AssetReqMId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Vno"/>
-      <Item Value="Dated"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_ProjectId"
     ListVOName="Project_Name_LOV1"
     ListRangeSize="-1"
@@ -142,6 +126,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AssetApprMId"
+    ListVOName="Asset_Appr_M_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssetApprMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Dated"/>
+      <Item Value="Vno"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -263,12 +266,12 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="AssetReqMId"
+    Name="AssetApprMId"
     PrecisionRule="true"
-    EntityAttrName="AssetReqMId"
+    EntityAttrName="AssetApprMId"
     EntityUsage="TblAssetOrderM"
-    AliasName="ASSET_REQ_M_ID"
-    LOVName="LOV_AssetReqMId">
+    AliasName="ASSET_APPR_M_ID"
+    LOVName="LOV_AssetApprMId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

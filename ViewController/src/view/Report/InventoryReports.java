@@ -130,22 +130,11 @@ public class InventoryReports {
                         
                         reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
 
-                        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
-                        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                        gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-                        reportBean.setReportParameter("paramform", "no");
-
-                        url = reportBean.getReportServerURL();
-                        System.out.println("Url => " + url);
-                        reportBean.openUrlInNewWindow(url);
-                        
                     }
                 else{
                     showMessage("Please Select From Date, Project, Item & Department");
                 }
                 
-               
                 break;
                 //calling procedure end//
             default:
@@ -153,6 +142,16 @@ public class InventoryReports {
                 break;
 
             }
+
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
+
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
 
         }
         return null;

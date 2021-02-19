@@ -87,14 +87,13 @@
                     <f:validator binding="#{bindings.PblSuppId.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer  id="s10"/>
-                             <af:selectOneChoice value="#{bindings.AssetReqMId.inputValue}"
-                                                 label="Asset Requisition Master"
-                        required="#{bindings.AssetReqMId.hints.mandatory}"
-                        shortDesc="#{bindings.AssetReqMId.hints.tooltip}" id="soc5"
-                        contentStyle="width:135px;">
-      <f:selectItems value="#{bindings.AssetReqMId.items}" id="si5"/>
-      <f:validator binding="#{bindings.AssetReqMId.validator}"/>
-    </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.AssetApprMId.inputValue}"
+                                                label="#{bindings.AssetApprMId.label}"
+                                                required="#{bindings.AssetApprMId.hints.mandatory}"
+                                                shortDesc="#{bindings.AssetApprMId.hints.tooltip}" id="soc4">
+                              <f:selectItems value="#{bindings.AssetApprMId.items}" id="si4"/>
+                              <f:validator binding="#{bindings.AssetApprMId.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s3"/>
                            
                            

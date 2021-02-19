@@ -60,8 +60,6 @@
     </attributeValues>
     <list IterBinding="TblAssetOrderMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblAssetOrderMView1Iterator" StaticList="false" Uses="LOV_AssetReqMId" id="AssetReqMId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <action IterBinding="TblAssetOrderMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
     <action IterBinding="TblAssetOrderMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblAssetOrderMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
@@ -110,5 +108,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblAssetOrderMView1Iterator" StaticList="false" Uses="LOV_AssetApprMId" id="AssetApprMId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

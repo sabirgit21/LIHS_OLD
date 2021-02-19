@@ -132,12 +132,11 @@
     TableName="TBL_ASSET_ORDER_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblAssetOrderMRow"/>
   </Attribute>
   <Attribute
-    Name="AssetReqMId"
-    ColumnName="ASSET_REQ_M_ID"
+    Name="AssetApprMId"
+    ColumnName="ASSET_APPR_M_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
@@ -191,9 +190,6 @@
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_ASSET_ORDER_M_DO"/>
     </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblAssetOrderM.AssetReqMId"/>
-    </AttrArray>
   </Key>
   <Key
     Name="FkAssetOrderMProject">

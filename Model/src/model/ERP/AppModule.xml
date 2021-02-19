@@ -592,6 +592,27 @@
   <ViewUsage
     Name="Tbl_ITN_R_D1"
     ViewObjectName="model.ERP.VO.Tbl_ITN_R_D"/>
+  <ViewUsage
+    Name="TblAssetApprDView1"
+    ViewObjectName="model.ERP.VO.TblAssetApprDView"/>
+  <ViewUsage
+    Name="TblAssetApprMView1"
+    ViewObjectName="model.ERP.VO.TblAssetApprMView"/>
+  <ViewUsage
+    Name="TblAssetQoutDView1"
+    ViewObjectName="model.ERP.VO.TblAssetQoutDView"/>
+  <ViewUsage
+    Name="TblAssetQoutMView1"
+    ViewObjectName="model.ERP.VO.TblAssetQoutMView"/>
+  <ViewUsage
+    Name="TblAssetApprDView2"
+    ViewObjectName="model.ERP.VO.TblAssetApprDView"/>
+  <ViewUsage
+    Name="TblAssetQoutDView2"
+    ViewObjectName="model.ERP.VO.TblAssetQoutDView"/>
+  <ViewUsage
+    Name="TblAssetApprMView2"
+    ViewObjectName="model.ERP.VO.TblAssetApprMView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1125,5 +1146,23 @@
     ViewLinkObjectName="model.ERP.VO.FkTblITNRFkLink"
     SrcViewUsageName="model.ERP.AppModule.Tbl_ITN_R_M1"
     DstViewUsageName="model.ERP.AppModule.Tbl_ITN_R_D1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkAssetApprDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkAssetApprDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssetApprMView1"
+    DstViewUsageName="model.ERP.AppModule.TblAssetApprDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkAssetQoutDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkAssetQoutDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssetQoutMView1"
+    DstViewUsageName="model.ERP.AppModule.TblAssetQoutDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkAssetApprMQoutLink1"
+    ViewLinkObjectName="model.ERP.VO.FkAssetApprMQoutLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssetQoutMView1"
+    DstViewUsageName="model.ERP.AppModule.TblAssetApprMView2"
     Reversed="false"/>
 </AppModule>

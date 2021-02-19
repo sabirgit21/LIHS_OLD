@@ -36,7 +36,7 @@ public class TblAssetOrderMImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         ProjectId,
-        AssetReqMId,
+        AssetApprMId,
         TblAssetOrderD,
         TblAssetPurchM,
         TblAssetReqM;
@@ -62,6 +62,8 @@ public class TblAssetOrderMImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int VNO = AttributesEnum.Vno.index();
     public static final int VTP = AttributesEnum.Vtp.index();
@@ -75,7 +77,7 @@ public class TblAssetOrderMImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
-    public static final int ASSETREQMID = AttributesEnum.AssetReqMId.index();
+    public static final int ASSETAPPRMID = AttributesEnum.AssetApprMId.index();
     public static final int TBLASSETORDERD = AttributesEnum.TblAssetOrderD.index();
     public static final int TBLASSETPURCHM = AttributesEnum.TblAssetPurchM.index();
     public static final int TBLASSETREQM = AttributesEnum.TblAssetReqM.index();
@@ -85,6 +87,14 @@ public class TblAssetOrderMImpl extends EntityImpl {
      */
     public TblAssetOrderMImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetOrderM");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -278,20 +288,21 @@ public class TblAssetOrderMImpl extends EntityImpl {
         setAttributeInternal(PROJECTID, value);
     }
 
+
     /**
-     * Gets the attribute value for AssetReqMId, using the alias name AssetReqMId.
-     * @return the value of AssetReqMId
+     * Gets the attribute value for AssetApprMId, using the alias name AssetApprMId.
+     * @return the value of AssetApprMId
      */
-    public BigDecimal getAssetReqMId() {
-        return (BigDecimal) getAttributeInternal(ASSETREQMID);
+    public BigDecimal getAssetApprMId() {
+        return (BigDecimal) getAttributeInternal(ASSETAPPRMID);
     }
 
     /**
-     * Sets <code>value</code> as the attribute value for AssetReqMId.
-     * @param value value to set the AssetReqMId
+     * Sets <code>value</code> as the attribute value for AssetApprMId.
+     * @param value value to set the AssetApprMId
      */
-    public void setAssetReqMId(BigDecimal value) {
-        setAttributeInternal(ASSETREQMID, value);
+    public void setAssetApprMId(BigDecimal value) {
+        setAttributeInternal(ASSETAPPRMID, value);
     }
 
     /**
@@ -311,16 +322,17 @@ public class TblAssetOrderMImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblAssetReqM() {
-        return (EntityImpl) getAttributeInternal(TBLASSETREQM);
+    public TblAssetReqMImpl getTblAssetReqM() {
+        return (TblAssetReqMImpl) getAttributeInternal(TBLASSETREQM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblAssetReqM(EntityImpl value) {
+    public void setTblAssetReqM(TblAssetReqMImpl value) {
         setAttributeInternal(TBLASSETREQM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -329,13 +341,6 @@ public class TblAssetOrderMImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetOrderM");
     }
 
     /**
