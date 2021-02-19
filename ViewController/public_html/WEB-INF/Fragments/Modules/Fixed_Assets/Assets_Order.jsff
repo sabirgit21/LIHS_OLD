@@ -88,7 +88,7 @@
                   </af:selectOneChoice>
                   <af:spacer  id="s10"/>
                             <af:selectOneChoice value="#{bindings.AssetApprMId.inputValue}"
-                                                label="#{bindings.AssetApprMId.label}"
+                                                label="Asset Approval No."
                                                 required="#{bindings.AssetApprMId.hints.mandatory}"
                                                 shortDesc="#{bindings.AssetApprMId.hints.tooltip}" id="soc4">
                               <f:selectItems value="#{bindings.AssetApprMId.items}" id="si4"/>
