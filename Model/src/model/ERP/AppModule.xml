@@ -1094,12 +1094,6 @@
     DstViewUsageName="model.ERP.AppModule.TblAssetReqDView2"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="FkAssetOrderMDoLink1"
-    ViewLinkObjectName="model.ERP.VO.FkAssetOrderMDoLink"
-    SrcViewUsageName="model.ERP.AppModule.TblAssetReqMView1"
-    DstViewUsageName="model.ERP.AppModule.TblAssetOrderMView2"
-    Reversed="false"/>
-  <ViewLinkUsage
     Name="FkAssetReqDMLink1"
     ViewLinkObjectName="model.ERP.VO.FkAssetReqDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssetReqMView1"

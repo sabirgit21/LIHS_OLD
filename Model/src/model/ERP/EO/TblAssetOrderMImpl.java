@@ -38,9 +38,9 @@ public class TblAssetOrderMImpl extends EntityImpl {
         ProjectId,
         AssetApprMId,
         TblAssetOrderD,
-        TblAssetPurchM,
-        TblAssetReqM;
-        private static AttributesEnum[] vals = null;
+        TblAssetPurchM;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -80,7 +80,6 @@ public class TblAssetOrderMImpl extends EntityImpl {
     public static final int ASSETAPPRMID = AttributesEnum.AssetApprMId.index();
     public static final int TBLASSETORDERD = AttributesEnum.TblAssetOrderD.index();
     public static final int TBLASSETPURCHM = AttributesEnum.TblAssetPurchM.index();
-    public static final int TBLASSETREQM = AttributesEnum.TblAssetReqM.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -317,20 +316,6 @@ public class TblAssetOrderMImpl extends EntityImpl {
      */
     public RowIterator getTblAssetPurchM() {
         return (RowIterator) getAttributeInternal(TBLASSETPURCHM);
-    }
-
-    /**
-     * @return the associated entity oracle.jbo.server.EntityImpl.
-     */
-    public TblAssetReqMImpl getTblAssetReqM() {
-        return (TblAssetReqMImpl) getAttributeInternal(TBLASSETREQM);
-    }
-
-    /**
-     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
-     */
-    public void setTblAssetReqM(TblAssetReqMImpl value) {
-        setAttributeInternal(TBLASSETREQM, value);
     }
 
 

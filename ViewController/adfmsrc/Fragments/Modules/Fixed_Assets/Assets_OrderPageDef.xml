@@ -104,7 +104,6 @@
           <Item Value="Carrier"/>
           <Item Value="Narration"/>
           <Item Value="ProjectId"/>
-          <Item Value="AssetReqMId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

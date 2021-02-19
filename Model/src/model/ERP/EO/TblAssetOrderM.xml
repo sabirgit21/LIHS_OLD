@@ -155,13 +155,6 @@
     AssociationOtherEnd="model.ERP.EO.FkAssetPurchMPoAssoc.TblAssetOrderM"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <AccessorAttribute
-    Name="TblAssetReqM"
-    Association="model.ERP.EO.FkAssetOrderMDoAssoc"
-    AssociationEnd="model.ERP.EO.FkAssetOrderMDoAssoc.TblAssetReqM"
-    AssociationOtherEnd="model.ERP.EO.FkAssetOrderMDoAssoc.TblAssetOrderM"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
   <Key
     Name="PkAssetOrderMId"
     PrimaryKey="true">
@@ -190,6 +183,7 @@
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_ASSET_ORDER_M_DO"/>
     </DesignTime>
+    <AttrArray Name="Attributes"/>
   </Key>
   <Key
     Name="FkAssetOrderMProject">

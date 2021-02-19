@@ -70,7 +70,6 @@
     TableName="TBL_ASSET_REQ_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblAssetReqMRow"/>
   </Attribute>
   <Attribute
@@ -116,13 +115,6 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_REQ_M"/>
-  <AccessorAttribute
-    Name="TblAssetOrderM"
-    Association="model.ERP.EO.FkAssetOrderMDoAssoc"
-    AssociationEnd="model.ERP.EO.FkAssetOrderMDoAssoc.TblAssetOrderM"
-    AssociationOtherEnd="model.ERP.EO.FkAssetOrderMDoAssoc.TblAssetReqM"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
   <AccessorAttribute
     Name="TblAssetReqD"
     Association="model.ERP.EO.FkAssetReqDMAssoc"

@@ -34,9 +34,9 @@ public class TblAssetReqMImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
-        TblAssetOrderM,
         TblAssetReqD;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -58,6 +58,7 @@ public class TblAssetReqMImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int VNO = AttributesEnum.Vno.index();
     public static final int VTP = AttributesEnum.Vtp.index();
@@ -69,13 +70,19 @@ public class TblAssetReqMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
-    public static final int TBLASSETORDERM = AttributesEnum.TblAssetOrderM.index();
     public static final int TBLASSETREQD = AttributesEnum.TblAssetReqD.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblAssetReqMImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetReqM");
     }
 
     /**
@@ -238,12 +245,6 @@ public class TblAssetReqMImpl extends EntityImpl {
         setAttributeInternal(UPDATEDBY, value);
     }
 
-    /**
-     * @return the associated entity oracle.jbo.RowIterator.
-     */
-    public RowIterator getTblAssetOrderM() {
-        return (RowIterator) getAttributeInternal(TBLASSETORDERM);
-    }
 
     /**
      * @return the associated entity oracle.jbo.RowIterator.
@@ -252,6 +253,7 @@ public class TblAssetReqMImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLASSETREQD);
     }
 
+
     /**
      * @param id key constituent
 
@@ -259,13 +261,6 @@ public class TblAssetReqMImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetReqM");
     }
 
     /**
