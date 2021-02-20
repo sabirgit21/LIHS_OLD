@@ -313,7 +313,7 @@
                               rowSelection="single" fetchSize="#{bindings.TblAssetL4View3.rangeSize}"
                               filterModel="#{bindings.TblAssetL4View3Query.queryDescriptor}" filterVisible="true"
                               queryListener="#{bindings.TblAssetL4View3Query.processQuery}" varStatus="vs" id="t4"
-                              scrollPolicy="page" autoHeightRows="0" partialTriggers="::b3 ::b4 ::b5">
+                              scrollPolicy="page" autoHeightRows="0" >
                       <af:column sortProperty="#{bindings.TblAssetL4View3.hints.AssetL3Id.name}" filterable="true"
                                  sortable="true" headerText="Level 3"
                                  id="c10" width="300">
@@ -420,17 +420,17 @@
                                  inlineStyle="float: right;"/>
                       <af:panelTabbed position="above" id="pt5">
                         <af:showDetailItem id="tab2" text="Search">
-                          <af:table value="#{bindings.TblAssetL4View31.collectionModel}" var="row"
-                                    rows="#{bindings.TblAssetL4View31.rangeSize}"
-                                    emptyText="#{bindings.TblAssetL4View31.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          <af:table value="#{bindings.TblAssetL4View1.collectionModel}" var="row"
+                                    rows="#{bindings.TblAssetL4View1.rangeSize}"
+                                    emptyText="#{bindings.TblAssetL4View1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                     rowBandingInterval="0"
-                                    selectedRowKeys="#{bindings.TblAssetL4View31.collectionModel.selectedRow}"
-                                    selectionListener="#{bindings.TblAssetL4View31.collectionModel.makeCurrent}"
-                                    rowSelection="single" fetchSize="#{bindings.TblAssetL4View31.rangeSize}"
-                                    filterModel="#{bindings.TblAssetL4View3Query.queryDescriptor}" filterVisible="true"
-                                    queryListener="#{bindings.TblAssetL4View3Query.processQuery}" varStatus="vs"
+                                    selectedRowKeys="#{bindings.TblAssetL4View1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblAssetL4View1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblAssetL4View1.rangeSize}"
+                                    filterModel="#{bindings.TblAssetL4View1Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblAssetL4View1Query.processQuery}" varStatus="vs"
                                     id="t5" scrollPolicy="page" autoHeightRows="0">
-                            <af:column sortProperty="#{bindings.TblAssetL4View31.hints.AssetL3Id.name}"
+                            <af:column sortProperty="#{bindings.TblAssetL4View1.hints.AssetL3Id.name}"
                                        filterable="true" sortable="true"
                                        headerText="Level 3" id="c13" width="300">
                                         <f:facet name="filter">
@@ -440,14 +440,14 @@
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.AssetL3Id.inputValue}"
                                                   label="#{row.bindings.AssetL3Id.label}"
-                                                  required="#{bindings.TblAssetL4View31.hints.AssetL3Id.mandatory}"
-                                                  shortDesc="#{bindings.TblAssetL4View31.hints.AssetL3Id.tooltip}"
+                                                  required="#{bindings.TblAssetL4View1.hints.AssetL3Id.mandatory}"
+                                                  shortDesc="#{bindings.TblAssetL4View1.hints.AssetL3Id.tooltip}"
                                                   id="soc5" readOnly="true">
                                 <f:selectItems value="#{row.bindings.AssetL3Id.items}" id="si5"/>
                                 <f:validator binding="#{row.bindings.AssetL3Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblAssetL4View31.hints.AssetL4Id.name}"
+                            <af:column sortProperty="#{bindings.TblAssetL4View1.hints.AssetL4Id.name}"
                                        filterable="true" sortable="true"
                                        headerText="ID" id="c14">
                                         <f:facet name="filter">
@@ -456,17 +456,17 @@
                                   </af:inputText>
                             </f:facet>
                               <af:inputText value="#{row.bindings.AssetL4Id.inputValue}"
-                                            label="#{bindings.TblAssetL4View31.hints.AssetL4Id.label}"
-                                            required="#{bindings.TblAssetL4View31.hints.AssetL4Id.mandatory}"
-                                            columns="#{bindings.TblAssetL4View31.hints.AssetL4Id.displayWidth}"
-                                            maximumLength="#{bindings.TblAssetL4View31.hints.AssetL4Id.precision}"
-                                            shortDesc="#{bindings.TblAssetL4View31.hints.AssetL4Id.tooltip}" id="it14" readOnly="true">
+                                            label="#{bindings.TblAssetL4View1.hints.AssetL4Id.label}"
+                                            required="#{bindings.TblAssetL4View1.hints.AssetL4Id.mandatory}"
+                                            columns="#{bindings.TblAssetL4View1.hints.AssetL4Id.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetL4View1.hints.AssetL4Id.precision}"
+                                            shortDesc="#{bindings.TblAssetL4View1.hints.AssetL4Id.tooltip}" id="it14" readOnly="true">
                                 <f:validator binding="#{row.bindings.AssetL4Id.validator}"/>
                                 <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblAssetL4View31.hints.AssetL4Id.format}"/>
+                                                  pattern="#{bindings.TblAssetL4View1.hints.AssetL4Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblAssetL4View31.hints.Name.name}" filterable="true"
+                            <af:column sortProperty="#{bindings.TblAssetL4View1.hints.Name.name}" filterable="true"
                                        sortable="true" headerText="Level 4"
                                        id="c15" width="300">
                                        <f:facet name="filter">
@@ -475,15 +475,15 @@
                                   </af:inputText>
                             </f:facet>
                               <af:inputText value="#{row.bindings.Name.inputValue}"
-                                            label="#{bindings.TblAssetL4View31.hints.Name.label}"
-                                            required="#{bindings.TblAssetL4View31.hints.Name.mandatory}"
-                                            columns="#{bindings.TblAssetL4View31.hints.Name.displayWidth}"
-                                            maximumLength="#{bindings.TblAssetL4View31.hints.Name.precision}"
-                                            shortDesc="#{bindings.TblAssetL4View31.hints.Name.tooltip}" id="it17" readOnly="true">
+                                            label="#{bindings.TblAssetL4View1.hints.Name.label}"
+                                            required="#{bindings.TblAssetL4View1.hints.Name.mandatory}"
+                                            columns="#{bindings.TblAssetL4View1.hints.Name.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetL4View1.hints.Name.precision}"
+                                            shortDesc="#{bindings.TblAssetL4View1.hints.Name.tooltip}" id="it17" readOnly="true">
                                 <f:validator binding="#{row.bindings.Name.validator}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblAssetL4View31.hints.UomId.name}" filterable="true"
+                            <af:column sortProperty="#{bindings.TblAssetL4View1.hints.UomId.name}" filterable="true"
                                        sortable="true" headerText="UOM"
                                        id="c16">
                                         <f:facet name="filter">
@@ -493,14 +493,14 @@
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.UomId.inputValue}"
                                                   label="#{row.bindings.UomId.label}"
-                                                  required="#{bindings.TblAssetL4View31.hints.UomId.mandatory}"
-                                                  shortDesc="#{bindings.TblAssetL4View31.hints.UomId.tooltip}"
+                                                  required="#{bindings.TblAssetL4View1.hints.UomId.mandatory}"
+                                                  shortDesc="#{bindings.TblAssetL4View1.hints.UomId.tooltip}"
                                                   id="soc6" readOnly="true">
                                 <f:selectItems value="#{row.bindings.UomId.items}" id="si6"/>
                                 <f:validator binding="#{row.bindings.UomId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblAssetL4View31.hints.Ast.name}" filterable="true"
+                            <af:column sortProperty="#{bindings.TblAssetL4View1.hints.Ast.name}" filterable="true"
                                        sortable="true" headerText="Active"
                                        id="c21">
                                         <f:facet name="filter">
@@ -510,8 +510,8 @@
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
                                                   label="#{row.bindings.Ast.label}"
-                                                  required="#{bindings.TblAssetL4View31.hints.Ast.mandatory}"
-                                                  shortDesc="#{bindings.TblAssetL4View31.hints.Ast.tooltip}" id="soc7" readOnly="true">
+                                                  required="#{bindings.TblAssetL4View1.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblAssetL4View1.hints.Ast.tooltip}" id="soc7" readOnly="true">
                                 <f:selectItems value="#{row.bindings.Ast.items}" id="si7"/>
                                 <f:validator binding="#{row.bindings.Ast.validator}"/>
                               </af:selectOneChoice>

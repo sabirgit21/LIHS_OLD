@@ -367,17 +367,17 @@
                          <af:button text="Get Report" id="b2" icon="#{resource['images:get_report.png']}"
                                  actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}"
                                  inlineStyle="float: right;"/>
-                          <af:table value="#{bindings.TblItemL4View31.collectionModel}" var="row"
-                          rows="#{bindings.TblItemL4View31.rangeSize}"
-                          emptyText="#{bindings.TblItemL4View31.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblItemL4View31.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblItemL4View31.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblItemL4View31.rangeSize}"
-                          filterModel="#{bindings.TblItemL4View3Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblItemL4View3Query.processQuery}" varStatus="vs" id="t5"
-                          scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblItemL4View31.hints.ItemL3Id.name}" filterable="true"
+                          <af:table value="#{bindings.TblItemL4View1.collectionModel}" var="row"
+                                    rows="#{bindings.TblItemL4View1.rangeSize}"
+                                    emptyText="#{bindings.TblItemL4View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblItemL4View1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblItemL4View1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblItemL4View1.rangeSize}"
+                                    filterModel="#{bindings.TblItemL4View1Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblItemL4View1Query.processQuery}" varStatus="vs" id="t5"
+                                    scrollPolicy="page" autoHeightRows="0">
+                           <af:column sortProperty="#{bindings.TblItemL4View1.hints.ItemL3Id.name}" filterable="true"
                              sortable="true" headerText="Level 3" id="c13" width="200">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ItemL3Id}"
@@ -386,14 +386,14 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ItemL3Id.inputValue}"
                                         label="#{row.bindings.ItemL3Id.label}"
-                                        required="#{bindings.TblItemL4View31.hints.ItemL3Id.mandatory}"
-                                        shortDesc="#{bindings.TblItemL4View31.hints.ItemL3Id.tooltip}" id="soc5"
+                                        required="#{bindings.TblItemL4View1.hints.ItemL3Id.mandatory}"
+                                        shortDesc="#{bindings.TblItemL4View1.hints.ItemL3Id.tooltip}" id="soc5"
                                         readOnly="true" >
                       <f:selectItems value="#{row.bindings.ItemL3Id.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.ItemL3Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblItemL4View31.hints.Name.name}" filterable="true"
+                  <af:column sortProperty="#{bindings.TblItemL4View1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Level 4" id="c15" width="200">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
@@ -401,11 +401,11 @@
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
-                                  label="#{bindings.TblItemL4View31.hints.Name.label}"
-                                  required="#{bindings.TblItemL4View31.hints.Name.mandatory}"
-                                  columns="#{bindings.TblItemL4View31.hints.Name.displayWidth}"
-                                  maximumLength="#{bindings.TblItemL4View31.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblItemL4View31.hints.Name.tooltip}" id="it17" readOnly="true">
+                                  label="#{bindings.TblItemL4View1.hints.Name.label}"
+                                  required="#{bindings.TblItemL4View1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblItemL4View1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblItemL4View1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblItemL4View1.hints.Name.tooltip}" id="it17" readOnly="true">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -417,13 +417,13 @@
 </f:facet>
                               <af:selectOneChoice value="#{row.bindings.UomId.inputValue}"
                                                   label="#{row.bindings.UomId.label}"
-                                                  required="#{bindings.TblItemL4View31.hints.UomId.mandatory}"
-                                                  shortDesc="#{bindings.TblItemL4View31.hints.UomId.tooltip}" id="soc7" readOnly="true">
+                                                  required="#{bindings.TblItemL4View1.hints.UomId.mandatory}"
+                                                  shortDesc="#{bindings.TblItemL4View1.hints.UomId.tooltip}" id="soc7" readOnly="true">
                                 <f:selectItems value="#{row.bindings.UomId.items}" id="si7"/>
                                 <f:validator binding="#{row.bindings.UomId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblItemL4View31.hints.Ast.name}" filterable="true" sortable="true"
+                            <af:column sortProperty="#{bindings.TblItemL4View1.hints.Ast.name}" filterable="true" sortable="true"
                              headerText="Active" id="c16">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
@@ -431,13 +431,13 @@
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                        required="#{bindings.TblItemL4View31.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblItemL4View31.hints.Ast.tooltip}" id="soc6" readOnly="true">
+                                        required="#{bindings.TblItemL4View1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblItemL4View1.hints.Ast.tooltip}" id="soc6" readOnly="true">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                </af:table>
+                          </af:table>
                         </af:showDetailItem>
                       </af:panelTabbed>
                     </af:gridCell>

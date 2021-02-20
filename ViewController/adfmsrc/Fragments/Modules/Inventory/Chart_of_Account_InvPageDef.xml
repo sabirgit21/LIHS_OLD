@@ -18,6 +18,9 @@
     <iterator Binds="TblItemL4View3" RangeSize="8" DataControl="AppModuleDataControl1" id="TblItemL4View3Iterator"/>
     <searchRegion Binds="TblItemL4View3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblItemL4View3Query"/>
+    <iterator Binds="TblItemL4View1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblItemL4View1Iterator"/>
+    <searchRegion Binds="TblItemL4View1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblItemL4View1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -88,14 +91,14 @@
             Action="createInsertRow"/>
     <action IterBinding="TblItemL4View3Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblItemL4View3Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <tree IterBinding="TblItemL4View3Iterator" id="TblItemL4View31">
-      <nodeDefinition DefName="model.ERP.VO.TblItemL4View" Name="TblItemL4View310">
+    <tree IterBinding="TblItemL4View1Iterator" id="TblItemL4View1">
+      <nodeDefinition DefName="model.ERP.VO.TblItemL4View" Name="TblItemL4View10">
         <AttrNames>
-          <Item Value="ItemL3Id"/>
           <Item Value="ItemL4Id"/>
+          <Item Value="ItemL3Id"/>
           <Item Value="Name"/>
-          <Item Value="Ast"/>
           <Item Value="UomId"/>
+          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
