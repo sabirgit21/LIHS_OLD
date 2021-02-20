@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblAssetApprM
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="ProjectId")
+def ProjectId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessPrID')
+}
+

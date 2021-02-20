@@ -6,16 +6,70 @@
   Name="TblAssetQoutDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblAssetQoutD.ID, 
+       TblAssetQoutD.ASSET_QOUT_M_ID, 
+       TblAssetQoutD.SR_NO, 
+       TblAssetQoutD.ASSET_L4_ID, 
+       TblAssetQoutD.DESCRIPTION, 
+       TblAssetQoutD.QTY, 
+       TblAssetQoutD.RATE, 
+       TblAssetQoutD.AMOUNT, 
+       TblAssetQoutD.CREATED_DATE, 
+       TblAssetQoutD.CREATED_BY, 
+       TblAssetQoutD.UPDATED_DATE, 
+       TblAssetQoutD.UPDATED_BY, 
+       TblAssetL4.ASSET_L4_ID AS ASSET_L4ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_ASSET_QOUT_D TblAssetQoutD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
+  Where="TblAssetQoutD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)       
+AND TblAssetL4.UOM_ID = TblUom.ID(+)">
+  <ViewAccessor
+    Name="Asset_Level4_LOV1"
+    ViewObjectName="model.LOV.Asset_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AssetL4Id"
+    ListVOName="Asset_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssetL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AssetL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblAssetQoutD"
     Entity="model.ERP.EO.TblAssetQoutD"/>
+  <EntityUsage
+    Name="TblAssetL4"
+    Entity="model.ERP.EO.TblAssetL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -41,7 +95,15 @@
     PrecisionRule="true"
     EntityAttrName="AssetL4Id"
     EntityUsage="TblAssetQoutD"
-    AliasName="ASSET_L4_ID"/>
+    AliasName="ASSET_L4_ID"
+    LOVName="LOV_AssetL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"
@@ -90,4 +152,22 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblAssetQoutD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="AssetL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="AssetL4Id"
+    EntityUsage="TblAssetL4"
+    AliasName="ASSET_L4ID1"/>
+  <ViewAttribute
+    Name="UomName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
 </ViewObject>

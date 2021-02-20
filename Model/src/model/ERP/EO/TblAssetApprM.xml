@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Id"
-    IsNotNull="true"
     ColumnName="ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_APPR_M"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Vno"
     ColumnName="VNO"
@@ -68,7 +69,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_ASSET_APPR_M"/>
+    TableName="TBL_ASSET_APPR_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblAssetApprMRow"/>
+  </Attribute>
   <Attribute
     Name="Narration"
     Precision="300"

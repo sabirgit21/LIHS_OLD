@@ -35,8 +35,7 @@ public class TblAssetReqMImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         TblAssetReqD;
-        static AttributesEnum[] vals = null;
-        ;
+        private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -58,6 +57,7 @@ public class TblAssetReqMImpl extends EntityImpl {
             return vals;
         }
     }
+
 
     public static final int ID = AttributesEnum.Id.index();
     public static final int VNO = AttributesEnum.Vno.index();
@@ -84,6 +84,7 @@ public class TblAssetReqMImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetReqM");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
