@@ -67,7 +67,7 @@
                   <af:spacer  id="s34"/>
                   <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project" autoSubmit="true"
                                       required="#{bindings.ProjectId.hints.mandatory}"
-                                      shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc6" disabled="true"
+                                      shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc6" readOnly="${sessionScope.sessPrID != ''}"
                                       contentStyle="width:150px;" >
                     <f:selectItems value="#{bindings.ProjectId.items}" id="si6"/>
                     <f:validator binding="#{bindings.ProjectId.validator}"/>
