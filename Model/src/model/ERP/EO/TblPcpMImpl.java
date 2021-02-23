@@ -38,6 +38,7 @@ public class TblPcpMImpl extends EntityImpl {
         Frdate,
         ProjectId,
         Todate,
+        CoaWht,
         TblPcpD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -77,6 +78,7 @@ public class TblPcpMImpl extends EntityImpl {
     public static final int FRDATE = AttributesEnum.Frdate.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int TODATE = AttributesEnum.Todate.index();
+    public static final int COAWHT = AttributesEnum.CoaWht.index();
     public static final int TBLPCPD = AttributesEnum.TblPcpD.index();
 
     /**
@@ -299,6 +301,22 @@ public class TblPcpMImpl extends EntityImpl {
      */
     public void setTodate(Timestamp value) {
         setAttributeInternal(TODATE, value);
+    }
+
+    /**
+     * Gets the attribute value for CoaWht, using the alias name CoaWht.
+     * @return the value of CoaWht
+     */
+    public BigDecimal getCoaWht() {
+        return (BigDecimal) getAttributeInternal(COAWHT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CoaWht.
+     * @param value value to set the CoaWht
+     */
+    public void setCoaWht(BigDecimal value) {
+        setAttributeInternal(COAWHT, value);
     }
 
     /**

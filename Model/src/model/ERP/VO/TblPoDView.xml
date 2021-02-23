@@ -27,7 +27,10 @@
        TblItemL4.UOM_ID AS UOM_ID1, 
        TblItemL4.ITEM_L4_ID AS ITEM_L4_ID1, 
        TblUom.NAME, 
-       TblUom.ID AS ID1"
+       TblUom.ID AS ID1, 
+       TblPoD.TAX_PARC, 
+       TblPoD.TAX_AMOUNT, 
+       TblPoD.NET_AMOUNT"
   FromList="TBL_PO_D TblPoD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
   Where="TblPoD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID     
 and TblItemL4.UOM_ID = TblUom.ID">
@@ -261,6 +264,24 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="Id"
     EntityUsage="TblUom"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="TaxParc"
+    PrecisionRule="true"
+    EntityAttrName="TaxParc"
+    EntityUsage="TblPoD"
+    AliasName="TAX_PARC"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblPoD"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="NetAmount"
+    PrecisionRule="true"
+    EntityAttrName="NetAmount"
+    EntityUsage="TblPoD"
+    AliasName="NET_AMOUNT"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

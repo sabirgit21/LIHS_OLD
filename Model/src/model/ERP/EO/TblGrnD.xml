@@ -111,6 +111,27 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRN_D"/>
+  <Attribute
+    Name="TaxParc"
+    ColumnName="TAX_PARC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_D"/>
+  <Attribute
+    Name="TaxAmount"
+    ColumnName="TAX_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_D"/>
+  <Attribute
+    Name="NetAmount"
+    ColumnName="NET_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_D"/>
   <AccessorAttribute
     Name="TblGrnM"
     Association="model.ERP.EO.FkGrnDMAssoc"

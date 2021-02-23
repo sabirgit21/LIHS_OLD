@@ -165,6 +165,18 @@
     EntityAttrName="BankCashId"
     EntityUsage="TblPcpD"
     AliasName="BANK_CASH_ID"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblPcpD"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="NetAmount"
+    PrecisionRule="true"
+    EntityAttrName="NetAmount"
+    EntityUsage="TblPcpD"
+    AliasName="NET_AMOUNT"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

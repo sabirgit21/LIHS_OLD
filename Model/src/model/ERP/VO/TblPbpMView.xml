@@ -25,7 +25,8 @@
        TblPbpM.UPDATED_BY, 
        TblPbpM.PROJECT_ID, 
        TblPbpM.TODATE, 
-       TblPbpM.FRDATE"
+       TblPbpM.FRDATE, 
+       TblPbpM.COA_WHT"
   FromList="TBL_PBP_M TblPbpM"
   Where="TblPbpM.PROJECT_ID = nvl(:getProID,TblPbpM.PROJECT_ID)">
   <Variable
@@ -55,6 +56,10 @@
   <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_Level4_LOV1"
+    ViewObjectName="model.LOV.Item_Level4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -122,6 +127,24 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CoaWht"
+    ListVOName="Item_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CoaWht"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -295,6 +318,20 @@
     EntityAttrName="Frdate"
     EntityUsage="TblPbpM"
     AliasName="FRDATE"/>
+  <ViewAttribute
+    Name="CoaWht"
+    PrecisionRule="true"
+    EntityAttrName="CoaWht"
+    EntityUsage="TblPbpM"
+    AliasName="COA_WHT"
+    LOVName="LOV_CoaWht">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblPbpDView"
     ViewLink="model.ERP.VO.FkPbpDLink"

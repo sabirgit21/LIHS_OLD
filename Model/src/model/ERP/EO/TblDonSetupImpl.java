@@ -41,6 +41,8 @@ public class TblDonSetupImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        MonthlyComit,
+        DonorType,
         TblDonCr,
         TblDonKindM;
         private static AttributesEnum[] vals = null;
@@ -65,6 +67,7 @@ public class TblDonSetupImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
@@ -83,6 +86,8 @@ public class TblDonSetupImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int MONTHLYCOMIT = AttributesEnum.MonthlyComit.index();
+    public static final int DONORTYPE = AttributesEnum.DonorType.index();
     public static final int TBLDONCR = AttributesEnum.TblDonCr.index();
     public static final int TBLDONKINDM = AttributesEnum.TblDonKindM.index();
 
@@ -90,6 +95,13 @@ public class TblDonSetupImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblDonSetupImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblDonSetup");
     }
 
     /**
@@ -365,6 +377,38 @@ public class TblDonSetupImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for MonthlyComit, using the alias name MonthlyComit.
+     * @return the value of MonthlyComit
+     */
+    public BigDecimal getMonthlyComit() {
+        return (BigDecimal) getAttributeInternal(MONTHLYCOMIT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MonthlyComit.
+     * @param value value to set the MonthlyComit
+     */
+    public void setMonthlyComit(BigDecimal value) {
+        setAttributeInternal(MONTHLYCOMIT, value);
+    }
+
+    /**
+     * Gets the attribute value for DonorType, using the alias name DonorType.
+     * @return the value of DonorType
+     */
+    public String getDonorType() {
+        return (String) getAttributeInternal(DONORTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DonorType.
+     * @param value value to set the DonorType
+     */
+    public void setDonorType(String value) {
+        setAttributeInternal(DONORTYPE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblDonCr() {
@@ -378,6 +422,7 @@ public class TblDonSetupImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLDONKINDM);
     }
 
+
     /**
      * @param id key constituent
 
@@ -385,13 +430,6 @@ public class TblDonSetupImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblDonSetup");
     }
 
     /**

@@ -148,6 +148,41 @@
                                 <f:validator binding="#{row.bindings.Mobile.validator}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Donor Type" id="c7"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DonorType}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.DonorType.inputValue}"
+                                                  label="#{row.bindings.DonorType.label}"
+                                                  required="#{bindings.TblDonSetupView1.hints.DonorType.mandatory}"
+                                                  shortDesc="#{bindings.TblDonSetupView1.hints.DonorType.tooltip}"
+                                                  id="soc2">
+                                <f:selectItems value="#{row.bindings.DonorType.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.DonorType.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Monthly Commitments" id="c8" sortable="true" filterable="true"
+                                       width="120">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.MonthlyComit}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.MonthlyComit.inputValue}"
+                                            label="#{bindings.TblDonSetupView1.hints.MonthlyComit.label}"
+                                            required="#{bindings.TblDonSetupView1.hints.MonthlyComit.mandatory}"
+                                            columns="#{bindings.TblDonSetupView1.hints.MonthlyComit.displayWidth}"
+                                            maximumLength="#{bindings.TblDonSetupView1.hints.MonthlyComit.precision}"
+                                            shortDesc="#{bindings.TblDonSetupView1.hints.MonthlyComit.tooltip}"
+                                            id="it18">
+                                <f:validator binding="#{row.bindings.MonthlyComit.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDonSetupView1.hints.MonthlyComit.format}"/>
+                              </af:inputText>
+                            </af:column>
                           </af:table>
                           
                           <af:spacer width="5" height="10" id="s4"/>

@@ -22,7 +22,9 @@
        TblPbpD.UPDATED_BY, 
        TblPbpM.PBL_SUPP_ID, 
        TblPbpM.ID AS ID1, 
-       TblPbpD.BANK_CASH_ID"
+       TblPbpD.BANK_CASH_ID, 
+       TblPbpD.TAX_AMOUNT, 
+       TblPbpD.NET_AMOUNT"
   FromList="TBL_PBP_D TblPbpD, TBL_PBP_M TblPbpM"
   Where="TblPbpD.PBP_M_ID = TblPbpM.ID(+)">
   <ViewAccessor
@@ -177,6 +179,18 @@
     EntityAttrName="BankCashId"
     EntityUsage="TblPbpD"
     AliasName="BANK_CASH_ID"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblPbpD"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="NetAmount"
+    PrecisionRule="true"
+    EntityAttrName="NetAmount"
+    EntityUsage="TblPbpD"
+    AliasName="NET_AMOUNT"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

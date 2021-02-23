@@ -473,6 +473,24 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column headerText="Tax Percentage" id="c1" sortable="true"
+                             filterable="true">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.TaxParc}"
+                                   id="it15" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.TaxParc.inputValue}"
+                                  label="#{bindings.TblPblSuppItemsView2.hints.TaxParc.label}"
+                                  required="#{bindings.TblPblSuppItemsView2.hints.TaxParc.mandatory}"
+                                  columns="#{bindings.TblPblSuppItemsView2.hints.TaxParc.displayWidth}"
+                                  maximumLength="#{bindings.TblPblSuppItemsView2.hints.TaxParc.precision}"
+                                  shortDesc="#{bindings.TblPblSuppItemsView2.hints.TaxParc.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.TaxParc.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblPblSuppItemsView2.hints.TaxParc.format}"/>
+                    </af:inputText>
+                  </af:column>
                 </af:table>
                 <af:spacer width="5" height="10" id="s3"/>
                 <af:panelGroupLayout id="pgl2" halign="center" layout="horizontal">

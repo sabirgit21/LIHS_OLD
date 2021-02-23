@@ -215,6 +215,27 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_DON_SETUP"/>
+  <Attribute
+    Name="MonthlyComit"
+    ColumnName="MONTHLY_COMIT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DON_SETUP"/>
+  <Attribute
+    Name="DonorType"
+    Precision="3"
+    ColumnName="DONOR_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_DON_SETUP"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblDonCr"
     Association="model.ERP.EO.FkDonCrDonSetupAssoc"

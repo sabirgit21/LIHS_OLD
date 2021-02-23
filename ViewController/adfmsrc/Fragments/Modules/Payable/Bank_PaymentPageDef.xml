@@ -88,6 +88,7 @@
           <Item Value="ClrDate"/>
           <Item Value="Narration"/>
           <Item Value="BankCashId"/>
+          <Item Value="CoaWht"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -100,6 +101,8 @@
           <Item Value="PblSuppId"/>
           <Item Value="Description"/>
           <Item Value="Amount"/>
+          <Item Value="TaxAmount"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -118,5 +121,7 @@
     </attributeValues>
     <list IterBinding="TblPbpMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPbpMView1Iterator" StaticList="false" Uses="LOV_CoaWht" id="CoaWht" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

@@ -113,6 +113,9 @@
           <Item Value="Amount"/>
           <Item Value="ItemL4IdStatic"/>
           <Item Value="uomName"/>
+          <Item Value="TaxParc"/>
+          <Item Value="TaxAmount"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

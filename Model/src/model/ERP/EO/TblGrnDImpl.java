@@ -34,6 +34,9 @@ public class TblGrnDImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        TaxParc,
+        TaxAmount,
+        NetAmount,
         TblGrnM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -57,6 +60,7 @@ public class TblGrnDImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GRNMID = AttributesEnum.GrnMId.index();
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
@@ -69,12 +73,22 @@ public class TblGrnDImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int TAXPARC = AttributesEnum.TaxParc.index();
+    public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
+    public static final int NETAMOUNT = AttributesEnum.NetAmount.index();
     public static final int TBLGRNM = AttributesEnum.TblGrnM.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblGrnDImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblGrnD");
     }
 
     /**
@@ -254,18 +268,67 @@ public class TblGrnDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for TaxParc, using the alias name TaxParc.
+     * @return the value of TaxParc
+     */
+    public BigDecimal getTaxParc() {
+        return (BigDecimal) getAttributeInternal(TAXPARC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxParc.
+     * @param value value to set the TaxParc
+     */
+    public void setTaxParc(BigDecimal value) {
+        setAttributeInternal(TAXPARC, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxAmount, using the alias name TaxAmount.
+     * @return the value of TaxAmount
+     */
+    public BigDecimal getTaxAmount() {
+        return (BigDecimal) getAttributeInternal(TAXAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxAmount.
+     * @param value value to set the TaxAmount
+     */
+    public void setTaxAmount(BigDecimal value) {
+        setAttributeInternal(TAXAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for NetAmount, using the alias name NetAmount.
+     * @return the value of NetAmount
+     */
+    public BigDecimal getNetAmount() {
+        return (BigDecimal) getAttributeInternal(NETAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NetAmount.
+     * @param value value to set the NetAmount
+     */
+    public void setNetAmount(BigDecimal value) {
+        setAttributeInternal(NETAMOUNT, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblGrnM() {
-        return (EntityImpl) getAttributeInternal(TBLGRNM);
+    public TblGrnMImpl getTblGrnM() {
+        return (TblGrnMImpl) getAttributeInternal(TBLGRNM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblGrnM(EntityImpl value) {
+    public void setTblGrnM(TblGrnMImpl value) {
         setAttributeInternal(TBLGRNM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -274,13 +337,6 @@ public class TblGrnDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblGrnD");
     }
 
     /**

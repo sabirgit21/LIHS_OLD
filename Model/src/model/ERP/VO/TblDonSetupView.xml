@@ -26,7 +26,9 @@
        TblDonSetup.CREATED_DATE, 
        TblDonSetup.CREATED_BY, 
        TblDonSetup.UPDATED_DATE, 
-       TblDonSetup.UPDATED_BY"
+       TblDonSetup.UPDATED_BY, 
+       TblDonSetup.DONOR_TYPE, 
+       TblDonSetup.MONTHLY_COMIT"
   FromList="TBL_DON_SETUP TblDonSetup"
   Where="TblDonSetup.PROJECT_ID = nvl(:getProId,TblDonSetup.PROJECT_ID)">
   <Variable
@@ -40,6 +42,10 @@
   <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Donor_Type_LOV1"
+    ViewObjectName="model.LOV.Donor_Type_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ProjectId"
@@ -56,6 +62,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonorType"
+    ListVOName="Donor_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonorType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -181,6 +205,26 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblDonSetup"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="DonorType"
+    PrecisionRule="true"
+    EntityAttrName="DonorType"
+    EntityUsage="TblDonSetup"
+    AliasName="DONOR_TYPE"
+    LOVName="LOV_DonorType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MonthlyComit"
+    PrecisionRule="true"
+    EntityAttrName="MonthlyComit"
+    EntityUsage="TblDonSetup"
+    AliasName="MONTHLY_COMIT"/>
   <ViewLinkAccessor
     Name="TblDonCrView"
     ViewLink="model.ERP.VO.FkDonCrDonSetupLink"

@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Bank Payment Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
                             <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
@@ -65,6 +65,14 @@
                               <f:validator binding="#{bindings.BankCashId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.CoaWht.inputValue}" label="With Holding Tax"
+                                                required="#{bindings.CoaWht.hints.mandatory}"
+                                                shortDesc="#{bindings.CoaWht.hints.tooltip}" id="soc9"
+                                                contentStyle="width:200px;">
+                              <f:selectItems value="#{bindings.CoaWht.items}" id="si9"/>
+                              <f:validator binding="#{bindings.CoaWht.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s16"/>
                             <af:inputText value="#{bindings.Narration.inputValue}"
                                           label="Remarks"
                                           required="#{bindings.Narration.hints.mandatory}"
@@ -259,6 +267,40 @@
                                                   pattern="#{bindings.TblPbpDView2.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Tax Amount" id="c1" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
+                                            label="#{bindings.TblPbpDView2.hints.TaxAmount.label}"
+                                            required="#{bindings.TblPbpDView2.hints.TaxAmount.mandatory}"
+                                            columns="#{bindings.TblPbpDView2.hints.TaxAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblPbpDView2.hints.TaxAmount.precision}"
+                                            shortDesc="#{bindings.TblPbpDView2.hints.TaxAmount.tooltip}" id="it5" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblPbpDView2.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Net Amount" id="c12" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetAmount}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetAmount.inputValue}"
+                                            label="#{bindings.TblPbpDView2.hints.NetAmount.label}"
+                                            required="#{bindings.TblPbpDView2.hints.NetAmount.mandatory}"
+                                            columns="#{bindings.TblPbpDView2.hints.NetAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblPbpDView2.hints.NetAmount.precision}"
+                                            shortDesc="#{bindings.TblPbpDView2.hints.NetAmount.tooltip}" id="it16" readOnly="true">
+                                <f:validator binding="#{row.bindings.NetAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblPbpDView2.hints.NetAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
                           </af:table>
                          
                            <af:spacer width="5" height="10" id="s14"/>
@@ -375,6 +417,20 @@
                                         shortDesc="#{bindings.TblPbpMView1.hints.BankCashId.tooltip}" id="soc6" readOnly="true">
                       <f:selectItems value="#{row.bindings.BankCashId.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.BankCashId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="With Holding Tax" id="c16" sortable="true"
+                             filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CoaWht}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CoaWht.inputValue}" label="#{row.bindings.CoaWht.label}"
+                                        required="#{bindings.TblPbpMView1.hints.CoaWht.mandatory}"
+                                        shortDesc="#{bindings.TblPbpMView1.hints.CoaWht.tooltip}" id="soc10" readOnly="true">
+                      <f:selectItems value="#{row.bindings.CoaWht.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.CoaWht.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPbpMView1.hints.ChqNo.name}" filterable="true" sortable="true"

@@ -70,6 +70,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PBL_SUPP_ITEMS"/>
+  <Attribute
+    Name="TaxParc"
+    ColumnName="TAX_PARC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBL_SUPP_ITEMS"/>
   <AccessorAttribute
     Name="TblPblSupp"
     Association="model.ERP.EO.FkPblSuppItemsSuppIdAssoc"

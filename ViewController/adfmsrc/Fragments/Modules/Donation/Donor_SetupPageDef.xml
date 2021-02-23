@@ -32,6 +32,8 @@
           <Item Value="Name"/>
           <Item Value="FatName"/>
           <Item Value="Mobile"/>
+          <Item Value="DonorType"/>
+          <Item Value="MonthlyComit"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -131,6 +131,7 @@
         <AttrNames>
           <Item Value="Id"/>
           <Item Value="ItemL4Id"/>
+          <Item Value="TaxParc"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
