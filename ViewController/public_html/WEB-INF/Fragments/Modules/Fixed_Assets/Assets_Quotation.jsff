@@ -252,7 +252,7 @@
                                             required="#{bindings.TblAssetQoutDView2.hints.Rate.mandatory}"
                                             columns="#{bindings.TblAssetQoutDView2.hints.Rate.displayWidth}"
                                             maximumLength="#{bindings.TblAssetQoutDView2.hints.Rate.precision}"
-                                            shortDesc="#{bindings.TblAssetQoutDView2.hints.Rate.tooltip}" id="it8" readOnly="true">
+                                            shortDesc="#{bindings.TblAssetQoutDView2.hints.Rate.tooltip}" id="it8">
                                 <f:validator binding="#{row.bindings.Rate.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblAssetQoutDView2.hints.Rate.format}"/>
@@ -270,8 +270,8 @@
                                             label="#{bindings.TblAssetQoutDView2.hints.Amount.label}"
                                             required="#{bindings.TblAssetQoutDView2.hints.Amount.mandatory}"
                                             columns="#{bindings.TblAssetQoutDView2.hints.Amount.displayWidth}"
-                                            maximumLength="#{bindings.TblAssetQoutDView2.hints.Amount.precision}"
-                                            shortDesc="#{bindings.TblAssetQoutDView2.hints.Amount.tooltip}" id="it9" readOnly="true">
+                                            maximumLength="#{bindings.TblAssetQoutDView2.hints.Amount.precision}" readOnly="true"
+                                            shortDesc="#{bindings.TblAssetQoutDView2.hints.Amount.tooltip}" id="it9">
                                 <f:validator binding="#{row.bindings.Amount.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblAssetQoutDView2.hints.Amount.format}"/>

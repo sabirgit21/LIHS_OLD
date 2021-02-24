@@ -41,6 +41,12 @@
     EntityAttrName="Vno"
     EntityUsage="TblAssetQoutM"
     AliasName="VNO"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblAssetQoutM"
+    AliasName="PBL_SUPP_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

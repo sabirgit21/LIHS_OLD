@@ -49,7 +49,7 @@
                             </af:inputDate>
                             <af:spacer  id="s4"/>
                             <af:selectOneChoice value="#{bindings.AssetQoutMId.inputValue}"
-                                                label="Asset Quotation"
+                                                label="Asset Quotation" autoSubmit="true"
                                                 required="#{bindings.AssetQoutMId.hints.mandatory}"
                                                 shortDesc="#{bindings.AssetQoutMId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:150px;">
@@ -79,7 +79,7 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s8"/>
                             <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}"
-                                                label="Supplier"
+                                                label="Supplier" disabled="true"
                                                 required="#{bindings.PblSuppId.hints.mandatory}"
                                                 shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc3"
                                                 contentStyle="width:150px;">
@@ -229,7 +229,7 @@
       </af:inputText>
 </f:facet>
                               <af:inputText value="#{row.bindings.Qty.inputValue}"
-                                            label="#{bindings.TblAssetApprDView2.hints.Qty.label}"
+                                            label="#{bindings.TblAssetApprDView2.hints.Qty.label}" readOnly="true"
                                             required="#{bindings.TblAssetApprDView2.hints.Qty.mandatory}"
                                             columns="#{bindings.TblAssetApprDView2.hints.Qty.displayWidth}"
                                             maximumLength="#{bindings.TblAssetApprDView2.hints.Qty.precision}"

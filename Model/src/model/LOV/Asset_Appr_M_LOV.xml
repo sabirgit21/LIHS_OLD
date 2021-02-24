@@ -42,6 +42,12 @@
     EntityAttrName="Dated"
     EntityUsage="TblAssetApprM"
     AliasName="DATED"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblAssetApprM"
+    AliasName="PBL_SUPP_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
