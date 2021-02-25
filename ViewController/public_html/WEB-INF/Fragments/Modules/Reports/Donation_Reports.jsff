@@ -8,36 +8,36 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                       
                             
-                       <!--<af:panelGroupLayout id="pgl4" layout="horizontal">
+                       <af:panelGroupLayout id="pgl4" layout="horizontal">
                             <af:inputDate label="From Date : " id="id3"
-                                           binding="#{backingBeanScope.SummaryReportsBackBean.fromDateParam}"/>
-                            --><!--<af:inputDate label="From Date"
+                                           binding="#{backingBeanScope.DonationReportsBackBean.fromDateParam}"/>
+                            <!--<af:inputDate label="From Date"
                             binding="#{backingBeanScope.SummaryReportsBackBean.fromDateParam}"
                                           columns="#{bindings.Dated.hints.displayWidth}"
                                           shortDesc="#{bindings.Dated.hints.tooltip}" id="id1">
                                 <f:validator binding="#{bindings.Dated.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.Dated.format}"/>
-                            </af:inputDate>--><!--
+                            </af:inputDate>-->
                             <af:spacer width="30" height="10" id="s11"/>
                             <af:inputDate label="To Date : " id="id4"
-                                          binding="#{backingBeanScope.SummaryReportsBackBean.toDateParam}"/>
-                            --><!--<af:inputDate label="To Date"
+                                          binding="#{backingBeanScope.DonationReportsBackBean.toDateParam}"/>
+                            <!--<af:inputDate label="To Date"
                             binding="#{backingBeanScope.Grant_Approval_Report_BackBean.toDateParam}"
                                           columns="#{bindings.Dated.hints.displayWidth}"
                                           shortDesc="#{bindings.Dated.hints.tooltip}" id="id2">
                                 <f:validator binding="#{bindings.Dated.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.Dated.format}"/>
-                            </af:inputDate>--><!--
+                            </af:inputDate>-->
                          <af:spacer width="30" height="10" id="s12"/>
-                            <af:selectOneChoice 
+                            <!--<af:selectOneChoice 
                                                 label="Project"
                                                 binding="#{backingBeanScope.SummaryReportsBackBean.projidparam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:200px;">
                                 <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ProjectId.validator}"/>
-                            </af:selectOneChoice>
-                        </af:panelGroupLayout>-->
+                            </af:selectOneChoice>-->
+                        </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
                
@@ -68,31 +68,18 @@
                                
                                 
                             </af:selectOneChoice>
-                            <!--<af:spacer width="30" height="10" id="s9"/>
-                            <af:selectOneChoice label="Select  Item Wise" id="soc2" autoSubmit="true"
-                                                unselectedLabel="Select"
-                                                binding="#{backingBeanScope.SummaryReportsBackBean.itemreport_type}">
+                            <af:spacer width="30" height="10" id="s9"/>
+                            <af:selectOneChoice label="Select Category Wise" id="soc2" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                                binding="#{backingBeanScope.DonationReportsBackBean.catreport_type}">
                                                 
-                                <af:selectItem label="Summary ITN Item L4 Project" value="summaryITNL4" id="si4"/>
-                                <af:selectItem label="Summary IRN Item L4 Project" value="summaryIRNL4" id="si10"/>
-                                <af:selectItem label="Summary GIR Item L4 Project" value="summaryGIRL4" id="si12"/>
-                                <af:selectItem label="Summary GIN Item L4 Project" value="summaryGINL4" id="si13"/>
-                                <af:selectItem label="Summary DN Item L4 Project" value="summaryDNL4" id="si14"/>
-                                <af:selectItem label="Summary Cash Purch Item L4 Project" value="summaryCPL4" id="si15"/>
-                                <af:selectItem label="Summary GRN Item L4 Project" value="summaryGRNL4" id="si16"/>
-                                <af:selectItem label="Summary OB Item L4 Project" value="summaryOBL4" id="si17"/>
-                            </af:selectOneChoice>
-                            <af:spacer width="30" height="10" id="s3"/>
-                            <af:selectOneChoice label="Select Center/Sub Center" id="soc3" autoSubmit="true"
-                                                unselectedLabel="Select"
-                                                binding="#{backingBeanScope.SummaryReportsBackBean.centerreport_type}">
-                                                
-                                 <af:selectItem label="Summary PRO Iss Center Project" value="summaryPROIssCenter" id="si20"/>
-                                <af:selectItem label="Summary FG TRN Center Project" value="summaryFGTRNCenter" id="si21"/>
-                                 <af:selectItem label="Summary FG TRN Sub Center Project" value="summaryFGTRNSubCenter"
-                                                id="si22"/>
+                                <af:selectItem label="Summary Donation Donor" value="summarydonationdonor" id="si4"/>
+                                <af:selectItem label="Summary Donation Category Day" value="summarydonationcategoryday" id="si10"/>
+                                <af:selectItem label="Summary Donation Category Month" value="summarydonationcategorymonth" id="si12"/>
+                                <af:selectItem label="Summary Donation Category donor" value="summarydonationcategorydonor" id="si13"/>
                                 
-                            </af:selectOneChoice>-->
+                                
+                            </af:selectOneChoice>
                             
                             </af:panelGroupLayout>
                     </af:gridCell>

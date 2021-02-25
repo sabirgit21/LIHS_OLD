@@ -2,9 +2,17 @@ package view.Report;
 
 import java.math.BigDecimal;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
+import java.util.Locale;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 
 import view.DatabaseConnection.DatabaseConnection;
@@ -12,24 +20,35 @@ import view.DatabaseConnection.DatabaseConnection;
 public class DonationReports {
     private RichSelectOneChoice format_type;
     private RichSelectOneChoice report_type;
+    private RichInputDate fromDateParam;
+    private RichInputDate toDateParam;
+    private RichSelectOneChoice catreport_type;
 
     public DonationReports() {
     }
     
     private static String gotFormat = "";
     private static String selectedReportType = "";
+    private static String selectedCatReportType = "";
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
        gotFormat = (String)this.getFormat_type().getValue();
-        
+        selectedCatReportType = (String)this.getCatreport_type().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
         String url = "";
         
+        if(getFromDate() != ""){
+            reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
         
+        if(getToDate() != ""){
+            reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+       
 
 
         if (gotFormat == "") {
@@ -74,6 +93,33 @@ public class DonationReports {
                 }
             }
             
+                if(selectedCatReportType == null || selectedCatReportType == ""){
+                    System.out.println("center sub center wise not selected");
+                }
+                else{
+                switch (selectedCatReportType) {
+                
+                    case "summarydonationdonor":
+                            reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Donor_Wise_Report&");
+                            break;
+                        
+                    case "summarydonationcategoryday":
+                            reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Day_Wise_Report&");
+                            break;
+                    case "summarydonationcategorymonth":
+                            reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Month_Wise_Report&");
+                            break;
+                    case "summarydonationcategorydonor":
+                            reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Donor_Wise_Report&");
+                            break;
+
+                default:
+                    showMessage("Please Select Report Type");
+                    break;
+
+                }
+                }
+            
 
               
 
@@ -106,7 +152,33 @@ public class DonationReports {
         return null;
     }
     
+    private String getFromDate() {
+        if(fromDateParam.getValue() != null && fromDateParam.getValue() != "") {
+            try {
+                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date parsedDate = sdf.parse(fromDateParam.getValue().toString());
+                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+                return (print.format(parsedDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
     
+    private String getToDate() {
+        if(toDateParam.getValue() != null && toDateParam.getValue() != "") {
+            try {
+                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date parsedDate = sdf.parse(toDateParam.getValue().toString());
+                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+                return (print.format(parsedDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
     
 
     public void setFormat_type(RichSelectOneChoice format_type) {
@@ -123,5 +195,29 @@ public class DonationReports {
 
     public RichSelectOneChoice getReport_type() {
         return report_type;
+    }
+
+    public void setFromDateParam(RichInputDate fromDateParam) {
+        this.fromDateParam = fromDateParam;
+    }
+
+    public RichInputDate getFromDateParam() {
+        return fromDateParam;
+    }
+
+    public void setToDateParam(RichInputDate toDateParam) {
+        this.toDateParam = toDateParam;
+    }
+
+    public RichInputDate getToDateParam() {
+        return toDateParam;
+    }
+
+    public void setCatreport_type(RichSelectOneChoice catreport_type) {
+        this.catreport_type = catreport_type;
+    }
+
+    public RichSelectOneChoice getCatreport_type() {
+        return catreport_type;
     }
 }
