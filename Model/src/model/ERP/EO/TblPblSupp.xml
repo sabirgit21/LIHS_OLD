@@ -221,6 +221,20 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PBL_SUPP"/>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_PBL_SUPP"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblPblSuppItems"
     Association="model.ERP.EO.FkPblSuppItemsSuppIdAssoc"

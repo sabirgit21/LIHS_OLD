@@ -141,5 +141,7 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblPblSuppItemsView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <list IterBinding="TblPblSuppView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

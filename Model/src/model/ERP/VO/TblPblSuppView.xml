@@ -21,6 +21,10 @@
     Name="GL_Level4_LOV1"
     ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Type"
     ListVOName="Supplier_Type1"
@@ -54,6 +58,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -172,7 +195,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblPblSupp"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -184,13 +208,28 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblPblSupp"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblPblSupp"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblPblSupp"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblPblSuppItemsView"
     ViewLink="model.ERP.VO.FkPblSuppItemsSuppIdLink"

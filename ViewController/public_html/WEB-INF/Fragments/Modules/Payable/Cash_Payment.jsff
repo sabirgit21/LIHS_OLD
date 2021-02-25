@@ -243,40 +243,6 @@
                                                   pattern="#{bindings.TblPcpDView2.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Tax Amount" id="c1" sortable="true" filterable="true"> 
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
-       id="it16" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
-                                            label="#{bindings.TblPcpDView2.hints.TaxAmount.label}"
-                                            required="#{bindings.TblPcpDView2.hints.TaxAmount.mandatory}"
-                                            columns="#{bindings.TblPcpDView2.hints.TaxAmount.displayWidth}"
-                                            maximumLength="#{bindings.TblPcpDView2.hints.TaxAmount.precision}"
-                                            shortDesc="#{bindings.TblPcpDView2.hints.TaxAmount.tooltip}" id="it5" readOnly="true">
-                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblPcpDView2.hints.TaxAmount.format}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column headerText="Net Amount" id="c9" sortable="true" filterable="true">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.NetAmount}"
-       id="it17" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.NetAmount.inputValue}"
-                                            label="#{bindings.TblPcpDView2.hints.NetAmount.label}"
-                                            required="#{bindings.TblPcpDView2.hints.NetAmount.mandatory}"
-                                            columns="#{bindings.TblPcpDView2.hints.NetAmount.displayWidth}"
-                                            maximumLength="#{bindings.TblPcpDView2.hints.NetAmount.precision}"
-                                            shortDesc="#{bindings.TblPcpDView2.hints.NetAmount.tooltip}" id="it13" readOnly="true">
-                                <f:validator binding="#{row.bindings.NetAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblPcpDView2.hints.NetAmount.format}"/>
-                              </af:inputText>
-                            </af:column>
                           </af:table>
                           <af:spacer width="5" height="10" id="s2"/>
                            <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">

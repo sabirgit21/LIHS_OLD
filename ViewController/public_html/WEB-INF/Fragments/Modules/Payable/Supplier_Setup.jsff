@@ -64,6 +64,13 @@
                                 contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.ContactPer.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s13"/>
+                  <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active"
+                                      required="#{bindings.Ast.hints.mandatory}"
+                                      shortDesc="#{bindings.Ast.hints.tooltip}" id="soc6">
+                    <f:selectItems value="#{bindings.Ast.items}" id="si6"/>
+                    <f:validator binding="#{bindings.Ast.validator}"/>
+                  </af:selectOneChoice>
                   <af:spacer  id="s8"/>
                   <af:inputText value="#{bindings.Phone.inputValue}" label="Phone"
                                 required="#{bindings.Phone.hints.mandatory}"
@@ -101,7 +108,7 @@
                                 contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Cell.validator}"/>
                   </af:inputText>
-                  <af:spacer  id="s13"/>
+                  <af:spacer  id="s131"/>
                   <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
