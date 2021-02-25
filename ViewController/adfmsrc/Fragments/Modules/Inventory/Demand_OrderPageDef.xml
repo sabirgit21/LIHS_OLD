@@ -19,11 +19,6 @@
         <Item Value="Id"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblDoMView1Iterator" id="Vno">
-      <AttrNames>
-        <Item Value="Vno"/>
-      </AttrNames>
-    </attributeValues>
     <list IterBinding="TblDoMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblDoMView1Iterator" id="Dated">
@@ -53,7 +48,6 @@
       <nodeDefinition DefName="model.ERP.VO.TblDoMView" Name="TblDoMView10">
         <AttrNames>
           <Item Value="Id"/>
-          <Item Value="Vno"/>
           <Item Value="Vtp"/>
           <Item Value="Dated"/>
           <Item Value="ProjectId"/>
@@ -89,5 +83,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblDoMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

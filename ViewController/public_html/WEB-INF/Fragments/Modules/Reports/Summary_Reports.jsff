@@ -133,7 +133,55 @@
                                        action="#{backingBeanScope.SummaryReportsBackBean.gen_Report}"/>
                             <af:spacer width="30" height="10" id="s6"/>
                                             </af:panelGroupLayout>
-                                        </af:gridCell>
+                        <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                                      required="#{bindings.Id.hints.mandatory}"
+                                      columns="#{bindings.Id.hints.displayWidth}"
+                                      maximumLength="#{bindings.Id.hints.precision}"
+                                      shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.Id.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                        </af:inputText>
+                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                                   disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
+                        <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
+                                   disabled="#{!bindings.Execute.enabled}" id="b3"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                   disabled="#{!bindings.Commit.enabled}" id="b4"/>
+                        <af:inputDate value="#{bindings.Dated.inputValue}" label="#{bindings.Dated.hints.label}"
+                                      required="#{bindings.Dated.hints.mandatory}"
+                                      columns="#{bindings.Dated.hints.displayWidth}"
+                                      shortDesc="#{bindings.Dated.hints.tooltip}" id="id1">
+                            <f:validator binding="#{bindings.Dated.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                        </af:inputDate>
+                        <af:selectOneChoice value="#{bindings.ProjectId1.inputValue}"
+                                            label="#{bindings.ProjectId1.label}"
+                                            required="#{bindings.ProjectId1.hints.mandatory}"
+                                            shortDesc="#{bindings.ProjectId1.hints.tooltip}" id="soc6">
+                            <f:selectItems value="#{bindings.ProjectId1.items}" id="si31"/>
+                            <f:validator binding="#{bindings.ProjectId1.validator}"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
+                                            label="#{bindings.DepartmentId.label}"
+                                            required="#{bindings.DepartmentId.hints.mandatory}"
+                                            shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc7">
+                            <f:selectItems value="#{bindings.DepartmentId.items}" id="si32"/>
+                            <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{bindings.Narration.inputValue}" label="#{bindings.Narration.hints.label}"
+                                      required="#{bindings.Narration.hints.mandatory}"
+                                      columns="#{bindings.Narration.hints.displayWidth}"
+                                      maximumLength="#{bindings.Narration.hints.precision}"
+                                      shortDesc="#{bindings.Narration.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.Narration.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="#{bindings.Vtp.label}"
+                                            required="#{bindings.Vtp.hints.mandatory}"
+                                            shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc8">
+                            <f:selectItems value="#{bindings.Vtp.items}" id="si33"/>
+                            <f:validator binding="#{bindings.Vtp.validator}"/>
+                        </af:selectOneChoice>
+                    </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
    

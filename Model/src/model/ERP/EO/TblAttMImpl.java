@@ -107,15 +107,15 @@ public class TblAttMImpl extends EntityImpl {
      * Gets the attribute value for Vno, using the alias name Vno.
      * @return the value of Vno
      */
-    public String getVno() {
-        return (String) getAttributeInternal(VNO);
+    public Number getVno() {
+        return (Number) getAttributeInternal(VNO);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Vno.
      * @param value value to set the Vno
      */
-    public void setVno(String value) {
+    public void setVno(Number value) {
         setAttributeInternal(VNO, value);
     }
 

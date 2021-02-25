@@ -31,9 +31,7 @@
     SQLType="VARCHAR"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_PO_M"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true">
+    TableName="TBL_PO_M">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>

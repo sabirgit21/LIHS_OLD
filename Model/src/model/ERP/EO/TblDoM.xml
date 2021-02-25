@@ -26,19 +26,6 @@
     RetrievedOnInsert="true"
     RetrievedOnUpdate="true"/>
   <Attribute
-    Name="Vno"
-    ColumnName="VNO"
-    SQLType="VARCHAR"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
-    TableName="TBL_DO_M"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="25"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
     Name="Vtp"
     Precision="3"
     ColumnName="VTP"
@@ -119,6 +106,13 @@
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_DO_M"/>
+  <Attribute
+    Name="Vno"
+    ColumnName="VNO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_DO_M"/>
   <AccessorAttribute

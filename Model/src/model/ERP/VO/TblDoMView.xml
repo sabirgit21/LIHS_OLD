@@ -10,7 +10,6 @@
   CustomQuery="false"
   PageIterMode="Full"
   SelectList="TblDoM.ID, 
-       TblDoM.VNO, 
        TblDoM.VTP, 
        TblDoM.DATED, 
        TblDoM.DEPARTMENT_ID, 
@@ -19,7 +18,8 @@
        TblDoM.CREATED_DATE, 
        TblDoM.CREATED_BY, 
        TblDoM.UPDATED_DATE, 
-       TblDoM.UPDATED_BY"
+       TblDoM.UPDATED_BY, 
+       TblDoM.VNO"
   FromList="TBL_DO_M TblDoM"
   Where="TblDoM.PROJECT_ID = nvl(:getProId,TblDoM.PROJECT_ID)">
   <Variable
@@ -106,12 +106,6 @@
     EntityAttrName="Id"
     EntityUsage="TblDoM"
     AliasName="ID"/>
-  <ViewAttribute
-    Name="Vno"
-    PrecisionRule="true"
-    EntityAttrName="Vno"
-    EntityUsage="TblDoM"
-    AliasName="VNO"/>
   <ViewAttribute
     Name="Vtp"
     PrecisionRule="true"
@@ -201,6 +195,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblDoM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TblDoM"
+    AliasName="VNO"/>
   <ViewLinkAccessor
     Name="TblDoDView"
     ViewLink="model.ERP.VO.FkDoDMLink"

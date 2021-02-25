@@ -27,14 +27,11 @@
     RetrievedOnUpdate="true"/>
   <Attribute
     Name="Vno"
-    Precision="25"
     ColumnName="VNO"
     SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_DON_KIND_M"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true">
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_DON_KIND_M">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>

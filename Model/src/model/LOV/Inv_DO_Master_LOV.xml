@@ -11,7 +11,6 @@
   PageIterMode="Full"
   SelectList="TblDoM.ID, 
        TblDoM.DATED, 
-       TblDoM.VNO, 
        TblDoM.PROJECT_ID"
   FromList="TBL_DO_M TblDoM"
   Where="TblDoM.PROJECT_ID = :getProID">
@@ -27,7 +26,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Inv_DO_Master_LOV"/>
   </Variable>
   <EntityUsage
@@ -54,12 +52,6 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="Vno"
-    PrecisionRule="true"
-    EntityAttrName="Vno"
-    EntityUsage="TblDoM"
-    AliasName="VNO"/>
   <ViewAttribute
     Name="ProjectId"
     PrecisionRule="true"

@@ -25,7 +25,6 @@ public class TblDoMImpl extends EntityImpl {
      */
     public enum AttributesEnum {
         Id,
-        Vno,
         Vtp,
         Dated,
         DepartmentId,
@@ -35,6 +34,7 @@ public class TblDoMImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        Vno,
         TblDoD,
         TblPoDD;
         private static AttributesEnum[] vals = null;
@@ -62,7 +62,6 @@ public class TblDoMImpl extends EntityImpl {
 
 
     public static final int ID = AttributesEnum.Id.index();
-    public static final int VNO = AttributesEnum.Vno.index();
     public static final int VTP = AttributesEnum.Vtp.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
@@ -72,6 +71,7 @@ public class TblDoMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int VNO = AttributesEnum.Vno.index();
     public static final int TBLDOD = AttributesEnum.TblDoD.index();
     public static final int TBLPODD = AttributesEnum.TblPoDD.index();
 
@@ -105,21 +105,6 @@ public class TblDoMImpl extends EntityImpl {
         setAttributeInternal(ID, value);
     }
 
-    /**
-     * Gets the attribute value for Vno, using the alias name Vno.
-     * @return the value of Vno
-     */
-    public Number getVno() {
-        return (Number) getAttributeInternal(VNO);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Vno.
-     * @param value value to set the Vno
-     */
-    public void setVno(Number value) {
-        setAttributeInternal(VNO, value);
-    }
 
     /**
      * Gets the attribute value for Vtp, using the alias name Vtp.
@@ -247,6 +232,22 @@ public class TblDoMImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for Vno, using the alias name Vno.
+     * @return the value of Vno
+     */
+    public BigDecimal getVno() {
+        return (BigDecimal) getAttributeInternal(VNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Vno.
+     * @param value value to set the Vno
+     */
+    public void setVno(BigDecimal value) {
+        setAttributeInternal(VNO, value);
     }
 
     /**

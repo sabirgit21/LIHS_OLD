@@ -78,13 +78,21 @@
                               <f:validator binding="#{bindings.DepartmentId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s10"/>
-                            <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
+                            <!--<af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="17"
                                           maximumLength="#{bindings.Vno.hints.precision}"
                                           shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" readOnly="true"
                                           contentStyle="width:150px;">
                               <f:validator binding="#{bindings.Vno.validator}"/>
+                            </af:inputText>-->
+                            <af:inputText value="#{bindings.Vno.inputValue}" label="#{bindings.Vno.hints.label}"
+                                          required="#{bindings.Vno.hints.mandatory}"
+                                          columns="#{bindings.Vno.hints.displayWidth}"
+                                          maximumLength="#{bindings.Vno.hints.precision}"
+                                          shortDesc="#{bindings.Vno.hints.tooltip}" id="it2">
+                              <f:validator binding="#{bindings.Vno.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.Vno.format}"/>
                             </af:inputText>
                             <af:spacer  id="s5"/>
                             <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
