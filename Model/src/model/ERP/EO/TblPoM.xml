@@ -71,9 +71,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PO_M">
+    TableName="TBL_PO_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
     <TransientExpression
       Name="ExpressionScript"
+      trustMode="trusted"
       CodeSourceName="TblPoMRow"/>
   </Attribute>
   <Attribute
