@@ -110,5 +110,12 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblAssetPurchMView1Iterator" StaticList="false" Uses="LOV_AssetType" id="AssetType"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblAssetPurchMView1Iterator" id="WarrantyUpto">
+      <AttrNames>
+        <Item Value="WarrantyUpto"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

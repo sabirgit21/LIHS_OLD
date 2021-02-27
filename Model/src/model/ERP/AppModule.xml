@@ -613,6 +613,15 @@
   <ViewUsage
     Name="TblAssetApprMView2"
     ViewObjectName="model.ERP.VO.TblAssetApprMView"/>
+  <ViewUsage
+    Name="TblAssetWrntyClaimDView1"
+    ViewObjectName="model.ERP.VO.TblAssetWrntyClaimDView"/>
+  <ViewUsage
+    Name="TblAssetWrntyClaimMView1"
+    ViewObjectName="model.ERP.VO.TblAssetWrntyClaimMView"/>
+  <ViewUsage
+    Name="TblAssetWrntyClaimDView2"
+    ViewObjectName="model.ERP.VO.TblAssetWrntyClaimDView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1158,5 +1167,11 @@
     ViewLinkObjectName="model.ERP.VO.FkAssetApprMQoutLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssetQoutMView1"
     DstViewUsageName="model.ERP.AppModule.TblAssetApprMView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkAssetWrntyClaimDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkAssetWrntyClaimDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssetWrntyClaimMView1"
+    DstViewUsageName="model.ERP.AppModule.TblAssetWrntyClaimDView2"
     Reversed="false"/>
 </AppModule>

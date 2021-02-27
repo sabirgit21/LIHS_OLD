@@ -253,6 +253,8 @@
           usageId="view_Assets_Approval_TaskFlow_Assets_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Approval.jsff" usageId="view_Assets_ApprovalPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Quotation.jsff" usageId="view_Assets_QuotationPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Waranty_Claim.jsff"
+          usageId="view_Assets_Waranty_ClaimPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -488,6 +490,7 @@
           path="Task_Flows.Modules.Fixed_Assets.Assets_Approval_TaskFlow_Assets_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Assets_ApprovalPageDef" path="Fragments.Modules.Fixed_Assets.Assets_ApprovalPageDef"/>
     <page id="view_Assets_QuotationPageDef" path="Fragments.Modules.Fixed_Assets.Assets_QuotationPageDef"/>
+    <page id="view_Assets_Waranty_ClaimPageDef" path="Fragments.Modules.Fixed_Assets.Assets_Waranty_ClaimPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

@@ -96,7 +96,6 @@
     TableName="TBL_ASSET_PURCH_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblAssetPurchMRow"/>
   </Attribute>
   <Attribute
@@ -148,6 +147,27 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
+    TableName="TBL_ASSET_PURCH_M"/>
+  <Attribute
+    Name="AssetType"
+    Precision="1"
+    ColumnName="ASSET_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ASSET_PURCH_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WarrantyUpto"
+    ColumnName="WARRANTY_UPTO"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
     TableName="TBL_ASSET_PURCH_M"/>
   <AccessorAttribute
     Name="TblAssetPurchD"

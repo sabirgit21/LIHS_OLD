@@ -98,6 +98,24 @@
                   </af:inputText>
                   
                             <af:spacer  id="s14"/>
+                            <af:selectOneChoice value="#{bindings.AssetType.inputValue}"
+                                                label="#{bindings.AssetType.label}"
+                                                required="#{bindings.AssetType.hints.mandatory}"
+                                                shortDesc="#{bindings.AssetType.hints.tooltip}" id="soc5">
+                              <f:selectItems value="#{bindings.AssetType.items}" id="si5"/>
+                              <f:validator binding="#{bindings.AssetType.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s124"/>
+                            <af:inputText value="#{bindings.WarrantyUpto.inputValue}"
+                                          label="#{bindings.WarrantyUpto.hints.label}"
+                                          required="#{bindings.WarrantyUpto.hints.mandatory}"
+                                          columns="#{bindings.WarrantyUpto.hints.displayWidth}"
+                                          maximumLength="#{bindings.WarrantyUpto.hints.precision}"
+                                          shortDesc="#{bindings.WarrantyUpto.hints.tooltip}" id="it16">
+                              <f:validator binding="#{bindings.WarrantyUpto.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.WarrantyUpto.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s394"/>
                             <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type" disabled="true"
                                       required="#{bindings.Vtp.hints.mandatory}"
                                       shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc2" contentStyle="width:150px;" >

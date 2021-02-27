@@ -38,6 +38,8 @@ public class TblAssetPurchMImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        AssetType,
+        WarrantyUpto,
         TblAssetPurchD,
         TblAssetOrderM,
         TblAssetReturnM;
@@ -63,6 +65,7 @@ public class TblAssetPurchMImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int VNO = AttributesEnum.Vno.index();
     public static final int VTP = AttributesEnum.Vtp.index();
@@ -78,6 +81,8 @@ public class TblAssetPurchMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ASSETTYPE = AttributesEnum.AssetType.index();
+    public static final int WARRANTYUPTO = AttributesEnum.WarrantyUpto.index();
     public static final int TBLASSETPURCHD = AttributesEnum.TblAssetPurchD.index();
     public static final int TBLASSETORDERM = AttributesEnum.TblAssetOrderM.index();
     public static final int TBLASSETRETURNM = AttributesEnum.TblAssetReturnM.index();
@@ -86,6 +91,13 @@ public class TblAssetPurchMImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblAssetPurchMImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetPurchM");
     }
 
     /**
@@ -313,6 +325,38 @@ public class TblAssetPurchMImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for AssetType, using the alias name AssetType.
+     * @return the value of AssetType
+     */
+    public String getAssetType() {
+        return (String) getAttributeInternal(ASSETTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AssetType.
+     * @param value value to set the AssetType
+     */
+    public void setAssetType(String value) {
+        setAttributeInternal(ASSETTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for WarrantyUpto, using the alias name WarrantyUpto.
+     * @return the value of WarrantyUpto
+     */
+    public Timestamp getWarrantyUpto() {
+        return (Timestamp) getAttributeInternal(WARRANTYUPTO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for WarrantyUpto.
+     * @param value value to set the WarrantyUpto
+     */
+    public void setWarrantyUpto(Timestamp value) {
+        setAttributeInternal(WARRANTYUPTO, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblAssetPurchD() {
@@ -340,6 +384,7 @@ public class TblAssetPurchMImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLASSETRETURNM);
     }
 
+
     /**
      * @param id key constituent
 
@@ -347,13 +392,6 @@ public class TblAssetPurchMImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetPurchM");
     }
 
     /**
