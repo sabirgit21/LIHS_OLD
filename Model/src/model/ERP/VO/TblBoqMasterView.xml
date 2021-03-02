@@ -21,17 +21,7 @@
        TblBoqMaster.UPDATED_DATE, 
        TblBoqMaster.UPDATED_BY, 
        TblBoqMaster.PROJECT_ID"
-  FromList="TBL_BOQ_MASTER TblBoqMaster"
-  Where="TblBoqMaster.PROJECT_ID= nvl(:getProId,TblBoqMaster.PROJECT_ID)">
-  <Variable
-    Name="getProId"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      trustMode="trusted"
-      CodeSourceName="TblBoqMasterView"/>
-  </Variable>
+  FromList="TBL_BOQ_MASTER TblBoqMaster">
   <ViewAccessor
     Name="Voucher_Type1"
     ViewObjectName="model.LOV.Voucher_Type"
