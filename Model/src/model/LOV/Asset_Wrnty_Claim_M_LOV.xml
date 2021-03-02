@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Asset_Return_M_LOV"
+  Name="Asset_Wrnty_Claim_M_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -16,37 +16,31 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Asset_Return_M_LOV_LABEL"/>
+        ResId="model.LOV.Asset_Wrnty_Claim_M_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <EntityUsage
-    Name="TblAssetReturnM"
-    Entity="model.ERP.EO.TblAssetReturnM"/>
-  <ViewAttribute
-    Name="Id"
-    PrecisionRule="true"
-    EntityAttrName="Id"
-    EntityUsage="TblAssetReturnM"
-    AliasName="ID"/>
+    Name="TblAssetWrntyClaimM"
+    Entity="model.ERP.EO.TblAssetWrntyClaimM"/>
   <ViewAttribute
     Name="Vno"
     PrecisionRule="true"
     EntityAttrName="Vno"
-    EntityUsage="TblAssetReturnM"
+    EntityUsage="TblAssetWrntyClaimM"
     AliasName="VNO"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblAssetWrntyClaimM"
+    AliasName="ID"/>
   <ViewAttribute
     Name="Dated"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Dated"
-    EntityUsage="TblAssetReturnM"
+    EntityUsage="TblAssetWrntyClaimM"
     AliasName="DATED"/>
-  <ViewAttribute
-    Name="PblSuppId"
-    PrecisionRule="true"
-    EntityAttrName="PblSuppId"
-    EntityUsage="TblAssetReturnM"
-    AliasName="PBL_SUPP_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

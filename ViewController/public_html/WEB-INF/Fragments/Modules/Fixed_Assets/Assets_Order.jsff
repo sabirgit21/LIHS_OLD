@@ -233,7 +233,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="APRV Qty" id="c4">
-                              <af:inputText value="#{row.bindings.ArQty.inputValue}"
+                              <af:inputText value="#{row.bindings.ArQty.inputValue}" readOnly="true"
                                             label="#{bindings.TblAssetOrderDView3.hints.ArQty.label}"
                                             required="#{bindings.TblAssetOrderDView3.hints.ArQty.mandatory}"
                                             columns="#{bindings.TblAssetOrderDView3.hints.ArQty.displayWidth}"
@@ -242,6 +242,18 @@
                                 <f:validator binding="#{row.bindings.ArQty.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblAssetOrderDView3.hints.ArQty.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Order Qty" id="c6">
+                              <af:inputText value="#{row.bindings.Qty.inputValue}"
+                                            label="#{bindings.TblAssetOrderDView3.hints.Qty.label}"
+                                            required="#{bindings.TblAssetOrderDView3.hints.Qty.mandatory}"
+                                            columns="#{bindings.TblAssetOrderDView3.hints.Qty.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetOrderDView3.hints.Qty.precision}"
+                                            shortDesc="#{bindings.TblAssetOrderDView3.hints.Qty.tooltip}" id="it6">
+                                <f:validator binding="#{row.bindings.Qty.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetOrderDView3.hints.Qty.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Rate" id="c13" sortable="true" filterable="true">

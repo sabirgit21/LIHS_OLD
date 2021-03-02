@@ -40,6 +40,7 @@ public class TblAssetPurchMImpl extends EntityImpl {
         UpdatedBy,
         AssetType,
         WarrantyUpto,
+        AssetWrntyClaimMId,
         TblAssetPurchD,
         TblAssetOrderM,
         TblAssetReturnM;
@@ -66,6 +67,7 @@ public class TblAssetPurchMImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int VNO = AttributesEnum.Vno.index();
     public static final int VTP = AttributesEnum.Vtp.index();
@@ -83,6 +85,7 @@ public class TblAssetPurchMImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int ASSETTYPE = AttributesEnum.AssetType.index();
     public static final int WARRANTYUPTO = AttributesEnum.WarrantyUpto.index();
+    public static final int ASSETWRNTYCLAIMMID = AttributesEnum.AssetWrntyClaimMId.index();
     public static final int TBLASSETPURCHD = AttributesEnum.TblAssetPurchD.index();
     public static final int TBLASSETORDERM = AttributesEnum.TblAssetOrderM.index();
     public static final int TBLASSETRETURNM = AttributesEnum.TblAssetReturnM.index();
@@ -99,6 +102,7 @@ public class TblAssetPurchMImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetPurchM");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -354,6 +358,22 @@ public class TblAssetPurchMImpl extends EntityImpl {
      */
     public void setWarrantyUpto(Timestamp value) {
         setAttributeInternal(WARRANTYUPTO, value);
+    }
+
+    /**
+     * Gets the attribute value for AssetWrntyClaimMId, using the alias name AssetWrntyClaimMId.
+     * @return the value of AssetWrntyClaimMId
+     */
+    public BigDecimal getAssetWrntyClaimMId() {
+        return (BigDecimal) getAttributeInternal(ASSETWRNTYCLAIMMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AssetWrntyClaimMId.
+     * @param value value to set the AssetWrntyClaimMId
+     */
+    public void setAssetWrntyClaimMId(BigDecimal value) {
+        setAttributeInternal(ASSETWRNTYCLAIMMID, value);
     }
 
     /**

@@ -15,7 +15,8 @@
        TblAssetPurchD.RATE, 
        TblAssetL4.NAME, 
        TblAssetL4.ASSET_L4_ID AS ASSET_L4ID1, 
-       TblAssetPurchD.ASSET_PURCH_M_ID"
+       TblAssetPurchD.ASSET_PURCH_M_ID, 
+       TblAssetPurchD.AMOUNT"
   FromList="TBL_ASSET_PURCH_D TblAssetPurchD, TBL_ASSET_L4 TblAssetL4"
   Where="TblAssetPurchD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)  
 and TblAssetPurchD.ASSET_PURCH_M_ID = :getAssPurchMId">
@@ -97,6 +98,12 @@ and TblAssetPurchD.ASSET_PURCH_M_ID = :getAssPurchMId">
     EntityAttrName="AssetPurchMId"
     EntityUsage="TblAssetPurchD"
     AliasName="ASSET_PURCH_M_ID"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblAssetPurchD"
+    AliasName="AMOUNT"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
