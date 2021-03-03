@@ -15,7 +15,8 @@
        TblPorMaster.VTP, 
        TblPorMaster.DEPARTMENT_ID, 
        TblPorMaster.DATED, 
-       TblPorMaster.ID"
+       TblPorMaster.ID, 
+       TblPorMaster.MENU_TYPE"
   FromList="TBL_POR_MASTER TblPorMaster"
   Where="ID in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)   
 and ID not in (Select POR_MASTER_ID from TBL_PRO_FG_MASTER where POR_MASTER_ID is not Null)   
@@ -76,6 +77,12 @@ and TblPorMaster.PROJECT_ID = :getProID">
     EntityAttrName="Id"
     EntityUsage="TblPorMaster"
     AliasName="ID"/>
+  <ViewAttribute
+    Name="MenuType"
+    PrecisionRule="true"
+    EntityAttrName="MenuType"
+    EntityUsage="TblPorMaster"
+    AliasName="MENU_TYPE"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
