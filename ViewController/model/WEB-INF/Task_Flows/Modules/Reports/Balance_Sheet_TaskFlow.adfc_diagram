@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Balance_Sheet</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">670.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Balance_Sheet&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">228.5459</property>
+      <property
+         name="page">/WEB-INF/Fragments/Modules/Reports/Balance_Sheet.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+</SDM>
