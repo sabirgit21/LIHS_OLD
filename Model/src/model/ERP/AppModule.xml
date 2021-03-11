@@ -622,6 +622,12 @@
   <ViewUsage
     Name="TblAssetWrntyClaimDView2"
     ViewObjectName="model.ERP.VO.TblAssetWrntyClaimDView"/>
+  <ViewUsage
+    Name="Reports_Param1"
+    ViewObjectName="model.ERP.VO.Reports_Param"/>
+  <ViewUsage
+    Name="Report_Param_Payable1"
+    ViewObjectName="model.ERP.VO.Report_Param_Payable"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
