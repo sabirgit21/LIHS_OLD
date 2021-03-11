@@ -4,20 +4,14 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblOpenBlncInvView1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblOpenBlncInvView1Iterator"/>
+    <iterator Binds="Reports_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="Reports_Param1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+    <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+    <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblOpenBlncInvView1Iterator" id="Dated">
-      <AttrNames>
-        <Item Value="Dated"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblOpenBlncInvView1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
+    <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

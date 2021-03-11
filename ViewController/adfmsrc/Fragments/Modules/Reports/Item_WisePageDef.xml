@@ -4,11 +4,10 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblCashPurchDView1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblCashPurchDView1Iterator"/>
+    <iterator Binds="Reports_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="Reports_Param1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="TblCashPurchDView1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
+    <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

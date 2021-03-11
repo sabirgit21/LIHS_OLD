@@ -27,8 +27,9 @@
                                 <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>-->
                          <af:spacer width="30" height="10" id="s12"/>
+                            
                             <af:selectOneChoice label="Item L4 : "
-                                                shortDesc="#{bindings.ItemL4Id.hints.tooltip}" id="soc1"
+                                                shortDesc="#{bindings.ItemL4Id.hints.tooltip}" id="soc1" contentStyle="width:150px;"
                                                 binding="#{backingBeanScope.ItemWiseReportBackBean.itemL4IdParam}">
                                 <f:selectItems value="#{bindings.ItemL4Id.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ItemL4Id.validator}"/>
