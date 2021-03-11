@@ -48,7 +48,7 @@
                             </af:inputDate>
                             <af:spacer  id="s4"/>
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
-                                                label="Project" readOnly="${sessionScope.sessPrID != ''}"
+                                                label="Project" 
                                                 required="#{bindings.ProjectId.hints.mandatory}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1" readOnly="${sessionScope.sessPrID != ''}"
                                                 contentStyle="width:150px;">
