@@ -15,7 +15,8 @@
        TblPorMaster.DATED, 
        TblPorMaster.DEPARTMENT_ID, 
        TblPorMaster.PROJECT_D_ID, 
-       TblPorMaster.PROJECT_ID"
+       TblPorMaster.PROJECT_ID, 
+       TblPorMaster.MENU_TYPE"
   FromList="TBL_POR_MASTER TblPorMaster"
   Where="ID not in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)   
 and TblPorMaster.PROJECT_ID = :getProID">
@@ -31,7 +32,6 @@ and TblPorMaster.PROJECT_ID = :getProID">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Por_Master_NotIn_LOV"/>
   </Variable>
   <EntityUsage
@@ -80,6 +80,12 @@ and TblPorMaster.PROJECT_ID = :getProID">
     EntityAttrName="ProjectId"
     EntityUsage="TblPorMaster"
     AliasName="PROJECT_ID"/>
+  <ViewAttribute
+    Name="MenuType"
+    PrecisionRule="true"
+    EntityAttrName="MenuType"
+    EntityUsage="TblPorMaster"
+    AliasName="MENU_TYPE"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

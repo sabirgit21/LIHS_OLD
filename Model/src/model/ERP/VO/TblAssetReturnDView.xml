@@ -87,12 +87,14 @@ AND TblAssetL4.UOM_ID = TblUom.ID(+)">
       <Item Value="PurchQty"/>
       <Item Value="Rate"/>
       <Item Value="Qty"/>
+      <Item Value="Amount"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="AssetL4Id"/>
       <Item Value="Qty"/>
       <Item Value="Rate"/>
       <Item Value="Qty"/>
+      <Item Value="Amount"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -212,7 +214,8 @@ AND TblAssetL4.UOM_ID = TblUom.ID(+)">
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblAssetReturnD"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -224,7 +227,8 @@ AND TblAssetL4.UOM_ID = TblUom.ID(+)">
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblAssetReturnD"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

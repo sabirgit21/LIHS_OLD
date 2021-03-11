@@ -117,5 +117,7 @@
         <Item Value="WarrantyUpto"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblAssetPurchMView1Iterator" StaticList="false" Uses="LOV_AssetWrntyClaimMId"
+          id="AssetWrntyClaimMId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

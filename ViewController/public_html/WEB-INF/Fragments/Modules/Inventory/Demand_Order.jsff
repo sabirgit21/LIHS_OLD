@@ -87,7 +87,7 @@
                               <f:validator binding="#{bindings.Vno.validator}"/>
                             </af:inputText>-->
                             <af:inputText value="#{bindings.Vno.inputValue}" label="#{bindings.Vno.hints.label}"
-                                          required="#{bindings.Vno.hints.mandatory}"
+                                          required="#{bindings.Vno.hints.mandatory}" readOnly="true"
                                           columns="#{bindings.Vno.hints.displayWidth}"
                                           maximumLength="#{bindings.Vno.hints.precision}"
                                           shortDesc="#{bindings.Vno.hints.tooltip}" id="it2">

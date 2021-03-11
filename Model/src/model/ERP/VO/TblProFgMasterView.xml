@@ -193,7 +193,7 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Vno"/>
       <Item Value="Dated"/>
-      <Item Value="Vtp"/>
+      <Item Value="MenuType"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

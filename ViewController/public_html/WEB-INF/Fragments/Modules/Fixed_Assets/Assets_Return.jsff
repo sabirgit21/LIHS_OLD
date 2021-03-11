@@ -235,7 +235,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblAssetReturnDView3.hints.Qty.name}" filterable="true"
-                                       sortable="true" headerText="Qty" id="c15">
+                                       sortable="true" headerText="Return Qty" id="c15">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Qty}"
        id="it17" placeholder="Search ">

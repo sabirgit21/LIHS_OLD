@@ -48,7 +48,7 @@
                             </af:inputDate>
                             <af:spacer  id="s6"/>
         <af:selectOneChoice value="#{bindings.AssetReturnMId.inputValue}" label="Asset Return"
-                            required="#{bindings.AssetReturnMId.hints.mandatory}"
+                            required="#{bindings.AssetReturnMId.hints.mandatory}" autoSubmit="true"
                             shortDesc="#{bindings.AssetReturnMId.hints.tooltip}" id="soc13">
           <f:selectItems value="#{bindings.AssetReturnMId.items}" id="si13"/>
           <f:validator binding="#{bindings.AssetReturnMId.validator}"/>
