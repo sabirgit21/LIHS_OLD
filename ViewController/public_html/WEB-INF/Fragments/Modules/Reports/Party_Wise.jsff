@@ -26,7 +26,7 @@
                                 <f:validator binding="#{bindings.Dated.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>-->
-                            <af:selectOneChoice label="#{bindings.PblSuppId.label}"
+                            <af:selectOneChoice label="Supplier"
                                                  binding="#{backingBeanScope.PartyWiseReportBackBean.pblSuppIdParam}"
                                                 shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc2" contentStyle="width:150px;">
                                 <f:selectItems value="#{bindings.PblSuppId.items}" id="si4"/>
