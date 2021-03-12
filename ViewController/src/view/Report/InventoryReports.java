@@ -97,17 +97,15 @@ public class InventoryReports {
 
                 //working for procedure call//
                 
-                if (getFromDate() != "" & gotprojectId != null & gotitemL4id != null & gotDepartmentidId != null) {
+                if (getFromDate() != "" & gotprojectId != null) {
                         
-                        BigDecimal sendItemL4IDLgrfinal = gotitemL4id;
+                       
                         
                         String sendFDateFINAL = getFromDate();
                 
                         String sendProjectIDCnvrt = gotprojectId.toString();
                         int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
 
-                        String sendDeptIDCnvrt = gotDepartmentidId.toString();
-                        int sendDeptIDFinal = Integer.parseInt(sendDeptIDCnvrt);
 
                         //calling procedure start//
                         Connection conn;
@@ -115,13 +113,11 @@ public class InventoryReports {
                         CallableStatement cstmt = null;
                         try {
                             conn = DatabaseConnection.getConnection();
-                            String SQL = "{call P_IL(?,?,?,?)}";
+                            String SQL = "{call P_MGT_REP(?,?)}";
                             cstmt = conn.prepareCall(SQL);
                             
-                            cstmt.setBigDecimal(1, sendItemL4IDLgrfinal);
-                            cstmt.setString(2, sendFDateFINAL );
-                            cstmt.setInt(3, sendProjectIDFinal);
-                            cstmt.setInt(4, sendDeptIDFinal);
+                            cstmt.setString(1, sendFDateFINAL );
+                            cstmt.setInt(2, sendProjectIDFinal);
                             
                             rs = cstmt.executeQuery();
                         } catch (SQLException e) {
@@ -132,7 +128,7 @@ public class InventoryReports {
 
                     }
                 else{
-                    showMessage("Please Select From Date, Project, Item & Department");
+                    showMessage("Please Select From Date & Project");
                 }
                 
                 break;
