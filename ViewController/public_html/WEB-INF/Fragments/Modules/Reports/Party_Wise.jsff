@@ -32,7 +32,14 @@
                                 <f:selectItems value="#{bindings.PblSuppId.items}" id="si4"/>
                                 <f:validator binding="#{bindings.PblSuppId.validator}"/>
                             </af:selectOneChoice>
-                            
+                            <af:spacer width="30" height="10" id="s1"/>
+                            <af:selectOneChoice label="Project"
+                                                binding="#{backingBeanScope.PartyWiseReportBackBean.projectidparam}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
+                                                contentStyle="width:150px;">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
                         </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>

@@ -5,9 +5,12 @@
   <executables>
     <iterator Binds="Report_Param_Payable1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="Report_Param_Payable1Iterator"/>
+    <iterator Binds="Reports_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="Reports_Param1Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="Report_Param_Payable1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
