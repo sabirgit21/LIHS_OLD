@@ -255,6 +255,8 @@
     <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Quotation.jsff" usageId="view_Assets_QuotationPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Assets_Waranty_Claim.jsff"
           usageId="view_Assets_Waranty_ClaimPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Supplier_Ledger.jsff" usageId="view_Supplier_LedgerPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/General_Ledger.jsff" usageId="view_General_LedgerPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -491,6 +493,8 @@
     <page id="view_Assets_ApprovalPageDef" path="Fragments.Modules.Fixed_Assets.Assets_ApprovalPageDef"/>
     <page id="view_Assets_QuotationPageDef" path="Fragments.Modules.Fixed_Assets.Assets_QuotationPageDef"/>
     <page id="view_Assets_Waranty_ClaimPageDef" path="Fragments.Modules.Fixed_Assets.Assets_Waranty_ClaimPageDef"/>
+    <page id="view_Supplier_LedgerPageDef" path="Fragments.Modules.Reports.Supplier_LedgerPageDef"/>
+    <page id="view_General_LedgerPageDef1" path="Fragments.Modules.Reports.General_LedgerPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

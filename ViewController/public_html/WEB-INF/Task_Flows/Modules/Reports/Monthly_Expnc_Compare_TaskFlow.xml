@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>MonthlyExpReportsBackBean</managed-bean-name>
+      <managed-bean-class>view.Report.MonthlyExpReports</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="Monthly_Expnc_Compare">
       <page>/WEB-INF/Fragments/Modules/Reports/Monthly_Expnc_Compare.jsff</page>
     </view>

@@ -1,2 +1,96 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1">
+        <af:showDetailItem id="pane1" text="Trial Balance">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                       <af:panelGroupLayout id="pgl4" layout="horizontal">
+                            
+                            <af:inputDate label="From Date : " id="id3"
+                                          binding="#{backingBeanScope.TrialBalanceReportsBackBean.fromDateParam}"/>
+                            <!--<af:inputDate label="From Date"
+                            binding="#{backingBeanScope.Grant_Approval_Report_BackBean.fromDateParam}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>-->
+                            <af:spacer width="30" height="10" id="s11"/>
+                            <af:inputDate label="To Date : " id="id1"
+                                          binding="#{backingBeanScope.TrialBalanceReportsBackBean.toDateParam}"/>
+                            <!--<af:inputDate label="To Date"
+                            binding="#{backingBeanScope.Grant_Approval_Report_BackBean.toDateParam}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>-->
+                         <af:spacer width="30" height="10" id="s12"/>
+                            <!--<af:selectOneChoice 
+                                                label="Project"
+                                                binding="#{backingBeanScope.InventoryReportsBackBean.projectidparam}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1"
+                                                contentStyle="width:150px;">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s1"/>
+                            <af:selectOneChoice 
+                                                label="Department"
+                                                binding="#{backingBeanScope.InventoryReportsBackBean.departmentidparam}"
+                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc2"
+                                                contentStyle="width:150px;">
+                                <f:selectItems value="#{bindings.DepartmentId.items}" id="si3"/>
+                                <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s2"/>
+                            <af:selectOneChoice 
+                                                label="Item L4"
+                                               binding="#{backingBeanScope.InventoryReportsBackBean.itemL4idparam}"
+                                                shortDesc="#{bindings.ItemL4Id.hints.tooltip}" id="soc3"
+                                                contentStyle="width:150px;">
+                                <f:selectItems value="#{bindings.ItemL4Id.items}" id="si5"/>
+                                <f:validator binding="#{bindings.ItemL4Id.validator}"/>
+                            </af:selectOneChoice>-->
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+               
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                        <af:spacer width="10" height="10" id="s5"/>
+                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                            binding="#{backingBeanScope.TrialBalanceReportsBackBean.format_type}">
+                                                 <af:selectItem label="PDF" value="PDF" id="si55"/>
+                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
+                            </af:selectOneChoice>
+                        <af:spacer width="30" height="30" id="s7"/>
+                            <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                                binding="#{backingBeanScope.TrialBalanceReportsBackBean.report_type}"
+                                                contentStyle="width:150px;">
+                                                
+                                <af:selectItem label="Trial Report" value="trialReport" id="si9"/>
+                                
+                                
+                                
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="30" id="s9"/>
+                            <af:button text="Generate Report" id="b2"
+                                       action="#{backingBeanScope.TrialBalanceReportsBackBean.gen_Report}"/>
+                            <af:spacer width="30" height="10" id="s6"/>
+                            </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>
+
