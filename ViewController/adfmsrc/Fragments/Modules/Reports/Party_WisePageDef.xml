@@ -3,7 +3,6 @@
                 Package="Fragments.Modules.Reports">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
     <iterator Binds="Report_Param_Payable1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="Report_Param_Payable1Iterator"/>
   </executables>
