@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:panelAccordion discloseMany="false" id="pa1">
-        <af:showDetailItem id="pane1" text="Summary Category Reports">
+        <af:showDetailItem id="pane1" text="Donation Reports">
             <af:panelGridLayout id="pgl2">
                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
