@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>BalanceSheetReportsBackBean</managed-bean-name>
+      <managed-bean-class>view.Report.BalanceSheetReports</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="Balance_Sheet">
       <page>/WEB-INF/Fragments/Modules/Reports/Balance_Sheet.jsff</page>
     </view>

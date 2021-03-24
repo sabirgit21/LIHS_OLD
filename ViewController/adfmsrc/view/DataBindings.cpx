@@ -258,6 +258,8 @@
     <page path="/WEB-INF/Fragments/Modules/Reports/Supplier_Ledger.jsff" usageId="view_Supplier_LedgerPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/General_Ledger.jsff" usageId="view_General_LedgerPageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/Attendance.jsff" usageId="view_AttendancePageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Daily_Payment_Receipt.jsff"
+          usageId="view_Daily_Payment_ReceiptPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -497,6 +499,7 @@
     <page id="view_Supplier_LedgerPageDef" path="Fragments.Modules.Reports.Supplier_LedgerPageDef"/>
     <page id="view_General_LedgerPageDef1" path="Fragments.Modules.Reports.General_LedgerPageDef"/>
     <page id="view_AttendancePageDef1" path="Fragments.Modules.Reports.AttendancePageDef"/>
+    <page id="view_Daily_Payment_ReceiptPageDef" path="Fragments.Modules.Reports.Daily_Payment_ReceiptPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
