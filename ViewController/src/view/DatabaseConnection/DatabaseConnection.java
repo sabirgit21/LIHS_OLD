@@ -25,7 +25,7 @@ public class DatabaseConnection {
         setUNamee("lihs");
         setUpasss("lihs");
 //        setUipp("192.168.2.2");
-        setUipp("192.168.2.2");
+        setUipp("62.171.154.170");
         setUportADF("1521");
         setUSID("orcl");
         /* END  */

@@ -53,6 +53,7 @@
           <Item Value="ProjectId"/>
           <Item Value="DepartmentId"/>
           <Item Value="Narration"/>
+          <Item Value="Vno"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
