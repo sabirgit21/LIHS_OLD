@@ -49,18 +49,14 @@ public class AttendanceReport {
         if(getToDate() != ""){
             reportBean.setReportParameter("P_Tdated", getToDate());
         }
-        if(getToDate() != ""){
-            reportBean.setReportParameter("P_Tdated", getToDate());
-        }
         if(gotprojectId != null){
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         } 
 
-
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else {
-            
+              
                 switch (selectedReportType) {
                 
                 case "attDay":
@@ -71,6 +67,9 @@ public class AttendanceReport {
                     reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Month_wise&");
                     break;
                 
+                    case "EmployeeBioData":
+                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Employee_Bio_Detail&");
+                        break;
                
 
                 default:

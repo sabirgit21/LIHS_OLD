@@ -54,6 +54,7 @@
                                                 
                                 <af:selectItem label="Attendance Day Wise" value="attDay" id="si9"/>
                                 <af:selectItem label="Attendance Month Wise" value="attMonth" id="si1"/>
+                                <af:selectItem label="Employee Bio Data" value="EmployeeBioData" id="si3"/>
                               
                                 
                             </af:selectOneChoice>
