@@ -23,7 +23,9 @@ public class AttendanceReport {
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
     private RichSelectOneChoice projectIdParam;
-    
+    private RichSelectOneChoice departmentidParam;
+    private RichSelectOneChoice empidParam;
+
 
     public AttendanceReport() {
     }
@@ -31,12 +33,16 @@ public class AttendanceReport {
     private static String selectedReportType = "";
     private static String gotFormat = "";
     private static BigDecimal  gotprojectId;
+    private static BigDecimal  gotDepartmentid;
+    private static BigDecimal  gotempid;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
         gotprojectId = (BigDecimal)this.getProjectIdParam().getValue();
+        gotDepartmentid = (BigDecimal)this.getDepartmentidParam().getValue();
+        gotempid = (BigDecimal)this.getEmpidParam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -52,7 +58,12 @@ public class AttendanceReport {
         if(gotprojectId != null){
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         } 
-
+        if(gotDepartmentid != null){
+            reportBean.setReportParameter("P_Department_id", gotDepartmentid.toString());
+        } 
+        if(gotempid != null){
+            reportBean.setReportParameter("P_Empid", gotempid.toString());
+        } 
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else {
@@ -171,5 +182,21 @@ public class AttendanceReport {
 
     public RichSelectOneChoice getProjectIdParam() {
         return projectIdParam;
+    }
+
+    public void setDepartmentidParam(RichSelectOneChoice departmentidParam) {
+        this.departmentidParam = departmentidParam;
+    }
+
+    public RichSelectOneChoice getDepartmentidParam() {
+        return departmentidParam;
+    }
+
+    public void setEmpidParam(RichSelectOneChoice empidParam) {
+        this.empidParam = empidParam;
+    }
+
+    public RichSelectOneChoice getEmpidParam() {
+        return empidParam;
     }
 }

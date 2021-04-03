@@ -4,10 +4,15 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Reports_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="Reports_Param1Iterator"/>
+    <iterator Binds="HR_Report_Param1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="HR_Report_Param1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+    <list IterBinding="HR_Report_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HR_Report_Param1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HR_Report_Param1Iterator" StaticList="false" Uses="LOV_Id" id="Id" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

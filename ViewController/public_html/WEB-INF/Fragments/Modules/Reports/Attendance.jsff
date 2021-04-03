@@ -28,10 +28,26 @@
                             </af:inputDate>-->
                          <af:spacer width="30" height="10" id="s12"/>
                             <af:selectOneChoice label="Project"
-                                                binding="#{backingBeanScope.AttendanceReportBackBean.projectIdParam}"
+                             binding="#{backingBeanScope.AttendanceReportBackBean.projectIdParam}"
                                                 shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1">
                                 <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                           
+                           <af:spacer width="30" height="10" id="s2"/>
+                            <af:selectOneChoice label="Department"
+                            binding="#{backingBeanScope.AttendanceReportBackBean.departmentidParam}"
+                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc2">
+                                <f:selectItems value="#{bindings.DepartmentId.items}" id="si4"/>
+                                <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                            </af:selectOneChoice>
+                            
+                            <af:spacer width="30" height="10" id="s1"/>
+                            <af:selectOneChoice label="Employee"
+                            binding="#{backingBeanScope.AttendanceReportBackBean.empidParam}"
+                                                shortDesc="#{bindings.Id.hints.tooltip}" id="soc3">
+                                <f:selectItems value="#{bindings.Id.items}" id="si5"/>
+                                <f:validator binding="#{bindings.Id.validator}"/>
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
                     </af:gridCell>
