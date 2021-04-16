@@ -24,7 +24,6 @@ public class DatabaseConnection {
         /* Database credentials >> username , password , hostname , port , SID  */
         setUNamee("lihs");
         setUpasss("lihs");
-//        setUipp("192.168.2.2");
         setUipp("192.168.1.4");
         setUportADF("1521");
         setUSID("orcl");
@@ -32,9 +31,9 @@ public class DatabaseConnection {
         
         /*  Report servlet connection >> port , hostname */
         setUportReport("9002");
-//        setUipReport("192.168.2.3");
-
         setUipReport("62.171.154.170");
+
+//        setUipReport("62.171.154.170");
         /*  END */
         
         String thinConn = "jdbc:oracle:thin:@" + getUipp() + ":" + getUportADF() + ":" + getUSID() ;

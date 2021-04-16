@@ -27,6 +27,7 @@ public class GLReports {
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
     private RichSelectOneChoice glL4idparam;
+    private RichSelectOneChoice getProjectid;
 
     public GLReports() {
     }
@@ -34,12 +35,14 @@ public class GLReports {
     private static String selectedReportType = "";
     private static String gotFormat = "";
     private static BigDecimal gotGlL4id;
+    private static BigDecimal gotProjectid;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
         gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
+        gotProjectid = (BigDecimal) this.getGetProjectid().getValue();
         
         
         DatabaseConnection dbconnect = new DatabaseConnection();
@@ -54,6 +57,9 @@ public class GLReports {
         }
             if (gotGlL4id != null) {
                 reportBean.setReportParameter("P_AccID", gotGlL4id.toString());
+            }
+            if (gotProjectid != null) {
+                reportBean.setReportParameter("P_Project_ID", gotProjectid.toString());
             }
         
 
@@ -112,7 +118,7 @@ public class GLReports {
 
                 }
             else{
-                showMessage("Please Select From Date, Project, Item & Department");
+                showMessage("Please Select From Date, To Date & GL L4");
             }
             
             break;
@@ -216,5 +222,13 @@ public class GLReports {
 
     public RichSelectOneChoice getGlL4idparam() {
         return glL4idparam;
+    }
+
+    public void setGetProjectid(RichSelectOneChoice getProjectid) {
+        this.getProjectid = getProjectid;
+    }
+
+    public RichSelectOneChoice getGetProjectid() {
+        return getProjectid;
     }
 }

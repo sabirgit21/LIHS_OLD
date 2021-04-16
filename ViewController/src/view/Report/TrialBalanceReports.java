@@ -30,19 +30,20 @@ public class TrialBalanceReports {
     private RichSelectOneChoice format_type;
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
+    private RichSelectOneChoice projectid;
 
     public TrialBalanceReports() {
     }
 
     private static String selectedReportType = "";
     private static String gotFormat = "";
-    
+    private static BigDecimal gotProjectid;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String) this.getReport_type().getValue();
         gotFormat = (String) this.getFormat_type().getValue();
-        
+        gotProjectid = (BigDecimal) this.getProjectid().getValue();
         
         
     DatabaseConnection dbconnect = new DatabaseConnection();
@@ -55,7 +56,9 @@ public class TrialBalanceReports {
     if (getToDate() != "") {
         reportBean.setReportParameter("P_Tdated", getToDate());
     }
-    
+        if (gotProjectid != null) {
+            reportBean.setReportParameter("P_Project_ID", gotProjectid.toString());
+        }
 
     if (gotFormat == "") {
         showMessage("Please Select Report Format");
@@ -98,7 +101,7 @@ public class TrialBalanceReports {
 
                 }
             else{
-                showMessage("Please Select From Date, Project, Item & Department");
+                showMessage("Please Select From Date & To Date");
             }
             
             break;
@@ -195,5 +198,13 @@ public class TrialBalanceReports {
 
     public RichInputDate getToDateParam() {
         return toDateParam;
+    }
+
+    public void setProjectid(RichSelectOneChoice projectid) {
+        this.projectid = projectid;
+    }
+
+    public RichSelectOneChoice getProjectid() {
+        return projectid;
     }
 }

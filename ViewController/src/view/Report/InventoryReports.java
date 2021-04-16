@@ -87,8 +87,58 @@ public class InventoryReports {
 
             case "itemLedger":
 
-                reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Item_Ledger&");
+                //working for procedure call//
+                
+                if (getFromDate() != "" & getToDate() != "" & gotitemL4id != null & gotDepartmentidId != null) {
+                        
+                        
+                        
+                        String sendFDateFINAL = getFromDate();
+                        String sendToDateFINAL = getToDate();
+                
+                        String sendItemIDCnvrt = gotitemL4id.toString();
+                        String sendDepartmentIDCnvrt = gotDepartmentidId.toString();
+                        int sendItemIDFinal = Integer.parseInt(sendItemIDCnvrt);
+                        int sendDepartmentIDFinal = Integer.parseInt(sendDepartmentIDCnvrt);
+
+                        //calling procedure start//
+                        Connection conn;
+                        ResultSet rs;
+                        CallableStatement cstmt = null;
+                        try {
+                            conn = DatabaseConnection.getConnection();
+                            String SQL = "{call P_IL(?,?,?)}";
+                            cstmt = conn.prepareCall(SQL);
+                            
+                            cstmt.setInt(1, sendItemIDFinal);
+                            cstmt.setString(2, sendFDateFINAL );
+                            cstmt.setInt(3, sendDepartmentIDFinal);
+                            
+                            rs = cstmt.executeQuery();
+                            
+                            String SQL2 = "{call P_IL_DP(?,?,?,?)}";
+                            cstmt = conn.prepareCall(SQL2);
+                            
+                            cstmt.setInt(1, sendItemIDFinal);
+                            cstmt.setString(2, sendFDateFINAL );
+                            cstmt.setString(3, sendToDateFINAL);
+                            cstmt.setInt(4, sendDepartmentIDFinal);
+                            
+                            rs = cstmt.executeQuery();
+                        } catch (SQLException e) {
+                            System.out.println(e);
+                        }
+                        
+                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Item_Ledger&");
+
+                    }
+                else{
+                    showMessage("Please Select Item, From Date & Deapartment");
+                }
+                
                 break;
+                //calling procedure end//
+            
             case "mGTdailyfeeding":
 
                 reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_1&");
@@ -97,40 +147,40 @@ public class InventoryReports {
 
                 //working for procedure call//
                 
-                if (getFromDate() != "" & gotprojectId != null) {
-                        
-                       
-                        
-                        String sendFDateFINAL = getFromDate();
-                
-                        String sendProjectIDCnvrt = gotprojectId.toString();
-                        int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
-
-
-                        //calling procedure start//
-                        Connection conn;
-                        ResultSet rs;
-                        CallableStatement cstmt = null;
-                        try {
-                            conn = DatabaseConnection.getConnection();
-                            String SQL = "{call P_MGT_REP(?,?)}";
-                            cstmt = conn.prepareCall(SQL);
-                            
-                            cstmt.setString(1, sendFDateFINAL );
-                            cstmt.setInt(2, sendProjectIDFinal);
-                            
-                            rs = cstmt.executeQuery();
-                        } catch (SQLException e) {
-                            System.out.println(e);
-                        }
-                        
-                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
-
-                    }
-                else{
-                    showMessage("Please Select From Date & Project");
-                }
-                
+//                if (getFromDate() != "" & gotprojectId != null) {
+//                        
+//                       
+//                        
+//                        String sendFDateFINAL = getFromDate();
+//                
+//                        String sendProjectIDCnvrt = gotprojectId.toString();
+//                        int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
+//
+//
+//                        //calling procedure start//
+//                        Connection conn;
+//                        ResultSet rs;
+//                        CallableStatement cstmt = null;
+//                        try {
+//                            conn = DatabaseConnection.getConnection();
+//                            String SQL = "{call P_MGT_REP(?,?)}";
+//                            cstmt = conn.prepareCall(SQL);
+//                            
+//                            cstmt.setString(1, sendFDateFINAL );
+//                            cstmt.setInt(2, sendProjectIDFinal);
+//                            
+//                            rs = cstmt.executeQuery();
+//                        } catch (SQLException e) {
+//                            System.out.println(e);
+//                        }
+//                        
+//                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
+//
+//                    }
+//                else{
+//                    showMessage("Please Select From Date & Project");
+//                }
+                reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
                 break;
                 //calling procedure end//
             default:

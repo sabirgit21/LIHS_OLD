@@ -11,7 +11,8 @@
        TblItemL4.UOM_ID, 
        TblItemL4.AST"
   FromList="TBL_ITEM_L4 TblItemL4"
-  Where="TblItemL4.AST='Y'"
+  Where="TblItemL4.AST='Y'  
+order by TblItemL4.NAME"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">

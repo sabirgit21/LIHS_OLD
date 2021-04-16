@@ -631,6 +631,9 @@
   <ViewUsage
     Name="HR_Report_Param1"
     ViewObjectName="model.ERP.VO.HR_Report_Param"/>
+  <ViewUsage
+    Name="GL_Reports_Param1"
+    ViewObjectName="model.ERP.VO.GL_Reports_Param"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="General_LedgerPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Trial_BalancePageDef"
                 Package="Fragments.Modules.Reports">
   <parameters/>
   <executables>
@@ -8,8 +8,6 @@
               id="GL_Reports_Param1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="GL_Reports_Param1Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="GL_Reports_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
