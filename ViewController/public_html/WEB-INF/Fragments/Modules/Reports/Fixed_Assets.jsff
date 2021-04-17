@@ -1,2 +1,79 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1">
+        <af:showDetailItem id="pane1" text="Attendance Reports">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                       <af:panelGroupLayout id="pgl4" layout="horizontal">
+                            <af:inputDate label="From Date : " id="id3"
+                                          binding="#{backingBeanScope.FixedAssetsReportBackBean.fromDateParam}"/>
+                            <!--<af:inputDate label="From Date"
+                            binding="#{backingBeanScope.Grant_Approval_Report_BackBean.fromDateParam}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>-->
+                            <af:spacer width="30" height="10" id="s11"/>
+                            <af:inputDate label="To Date : " id="id1"
+                                          binding="#{backingBeanScope.FixedAssetsReportBackBean.toDateParam}"/>
+                            <!--<af:inputDate label="To Date"
+                            binding="#{backingBeanScope.Grant_Approval_Report_BackBean.toDateParam}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>-->
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+               
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:selectOneChoice   unselectedLabel="--Select--"
+                            label="Select Project"
+                                            binding="#{backingBeanScope.FixedAssetsReportBackBean.projectId_Param}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                            
+                            <af:spacer width="30" height="10" id="s6"/>
+                            </af:panelGroupLayout>
+                            
+                            <af:panelGroupLayout id="pgl2" layout="horizontal">
+                        <af:selectOneChoice label="Select Format Type" id="soc2" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                            binding="#{backingBeanScope.FixedAssetsReportBackBean.format_type}">
+                                                 <af:selectItem label="PDF" value="PDF" id="si55"/>
+                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
+                            </af:selectOneChoice>
+                        <af:spacer width="30" height="30" id="s7"/>
+                            <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                                binding="#{backingBeanScope.FixedAssetsReportBackBean.report_type}">
+                                                
+                                <af:selectItem label="Attendance Day Wise" value="attDay" id="si9"/>
+                                <af:selectItem label="Attendance Month Wise" value="attMonth" id="si1"/>
+                                <af:selectItem label="Employee Bio Data" value="EmployeeBioData" id="si3"/>
+                              
+                                
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="30" id="s9"/>
+                            <af:button text="Generate Report" id="b2"
+                                       action="#{backingBeanScope.FixedAssetsReportBackBean.gen_Report}"/>
+                            <af:spacer width="30" height="10" id="s1"/>
+                            </af:panelGroupLayout>
+                            
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>
