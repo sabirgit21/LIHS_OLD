@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,17 +22,26 @@ public class DateWiseReport {
     private RichInputDate toDateParam;
     private RichSelectOneChoice format_type;
     private RichSelectOneChoice report_type;
+    private RichSelectOneChoice projectId_Param;
+    private RichSelectOneChoice departmentid_Param;
+    private RichSelectOneChoice itemL4id_Param;
 
     public DateWiseReport() {
     }
 
     private static String selectedReportType = "";
     private static String gotFormat = "";
+    private static BigDecimal gotProjectid;
+    private static BigDecimal gotDepartmentid;
+    private static BigDecimal gotItemL4id;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
+        gotProjectid = (BigDecimal) this.getProjectId_Param().getValue();
+        gotDepartmentid = (BigDecimal) this.getDepartmentid_Param().getValue();
+        gotItemL4id = (BigDecimal) this.getItemL4id_Param().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -43,8 +54,16 @@ public class DateWiseReport {
         if(getToDate() != ""){
             reportBean.setReportParameter("P_Tdated", getToDate());
         }
-
-
+        if (gotProjectid != null) {
+            reportBean.setReportParameter("P_Project_ID", gotProjectid.toString());
+        }
+        if (gotDepartmentid != null) {
+            reportBean.setReportParameter("P_Department_ID", gotDepartmentid.toString());
+        }
+        if (gotItemL4id != null) {
+            reportBean.setReportParameter("P_item_L4_id", gotItemL4id.toString());
+        }
+        
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else {
@@ -179,5 +198,29 @@ public class DateWiseReport {
 
     public RichSelectOneChoice getReport_type() {
         return report_type;
+    }
+
+    public void setProjectId_Param(RichSelectOneChoice projectId_Param) {
+        this.projectId_Param = projectId_Param;
+    }
+
+    public RichSelectOneChoice getProjectId_Param() {
+        return projectId_Param;
+    }
+
+    public void setDepartmentid_Param(RichSelectOneChoice departmentid_Param) {
+        this.departmentid_Param = departmentid_Param;
+    }
+
+    public RichSelectOneChoice getDepartmentid_Param() {
+        return departmentid_Param;
+    }
+
+    public void setItemL4id_Param(RichSelectOneChoice itemL4id_Param) {
+        this.itemL4id_Param = itemL4id_Param;
+    }
+
+    public RichSelectOneChoice getItemL4id_Param() {
+        return itemL4id_Param;
     }
 }
