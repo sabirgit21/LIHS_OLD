@@ -26,6 +26,7 @@ public class PartyWiseReport {
     private RichSelectOneChoice report_type;
     private RichSelectOneChoice pblSuppIdParam;
     private RichSelectOneChoice projectidparam;
+    private RichSelectOneChoice departmentid_Param;
 
 
     public PartyWiseReport() {
@@ -34,6 +35,7 @@ public class PartyWiseReport {
     private static String gotFormat = "";
     private static BigDecimal  gotPblSuppId;
     private static BigDecimal  gotprojectid;
+    private static BigDecimal  gotDepartmentid;
 
     public String gen_Report() {
         // Add event code here...
@@ -41,6 +43,7 @@ public class PartyWiseReport {
         gotFormat = (String)this.getFormat_type().getValue();
         gotPblSuppId = (BigDecimal)this.getPblSuppIdParam().getValue();
         gotprojectid = (BigDecimal)this.getProjectidparam().getValue();
+        gotDepartmentid = (BigDecimal) this.getDepartmentid_Param().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -58,6 +61,9 @@ public class PartyWiseReport {
         if(gotprojectid != null){
             reportBean.setReportParameter("P_Project_id", gotprojectid.toString());
         } 
+        if (gotDepartmentid != null) {
+            reportBean.setReportParameter("P_Department_ID", gotDepartmentid.toString());
+        }
 
 
         if (gotFormat == "") {
@@ -185,5 +191,13 @@ public class PartyWiseReport {
 
     public RichSelectOneChoice getProjectidparam() {
         return projectidparam;
+    }
+
+    public void setDepartmentid_Param(RichSelectOneChoice departmentid_Param) {
+        this.departmentid_Param = departmentid_Param;
+    }
+
+    public RichSelectOneChoice getDepartmentid_Param() {
+        return departmentid_Param;
     }
 }

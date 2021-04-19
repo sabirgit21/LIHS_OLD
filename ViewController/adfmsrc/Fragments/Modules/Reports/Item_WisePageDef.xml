@@ -9,5 +9,9 @@
   <bindings>
     <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Reports_Param1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

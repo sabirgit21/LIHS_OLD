@@ -25,18 +25,24 @@ public class ItemWiseReport {
     private RichSelectOneChoice format_type;
     private RichSelectOneChoice report_type;
     private RichSelectOneChoice itemL4IdParam;
+    private RichSelectOneChoice projectId_Param;
+    private RichSelectOneChoice departmentid_Param;
 
     public ItemWiseReport() {
     }
 
     private static String selectedReportType = "";
     private static String gotFormat = "";
+    private static BigDecimal gotProjectid;
+    private static BigDecimal gotDepartmentid;
     private static BigDecimal  gotItemL4Id;
 
     public String gen_Report() {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
+        gotProjectid = (BigDecimal) this.getProjectId_Param().getValue();
+        gotDepartmentid = (BigDecimal) this.getDepartmentid_Param().getValue();
         gotItemL4Id = (BigDecimal)this.getItemL4IdParam().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
@@ -48,6 +54,12 @@ public class ItemWiseReport {
         }
         if(getToDate() != ""){
             reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        if (gotProjectid != null) {
+            reportBean.setReportParameter("P_Project_ID", gotProjectid.toString());
+        }
+        if (gotDepartmentid != null) {
+            reportBean.setReportParameter("P_Department_ID", gotDepartmentid.toString());
         }
         if(gotItemL4Id != null){
             reportBean.setReportParameter("P_Item", gotItemL4Id.toString());
@@ -195,5 +207,21 @@ public class ItemWiseReport {
 
     public RichSelectOneChoice getItemL4IdParam() {
         return itemL4IdParam;
+    }
+
+    public void setProjectId_Param(RichSelectOneChoice projectId_Param) {
+        this.projectId_Param = projectId_Param;
+    }
+
+    public RichSelectOneChoice getProjectId_Param() {
+        return projectId_Param;
+    }
+
+    public void setDepartmentid_Param(RichSelectOneChoice departmentid_Param) {
+        this.departmentid_Param = departmentid_Param;
+    }
+
+    public RichSelectOneChoice getDepartmentid_Param() {
+        return departmentid_Param;
     }
 }
