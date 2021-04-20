@@ -26,6 +26,7 @@ public class SummaryReports {
     private RichSelectOneChoice itemreport_type;
     private RichSelectOneChoice centerreport_type;
     private RichSelectOneChoice dayreport_type;
+    private RichSelectOneChoice departmentid_Param;
 
     public SummaryReports() {
         
@@ -37,6 +38,7 @@ public class SummaryReports {
     private static String selectedDayReportType = "";
     private static String gotFormat = "";
     private static BigDecimal  gotprojectId;
+    private static BigDecimal  gotdepartmentId;
 
     public String gen_Report() {
         // Add event code here...
@@ -48,6 +50,7 @@ public class SummaryReports {
             
         gotFormat = (String)this.getFormat_type().getValue();
         gotprojectId = (BigDecimal)this.getProjidparam().getValue();
+        gotdepartmentId = (BigDecimal)this.getDepartmentid_Param().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -63,7 +66,9 @@ public class SummaryReports {
         if(gotprojectId != null){
             reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
         } 
-
+        if(gotdepartmentId != null){
+            reportBean.setReportParameter("P_Department_id", gotdepartmentId.toString());
+        } 
 
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
@@ -385,5 +390,13 @@ public class SummaryReports {
 
     public RichSelectOneChoice getDayreport_type() {
         return dayreport_type;
+    }
+
+    public void setDepartmentid_Param(RichSelectOneChoice departmentid_Param) {
+        this.departmentid_Param = departmentid_Param;
+    }
+
+    public RichSelectOneChoice getDepartmentid_Param() {
+        return departmentid_Param;
     }
 }
