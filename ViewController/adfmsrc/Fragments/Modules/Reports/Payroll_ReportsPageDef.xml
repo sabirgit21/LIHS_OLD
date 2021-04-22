@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Payroll_ReportsPageDef"
+                Package="Fragments.Modules.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HR_Report_Param1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="HR_Report_Param1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="HR_Report_Param1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HR_Report_Param1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="HR_Report_Param1Iterator" StaticList="false" Uses="LOV_Id" id="Id" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

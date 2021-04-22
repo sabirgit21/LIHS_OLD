@@ -81,7 +81,18 @@ public class AttendanceReport {
                     case "EmployeeBioData":
                         reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Employee_Bio_Detail&");
                         break;
-               
+                
+                    case "EmpAtt":
+                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Employee_Wise&");
+                        break;
+                
+                    case "PayAtt":
+                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Payroll_Detail&");
+                        break;
+                
+                    case "EmpAttSum":
+                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Employees_Attendance_Summary_Report&");
+                        break;
 
                 default:
                     showMessage("Please Select Report Type");
