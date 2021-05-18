@@ -60,7 +60,7 @@ public class FixedAssetsReport {
                 switch (selectedReportType) {
                 
                 case "cashPurchase":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Cash_Purchase_Date_Wise&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Cash_Purchase_Date_Wise&");
                     break;
                 
                 default:

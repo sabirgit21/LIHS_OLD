@@ -108,7 +108,7 @@ public class SuppGLReports {
                         System.out.println(e);
                     }
                     
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Supplier_Ledger&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Supplier_Ledger&");
 
                 }
             else{

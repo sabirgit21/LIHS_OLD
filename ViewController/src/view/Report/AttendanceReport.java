@@ -71,27 +71,27 @@ public class AttendanceReport {
                 switch (selectedReportType) {
                 
                 case "attDay":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Day_wise&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Day_wise&");
                     break;
                 
                 case "attMonth":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Month_wise&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Month_wise&");
                     break;
                 
                     case "EmployeeBioData":
-                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Employee_Bio_Detail&");
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Employee_Bio_Detail&");
                         break;
                 
                     case "EmpAtt":
-                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Employee_Wise&");
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Employee_Wise&");
                         break;
                 
                     case "PayAtt":
-                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Payroll_Detail&");
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Attendance_Payroll_Detail&");
                         break;
                 
                     case "EmpAttSum":
-                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Employees_Attendance_Summary_Report&");
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Employees_Attendance_Summary_Report&");
                         break;
 
                 default:

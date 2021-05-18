@@ -96,7 +96,7 @@ public class PRReports {
                         System.out.println(e);
                     }
                     
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/PR_Det&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/PR_Det&");
 
                 }
             else{
@@ -143,7 +143,7 @@ public class PRReports {
                             System.out.println(e);
                         }
                         
-                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/PR_Summ&");
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/PR_Summ&");
 
                     }
                 else{

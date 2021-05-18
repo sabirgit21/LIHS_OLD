@@ -73,14 +73,14 @@ public class PartyWiseReport {
                 switch (selectedReportType) {
                 
                 case "debitNotes":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Debit_Notes_Supplier_Wise&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Debit_Notes_Supplier_Wise&");
                     break;
                 case "goodsReceipt":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Good_Receipt_Notes_Supplier_Wise&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Good_Receipt_Notes_Supplier_Wise&");
                     break;
                 
                 case "purchaseOrder":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Purchase_Order_Supplier_Wise&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Purchase_Order_Supplier_Wise&");
                     break;
                 
                 default:

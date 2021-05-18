@@ -73,15 +73,15 @@ public class DonationReports {
                 switch (selectedReportType) {
                 
                 case "donationInkindDetail":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donation_In_Kind_Donation_Report_Detail&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donation_In_Kind_Donation_Report_Detail&");
                     break;
                 
                 case "donationReceiptDetail":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donation_Receipt_Donation_Report_Detail&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donation_Receipt_Donation_Report_Detail&");
                     break;
                 
                 case "donorSetupDetail":
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Setup_Donationl_Report_Detail&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Setup_Donationl_Report_Detail&");
                     break;
                 
 
@@ -100,17 +100,17 @@ public class DonationReports {
                 switch (selectedCatReportType) {
                 
                     case "summarydonationdonor":
-                            reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Donor_Wise_Report&");
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Donor_Wise_Report&");
                             break;
                         
                     case "summarydonationcategoryday":
-                            reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Day_Wise_Report&");
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Day_Wise_Report&");
                             break;
                     case "summarydonationcategorymonth":
-                            reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Month_Wise_Report&");
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Month_Wise_Report&");
                             break;
                     case "summarydonationcategorydonor":
-                            reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Donor_Wise_Report&");
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Donor_Wise_Report&");
                             break;
 
                 default:

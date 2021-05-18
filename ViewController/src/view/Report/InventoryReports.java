@@ -78,11 +78,11 @@ public class InventoryReports {
             switch (selectedReportType) {
 
             case "inventoryReport":
-                reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Inventory_Reports&");
+                reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Inventory_Reports&");
                 break;
 
             case "currentStock":
-                reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Current_Stock&");
+                reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Current_Stock&");
                 break;
 
             case "itemLedger":
@@ -129,7 +129,7 @@ public class InventoryReports {
                             System.out.println(e);
                         }
                         
-                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Item_Ledger&");
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Item_Ledger&");
 
                     }
                 else{
@@ -141,7 +141,7 @@ public class InventoryReports {
             
             case "mGTdailyfeeding":
 
-                reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_1&");
+                reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_1&");
                 break;
             case "mGTdailyfeeding2":
 
@@ -174,13 +174,13 @@ public class InventoryReports {
 //                            System.out.println(e);
 //                        }
 //                        
-//                        reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
+//                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
 //
 //                    }
 //                else{
 //                    showMessage("Please Select From Date & Project");
 //                }
-                reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
+                reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_2&");
                 break;
                 //calling procedure end//
             default:

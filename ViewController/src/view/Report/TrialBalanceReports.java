@@ -97,7 +97,7 @@ public class TrialBalanceReports {
                         System.out.println(e);
                     }
                     
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/Trial_Balace_Report&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Trial_Balace_Report&");
 
                 }
             else{

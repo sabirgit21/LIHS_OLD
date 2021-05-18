@@ -59,7 +59,7 @@ public class MonthlyExpReports {
         switch (selectedReportType) {
 
             case "monthlyExpenseL4":
-                reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/MonthlyExpense_L4&");
+                reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/MonthlyExpense_L4&");
                 break;
         default:
             showMessage("Please Select Report Type");

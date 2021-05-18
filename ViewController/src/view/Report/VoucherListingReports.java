@@ -89,7 +89,7 @@ public class VoucherListingReports {
                         System.out.println(e);
                     }
                     
-                    reportBean.setReportURLName("userid=lihs/lihs@orcl&domain=classicdomain&report=C:/LIHS_Reports/V_Listing&");
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/V_Listing&");
 
                 }
             else{
