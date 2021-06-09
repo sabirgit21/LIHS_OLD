@@ -139,6 +139,62 @@ public class InventoryReports {
                 break;
                 //calling procedure end//
             
+                case "itemLedgerProject":
+
+                    //working for procedure call//
+                    
+                    if (getFromDate() != "" & getToDate() != "" & gotitemL4id != null & gotDepartmentidId != null & gotprojectId != null ) {
+                            
+                            
+                            
+                            String sendFDateFINAL = getFromDate();
+                            String sendToDateFINAL = getToDate();
+                    
+                            String sendItemIDCnvrt = gotitemL4id.toString();
+                            String sendDepartmentIDCnvrt = gotDepartmentidId.toString();
+                            String sendProjectIDCnvrt = gotprojectId.toString();
+                            int sendItemIDFinal = Integer.parseInt(sendItemIDCnvrt);
+                            int sendDepartmentIDFinal = Integer.parseInt(sendDepartmentIDCnvrt);
+                            int sendProjectIDFinal = Integer.parseInt(sendProjectIDCnvrt);
+                            //calling procedure start//
+                            Connection conn;
+                            ResultSet rs;
+                            CallableStatement cstmt = null;
+                            try {
+                                conn = DatabaseConnection.getConnection();
+                                String SQL = "{call P_IL_PROJ(?,?,?,?)}";
+                                cstmt = conn.prepareCall(SQL);
+                                
+                                cstmt.setInt(1, sendItemIDFinal);
+                                cstmt.setString(2, sendFDateFINAL );
+                                cstmt.setInt(3, sendDepartmentIDFinal);
+                                cstmt.setInt(4, sendProjectIDFinal);
+                                
+                                rs = cstmt.executeQuery();
+                                
+                                String SQL2 = "{call P_IL_DP_PROJ(?,?,?,?,?)}"; 
+                                cstmt = conn.prepareCall(SQL2);
+                                
+                                cstmt.setInt(1, sendItemIDFinal);
+                                cstmt.setString(2, sendFDateFINAL );
+                                cstmt.setString(3, sendToDateFINAL);
+                                cstmt.setInt(4, sendDepartmentIDFinal);
+                                cstmt.setInt(5, sendProjectIDFinal);
+                                rs = cstmt.executeQuery();
+                            } catch (SQLException e) {
+                                System.out.println(e);
+                            }
+                            
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Item_Ledger&");
+
+                        }
+                    else{
+                        showMessage("Please Select From Date ,From Date, Deapartment, Project,Item");
+                    }
+                    
+                    break;
+                    //calling procedure end//
+            
             case "mGTdailyfeeding":
 
                 reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/MGT_Daily_Feeding_1&");

@@ -135,6 +135,7 @@
                                 <af:selectItem label="Inventory Report" value="inventoryReport" id="si9"/>
                                 <af:selectItem label="Current Stock" value="currentStock" id="si1"/>
                                 <af:selectItem label="Item Ledger" value="itemLedger" id="si4"/>
+                                <af:selectItem label="Item Ledger with Project" value="itemLedgerProject" id="si5"/>
                                  <af:selectItem label="MGT Daily Feeding" value="mGTdailyfeeding" id="si6"/>
                                  <af:selectItem label="MGT Daily Feeding 2" value="mGTdailyfeeding2" id="si7"/>
                                 
