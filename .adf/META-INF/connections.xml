@@ -24,4 +24,14 @@
       </StringRefAddr>
     </RefAddresses>
   </Reference>
+  <Reference name="Map_All" className="oracle.adf.model.connection.url.HttpURLConnection" xmlns="">
+    <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="Map_All">
+        <Contents>
+          <urlconnection name="Map_All" url="http://elocation.oracle.com/mapviewer"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
 </References>

@@ -637,6 +637,9 @@
   <ViewUsage
     Name="FA_Report_Param1"
     ViewObjectName="model.ERP.VO.FA_Report_Param"/>
+  <ViewUsage
+    Name="Vew_Map_All1"
+    ViewObjectName="model.ERP.VO.Vew_Map_All"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

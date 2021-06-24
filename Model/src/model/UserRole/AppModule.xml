@@ -106,6 +106,9 @@
   <ViewUsage
     Name="Pages_Reports1"
     ViewObjectName="model.UserRole.VO.Pages_Reports"/>
+  <ViewUsage
+    Name="Pages_Management_Reports1"
+    ViewObjectName="model.UserRole.VO.Pages_Management_Reports"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.UserRole.VO.FkPagesLink"

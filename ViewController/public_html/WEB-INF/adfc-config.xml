@@ -70,4 +70,9 @@
     <managed-bean-class>view.sidebar.ReportsSidebar</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__15">
+    <managed-bean-name>MGTReportsSidebarBean</managed-bean-name>
+    <managed-bean-class>view.sidebar.MGTReportsSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

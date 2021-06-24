@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="MGR_ReportsPageDef"
+                Package="Main_Pages.Modules.MGR_Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Pages_Management_Reports1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Pages_Management_Reports1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.MGTReportsSidebarBean.dynamicTaskFlowId1}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="Vew_Map_All1" RangeSize="-1" DataControl="AppModuleDataControl1" id="Vew_Map_All1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Pages_Management_Reports1Iterator" id="Pages_Management_Reports1">
+      <nodeDefinition DefName="model.UserRole.VO.Pages_Management_Reports" Name="Pages_Management_Reports10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <mapTheme IterBinding="Vew_Map_All1Iterator" id="Vew_Map_All1" xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <mapThemeDataMap convert="false" mapThemeType="point">
+        <data>
+          <item value="Name"/>
+        </data>
+        <item type="lat_long" longitude="Longitude" latitude="Latitude" label="Name"/>
+        <item type="category" value="MapVal"/>
+      </mapThemeDataMap>
+    </mapTheme>
+  </bindings>
+</pageDefinition>

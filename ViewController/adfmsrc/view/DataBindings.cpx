@@ -5,6 +5,8 @@
     <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
              className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
     <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
   </definitionFactories>
   <pageMap>
     <page path="/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" usageId="view_General_LedgerPageDef"/>
@@ -264,6 +266,7 @@
     <page path="/WEB-INF/Fragments/Modules/Reports/Fixed_Assets.jsff" usageId="view_Fixed_AssetsPageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/Date_Wise.jsff" usageId="view_Date_WisePageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/Payroll_Reports.jsff" usageId="view_Payroll_ReportsPageDef"/>
+    <page path="/Main_Pages/Modules/MGR_Reports/MGR_Reports.jsf" usageId="view_MGR_ReportsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -508,6 +511,7 @@
     <page id="view_Fixed_AssetsPageDef1" path="Fragments.Modules.Reports.Fixed_AssetsPageDef"/>
     <page id="view_Date_WisePageDef" path="Fragments.Modules.Reports.Date_WisePageDef"/>
     <page id="view_Payroll_ReportsPageDef" path="Fragments.Modules.Reports.Payroll_ReportsPageDef"/>
+    <page id="view_MGR_ReportsPageDef" path="Main_Pages.Modules.MGR_Reports.MGR_ReportsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
