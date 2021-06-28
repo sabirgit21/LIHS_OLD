@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="DonationPageDef"
+                Package="Fragments.Modules.Donation">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="View_Chart1" RangeSize="-1" DataControl="AppModuleDataControl1" id="View_Chart1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="View_Chart1Iterator" id="View_Chart1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.View_Chart" Name="View_Chart1">
+        <AttrNames>
+          <Item Value="Selectobjects1"/>
+          <Item Value="DonCat"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="View_Chart1Iterator" id="View_Chart11" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.View_Chart" Name="View_Chart11">
+        <AttrNames>
+          <Item Value="Selectobjects1"/>
+          <Item Value="DonCat"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

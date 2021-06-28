@@ -28,7 +28,8 @@
        TblDonSetup.UPDATED_DATE, 
        TblDonSetup.UPDATED_BY, 
        TblDonSetup.DONOR_TYPE, 
-       TblDonSetup.MONTHLY_COMIT"
+       TblDonSetup.MONTHLY_COMIT, 
+       TblDonSetup.DON_CAT"
   FromList="TBL_DON_SETUP TblDonSetup"
   Where="TblDonSetup.PROJECT_ID = nvl(:getProId,TblDonSetup.PROJECT_ID)">
   <Variable
@@ -46,6 +47,10 @@
   <ViewAccessor
     Name="Donor_Type_LOV1"
     ViewObjectName="model.LOV.Donor_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Don_Category_LOV1"
+    ViewObjectName="model.LOV.Don_Category_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ProjectId"
@@ -73,6 +78,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="DonorType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonCat"
+    ListVOName="Don_Category_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonCat"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -225,6 +248,20 @@
     EntityAttrName="MonthlyComit"
     EntityUsage="TblDonSetup"
     AliasName="MONTHLY_COMIT"/>
+  <ViewAttribute
+    Name="DonCat"
+    PrecisionRule="true"
+    EntityAttrName="DonCat"
+    EntityUsage="TblDonSetup"
+    AliasName="DON_CAT"
+    LOVName="LOV_DonCat">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblDonCrView"
     ViewLink="model.ERP.VO.FkDonCrDonSetupLink"

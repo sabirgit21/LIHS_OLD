@@ -34,6 +34,7 @@
           <Item Value="Mobile"/>
           <Item Value="DonorType"/>
           <Item Value="MonthlyComit"/>
+          <Item Value="DonCat"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

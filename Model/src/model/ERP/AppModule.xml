@@ -640,6 +640,9 @@
   <ViewUsage
     Name="Vew_Map_All1"
     ViewObjectName="model.ERP.VO.Vew_Map_All"/>
+  <ViewUsage
+    Name="View_Chart1"
+    ViewObjectName="model.ERP.VO.View_Chart"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

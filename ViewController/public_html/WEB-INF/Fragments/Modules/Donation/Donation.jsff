@@ -1,2 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1">
+    <af:showDetailItem id="pane1" text="Graph">
+      <dvt:pieChart id="pieChart1" var="row" value="#{bindings.View_Chart1.collectionModel}">
+        <dvt:chartLegend id="cl1"/>
+        <dvt:pieDataItem id="di1" label="#{row.DonCat}" value="#{row.Selectobjects1}"/>
+      </dvt:pieChart>
+      <dvt:barChart orientation="vertical" id="barChart1" var="row" value="#{bindings.View_Chart11.collectionModel}">
+        <dvt:chartLegend id="cl2"/>
+        <f:facet name="dataStamp">
+          <dvt:chartDataItem id="di2" series="#{bindings.View_Chart11.hints.Selectobjects1.label}"
+                             value="#{row.Selectobjects1}" group="#{row.DonCat}"/>
+        </f:facet>
+      </dvt:barChart>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

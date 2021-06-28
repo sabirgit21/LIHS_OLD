@@ -267,6 +267,7 @@
     <page path="/WEB-INF/Fragments/Modules/Reports/Date_Wise.jsff" usageId="view_Date_WisePageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/Payroll_Reports.jsff" usageId="view_Payroll_ReportsPageDef"/>
     <page path="/Main_Pages/Modules/MGR_Reports/MGR_Reports.jsf" usageId="view_MGR_ReportsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Donation/Donation.jsff" usageId="view_DonationPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -512,6 +513,7 @@
     <page id="view_Date_WisePageDef" path="Fragments.Modules.Reports.Date_WisePageDef"/>
     <page id="view_Payroll_ReportsPageDef" path="Fragments.Modules.Reports.Payroll_ReportsPageDef"/>
     <page id="view_MGR_ReportsPageDef" path="Main_Pages.Modules.MGR_Reports.MGR_ReportsPageDef"/>
+    <page id="view_DonationPageDef1" path="Fragments.Modules.Donation.DonationPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

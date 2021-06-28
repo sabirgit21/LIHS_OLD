@@ -164,6 +164,22 @@
                                 <f:validator binding="#{row.bindings.DonorType.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            <af:column headerText="Category" id="c9"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DonCat}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.DonCat.inputValue}"
+                                                  label="#{row.bindings.DonCat.label}"
+                                                  required="#{bindings.TblDonSetupView1.hints.DonCat.mandatory}"
+                                                  shortDesc="#{bindings.TblDonSetupView1.hints.DonCat.tooltip}"
+                                                  id="soc3">
+                                <f:selectItems value="#{row.bindings.DonCat.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.DonCat.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <af:column headerText="Monthly Commitments" id="c8" sortable="true" filterable="true"
                                        width="120">
                              <f:facet name="filter">

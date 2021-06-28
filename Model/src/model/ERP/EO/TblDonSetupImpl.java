@@ -43,6 +43,7 @@ public class TblDonSetupImpl extends EntityImpl {
         UpdatedBy,
         MonthlyComit,
         DonorType,
+        DonCat,
         TblDonCr,
         TblDonKindM;
         private static AttributesEnum[] vals = null;
@@ -68,6 +69,7 @@ public class TblDonSetupImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
@@ -88,6 +90,7 @@ public class TblDonSetupImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int MONTHLYCOMIT = AttributesEnum.MonthlyComit.index();
     public static final int DONORTYPE = AttributesEnum.DonorType.index();
+    public static final int DONCAT = AttributesEnum.DonCat.index();
     public static final int TBLDONCR = AttributesEnum.TblDonCr.index();
     public static final int TBLDONKINDM = AttributesEnum.TblDonKindM.index();
 
@@ -103,6 +106,7 @@ public class TblDonSetupImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblDonSetup");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -406,6 +410,22 @@ public class TblDonSetupImpl extends EntityImpl {
      */
     public void setDonorType(String value) {
         setAttributeInternal(DONORTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for DonCat, using the alias name DonCat.
+     * @return the value of DonCat
+     */
+    public String getDonCat() {
+        return (String) getAttributeInternal(DONCAT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DonCat.
+     * @param value value to set the DonCat
+     */
+    public void setDonCat(String value) {
+        setAttributeInternal(DONCAT, value);
     }
 
     /**
