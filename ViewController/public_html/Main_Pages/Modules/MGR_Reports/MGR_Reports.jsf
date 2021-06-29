@@ -38,8 +38,8 @@
                             <f:facet name="second">
                                 <af:panelGroupLayout layout="scroll" id="pgl3">
                                     <!-- Content -->
-                                    <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
-                                    <!--<af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>-->
+                                    
+                                    <af:region value="#{bindings.dynamicRegion2.regionModel}" id="r1"/>
                                     <dvt:map summary="Google Map" id="map" startingX="0.0" mapServerConfigId="mapConfig1"
                                              baseMapName="ELOCATION_MERCATOR.WORLD_MAP" mapZoom="0"
                                              inlineStyle="width:1101px; height:745px;" startingY="0.0" autoZoomThemeId="mt1">

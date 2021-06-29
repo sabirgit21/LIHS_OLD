@@ -9,6 +9,8 @@
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.MGTReportsSidebarBean.dynamicTaskFlowId1}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <iterator Binds="Vew_Map_All1" RangeSize="-1" DataControl="AppModuleDataControl1" id="Vew_Map_All1Iterator"/>
+    <taskFlow id="dynamicRegion2" taskFlowId="${viewScope.MGTReportsSidebarBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="Pages_Management_Reports1Iterator" id="Pages_Management_Reports1">
