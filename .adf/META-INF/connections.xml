@@ -17,7 +17,7 @@
         <Contents>thin</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="hostname">
-        <Contents>192.168.1.4</Contents>
+        <Contents>62.171.154.170</Contents>
       </StringRefAddr>
       <SecureRefAddr addrType="password"/>
       <StringRefAddr addrType="subtype">
@@ -27,7 +27,7 @@
         <Contents>1521</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="user">
-        <Contents>lihs</Contents>
+        <Contents>lihsold</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="sid">
         <Contents>orcl</Contents>
